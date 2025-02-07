@@ -1,0 +1,93 @@
+:root {
+  --light-background: #f9f9f9;
+  --light-text: #333;
+  --light-link: #007bff;
+  --light-button: #007bff;
+
+  --dark-background: #121212;
+  --dark-text: #e0e0e0;
+  --dark-link: #1e90ff;
+  --dark-button: #333;
+
+  --font-size-base: 1rem;
+  --font-size-large: 1.25rem;
+
+  --space-base: 1rem;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  background-color: var(--light-background);
+  color: var(--light-text);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body.light-theme {
+  background-color: var(--light-background);
+  color: var(--light-text);
+}
+
+a {
+  color: var(--light-link);
+}
+
+button {
+  background-color: var(--light-button);
+  color: white;
+}
+
+body.dark-theme {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+a {
+  color: var(--dark-link);
+}
+
+button {
+  background-color: var(--dark-button);
+  color: white;
+}
