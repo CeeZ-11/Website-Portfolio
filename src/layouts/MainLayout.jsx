@@ -3,6 +3,7 @@ import profileImg from "../assets/profile.webp";
 import emailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
 import addressIcon from "../assets/address.svg";
+import birthdateIcon from "../assets/birthdate.svg";
 
 export default function MainLayout() {
   return (
@@ -30,6 +31,13 @@ export default function MainLayout() {
             <div className="phone-details">
               <h5>Phone: </h5>
               <p>+639270664116</p>
+            </div>
+          </div>
+          <div className="birthdate">
+            <img src={birthdateIcon} alt="birthdate" />
+            <div className="address-details">
+              <h5>Birthdate: </h5>
+              <p>December 11, 1996</p>
             </div>
           </div>
           <div className="address">
