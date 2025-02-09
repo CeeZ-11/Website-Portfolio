@@ -1,0 +1,35 @@
+.Main {
+  width: 90vw;
+  border-radius: 15px;
+  height: 90vh;
+  padding: 0px;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+aside {
+  flex: 0.2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  min-width: 200px;
+}
+
+main {
+  flex: 0.8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+}
+
+@media (max-width: 900px) {
+  .Main {
+    flex-direction: column;
+  }
+}
