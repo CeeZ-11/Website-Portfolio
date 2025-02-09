@@ -28,6 +28,45 @@ main {
   border-radius: 15px;
 }
 
+aside img {
+  width: clamp(100px, 15vw, 200px);
+  height: clamp(100px, 15vw, 200px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  gap: 20px;
+}
+
+.profile-card h2 {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: bold;
+}
+
+.profile-card h4 {
+  font-size: clamp(0.7rem, 1.1vw, 1.1rem);
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.profile-name {
+  text-align: center;
+}
+
+.short-line {
+  width: 40%;
+  border: 0;
+  border-top: 1px solid #ffffff;
+  margin: 5px auto;
+}
+
 @media (max-width: 900px) {
   .Main {
     flex-direction: column;
