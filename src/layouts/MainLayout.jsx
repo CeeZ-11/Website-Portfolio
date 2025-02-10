@@ -84,15 +84,17 @@ export default function MainLayout() {
           </ul>
         </nav>
         <div className="main-scroll">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path="/about" element={<About />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/" element={<About />} />
-            </Routes>
-          </Suspense>
+          <div className="page-container">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/" element={<About />} />
+              </Routes>
+            </Suspense>
+          </div>
         </div>
       </main>
     </div>

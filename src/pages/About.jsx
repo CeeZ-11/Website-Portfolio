@@ -24,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <div className="about">
+    <>
       <div className="about-title">
         <h1>About Me</h1>
         <hr className="header-line" />
@@ -67,6 +67,6 @@ export default function About() {
           <li>Mobile App Development (Future Goal)</li>
         </ul>
       </div>
-    </div>
+    </>
   );
 }

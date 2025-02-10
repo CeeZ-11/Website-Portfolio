@@ -1,19 +1,3 @@
-.header-line {
-  max-width: 30px;
-  width: 50%;
-  border: 0;
-  border-top: 2px solid #ff7300;
-  box-shadow: 0 0 5px rgb(255, 102, 0, 0.8);
-}
-
-.about {
-  padding: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  overflow-y: auto;
-}
-
 .aboutC {
   display: flex;
   flex-direction: column;
@@ -58,7 +42,6 @@
   overflow: auto;
 }
 
-/* Style the scrollbar itself */
 .main-scroll::-webkit-scrollbar {
   width: 1.5px;
 }
