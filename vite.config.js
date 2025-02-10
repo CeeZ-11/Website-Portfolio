@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   plugins: [react(), compression()],
-  base: "/Website-Portfolio",
+  base: "/Website-Portfolio/",
   test: {
     globals: true,
     environment: "jsdom",

@@ -107,11 +107,11 @@ export default function MainLayout() {
           <div className="page-container">
             <Suspense fallback={<div>Loading...</div>}>
               <Routes>
+                <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/" element={<About />} />
               </Routes>
             </Suspense>
           </div>
