@@ -1,5 +1,6 @@
 import "../styles/MainLayout.css";
-import profileImg from "../assets/profile.webp";
+import profileImgSmall from "../assets/profile-small.webp";
+import profileImgLarge from "../assets/profile-large.webp";
 import emailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
 import addressIcon from "../assets/address.svg";
@@ -13,7 +14,12 @@ export default function MainLayout() {
     <div className="Main">
       <aside>
         <div className="profile-card">
-          <img src={profileImg} alt="profile" loading="lazy" />
+          <img
+            src={profileImgSmall}
+            srcSet={`${profileImgSmall} 600w, ${profileImgLarge} 1200w`}
+            alt="profile"
+            loading="lazy"
+          />
           <div className="profile-name">
             <h2>Seamor Estrabon</h2>
             <h4>Front-End Developer</h4>
