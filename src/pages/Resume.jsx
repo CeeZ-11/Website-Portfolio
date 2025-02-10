@@ -1,4 +1,5 @@
 import PageTitle from "../components/PageTitle";
+import "../styles/Resume.css";
 import { useState } from "react";
 
 export default function Resume() {
@@ -53,62 +54,64 @@ export default function Resume() {
       </div>
       <div className="additional-info">
         <h2>Additional Information</h2>
-        <nav className="info-nav">
-          <ul>
-            <li>
-              <button
-                onClick={() => setActiveTab("languages")}
-                className={activeTab === "languages" ? "active" : ""}
-              >
-                Languages
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveTab("certifications")}
-                className={activeTab === "certifications" ? "active" : ""}
-              >
-                Certifications
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveTab("trainings")}
-                className={activeTab === "trainings" ? "active" : ""}
-              >
-                Trainings & Seminars
-              </button>
-            </li>
-          </ul>
-        </nav>
-        <div className="info-content">
-          {activeTab === "languages" && (
-            <>
-              <h4> Languages </h4>
-              <ul>
-                <li> English - B2(Upper Intermediate)</li>
-                <li>Tagalog - Native or Bilingual</li>
-              </ul>
-            </>
-          )}
-          {activeTab === "certifications" && (
-            <>
-              <h4> Certifications </h4>
-              <ul>
-                <li>SAP Business One Certification (Jan 2016)</li>
-                <li>Apple Teacher Certification (Oct 2019)</li>
-              </ul>
-            </>
-          )}
-          {activeTab === "trainings" && (
-            <>
-              <h4> Trainings & Seminars </h4>
-              <ul>
-                <li>JobStreet.com – Jumpstart Session (2016)</li>
-                <li>Google I/O Seminar (2016)</li>
-              </ul>
-            </>
-          )}
+        <div className="info-container">
+          <nav className="info-nav">
+            <ul>
+              <li>
+                <button
+                  onClick={() => setActiveTab("languages")}
+                  className={activeTab === "languages" ? "active" : ""}
+                >
+                  Languages
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setActiveTab("certifications")}
+                  className={activeTab === "certifications" ? "active" : ""}
+                >
+                  Certifications
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setActiveTab("trainings")}
+                  className={activeTab === "trainings" ? "active" : ""}
+                >
+                  Trainings & Seminars
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <div className="info-content">
+            {activeTab === "languages" && (
+              <>
+                <h4> Languages </h4>
+                <ul>
+                  <li> English - B2(Upper Intermediate)</li>
+                  <li>Tagalog - Native or Bilingual</li>
+                </ul>
+              </>
+            )}
+            {activeTab === "certifications" && (
+              <>
+                <h4> Certifications </h4>
+                <ul>
+                  <li>SAP Business One Certification (Jan 2016)</li>
+                  <li>Apple Teacher Certification (Oct 2019)</li>
+                </ul>
+              </>
+            )}
+            {activeTab === "trainings" && (
+              <>
+                <h4> Trainings & Seminars </h4>
+                <ul>
+                  <li>JobStreet.com – Jumpstart Session (2016)</li>
+                  <li>Google I/O Seminar (2016)</li>
+                </ul>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>

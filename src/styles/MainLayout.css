@@ -180,7 +180,7 @@ main nav ul li a.active {
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   overflow-y: auto;
 }
 
