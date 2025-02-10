@@ -1,3 +1,9 @@
+import PageTitle from "../components/PageTitle";
+
 export default function Portfolio() {
-  return <h1>Portfolio Page</h1>;
+  return (
+    <>
+      <PageTitle name="Portfolio" />
+    </>
+  );
 }
