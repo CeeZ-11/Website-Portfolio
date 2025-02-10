@@ -9,6 +9,7 @@ import NodejsIcon from "../components/Icons/NodejsIcon";
 import WebpackIcon from "../components/Icons/WebpackIcon";
 import NpmIcon from "../components/Icons/NpmIcon";
 import TechStack from "../components/TechStack.jsx";
+import PageTitle from "../components/PageTitle.jsx";
 
 export default function About() {
   const techStackSkills = [
@@ -25,11 +26,7 @@ export default function About() {
 
   return (
     <>
-      <div className="about-title">
-        <h1>About Me</h1>
-        <hr className="header-line" />
-      </div>
-
+      <PageTitle name="About Me" />
       <div className="intro">
         <p>
           Hi, I’m <span className="name">Seamor Estrabon</span>, a passionate
