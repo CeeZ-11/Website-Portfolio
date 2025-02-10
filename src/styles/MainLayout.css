@@ -154,6 +154,14 @@ main nav ul li a {
   transition: all 0.3s ease;
 }
 
+main nav ul li:first-child a {
+  border-bottom-left-radius: 10px;
+}
+
+main nav ul li:last-child a {
+  border-bottom-right-radius: 10px;
+}
+
 main nav ul li a:hover {
   background: #131313;
   color: #ff7300;
