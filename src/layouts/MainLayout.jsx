@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import "../styles/MainLayout.css";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import profileImgSmall from "../assets/profile-small.webp";
 import profileImgLarge from "../assets/profile-large.webp";
 import emailIcon from "../assets/email.svg";
@@ -70,16 +70,36 @@ export default function MainLayout() {
         <nav>
           <ul>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <Link to="/resume">Resume</Link>
+              <NavLink
+                to="/resume"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Resume
+              </NavLink>
             </li>
             <li>
-              <Link to="/portfolio">Portfolio</Link>
+              <NavLink
+                to="/portfolio"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Portfolio
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         </nav>

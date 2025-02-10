@@ -170,6 +170,12 @@ main nav ul li a:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+main nav ul li a.active {
+  color: #ff7300;
+  text-shadow: 0 0 6px rgba(255, 115, 0, 0.5), 0 0 10px rgba(255, 115, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 .page-container {
   padding: 20px 40px;
   display: flex;
