@@ -8,8 +8,21 @@ import GithubIcon from "../components/Icons/GithubIcon";
 import NodejsIcon from "../components/Icons/NodejsIcon";
 import WebpackIcon from "../components/Icons/WebpackIcon";
 import NpmIcon from "../components/Icons/NpmIcon";
+import TechStack from "../components/TechStack.jsx";
 
 export default function About() {
+  const techStackSkills = [
+    { icon: JavaScriptIcon, name: "JavaScript (ES6+)" },
+    { icon: ReactIcon, name: "React (In Progress)" },
+    { icon: Html5Icon, name: "HTML5" },
+    { icon: Css3Icon, name: "CSS3" },
+    { icon: GitIcon, name: "Git" },
+    { icon: GithubIcon, name: "Github" },
+    { icon: NodejsIcon, name: "NodeJS" },
+    { icon: WebpackIcon, name: "Webpack" },
+    { icon: NpmIcon, name: "NPM" },
+  ];
+
   return (
     <div className="about">
       <div className="about-title">
@@ -40,33 +53,9 @@ export default function About() {
       <div className="aboutC tech-stack-container">
         <h2>Tech Stack</h2>
         <ul className="tech-stack-list">
-          <li className="tech-stack">
-            <JavaScriptIcon /> JavaScript (ES6+)
-          </li>
-          <li className="tech-stack">
-            <ReactIcon /> React (In Progress)
-          </li>
-          <li className="tech-stack">
-            <Html5Icon /> HTML5
-          </li>
-          <li className="tech-stack">
-            <Css3Icon /> CSS3
-          </li>
-          <li className="tech-stack">
-            <GitIcon /> Git
-          </li>
-          <li className="tech-stack">
-            <GithubIcon /> GitHub
-          </li>
-          <li className="tech-stack">
-            <NodejsIcon /> NodeJS
-          </li>
-          <li className="tech-stack">
-            <WebpackIcon /> Webpack
-          </li>
-          <li className="tech-stack">
-            <NpmIcon /> npm
-          </li>
+          {techStackSkills.map((tech) => (
+            <TechStack key={tech.name} icon={tech.icon} name={tech.name} />
+          ))}
         </ul>
       </div>
 
