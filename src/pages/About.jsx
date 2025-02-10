@@ -39,43 +39,35 @@ export default function About() {
 
       <div className="aboutC tech-stack-container">
         <h2>Tech Stack</h2>
-        <div className="tech-stack-list">
-          <div className="tech-stack">
+        <ul className="tech-stack-list">
+          <li className="tech-stack">
             <JavaScriptIcon /> JavaScript (ES6+)
-          </div>
-          <div className="tech-stack">
-            {" "}
+          </li>
+          <li className="tech-stack">
             <ReactIcon /> React (In Progress)
-          </div>
-          <div className="tech-stack">
-            {" "}
+          </li>
+          <li className="tech-stack">
             <Html5Icon /> HTML5
-          </div>
-          <div className="tech-stack">
-            {" "}
+          </li>
+          <li className="tech-stack">
             <Css3Icon /> CSS3
-          </div>
-          <div className="tech-stack">
-            <GitIcon />
-            Git
-          </div>
-          <div className="tech-stack">
-            <GithubIcon />
-            GitHub
-          </div>
-          <div className="tech-stack">
-            <NodejsIcon />
-            NodeJS
-          </div>
-          <div className="tech-stack">
-            <WebpackIcon />
-            Webpack
-          </div>
-          <div className="tech-stack">
-            <NpmIcon />
-            npm
-          </div>
-        </div>
+          </li>
+          <li className="tech-stack">
+            <GitIcon /> Git
+          </li>
+          <li className="tech-stack">
+            <GithubIcon /> GitHub
+          </li>
+          <li className="tech-stack">
+            <NodejsIcon /> NodeJS
+          </li>
+          <li className="tech-stack">
+            <WebpackIcon /> Webpack
+          </li>
+          <li className="tech-stack">
+            <NpmIcon /> npm
+          </li>
+        </ul>
       </div>
 
       <div className="aboutC cur-learning">

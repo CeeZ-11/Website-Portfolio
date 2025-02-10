@@ -25,6 +25,26 @@
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.tech-stack {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-stack:hover {
+  transform: scale(1.1);
 }
 
 .tech-icons {
