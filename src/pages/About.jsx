@@ -1,4 +1,5 @@
 import "../styles/About.css";
+import JavaScriptIcon from "../components/Icons/JavscriptIcon";
 
 export default function About() {
   return (
@@ -31,7 +32,9 @@ export default function About() {
       <div className="aboutC tech-stack-container">
         <h2>Tech Stack</h2>
         <div className="tech-stack-list">
-          <div className="tech-stack">JavaScript (ES6+)</div>
+          <div className="tech-stack">
+            <JavaScriptIcon /> JavaScript (ES6+)
+          </div>
           <div className="tech-stack">React (In Progress)</div>
           <div className="tech-stack">HTML5 & CSS3</div>
           <div className="tech-stack">Git & GitHub</div>
