@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/Website-Portfolio">
+      <BrowserRouter basename="/Website-Portfolio/">
         <MainLayout />
       </BrowserRouter>
     </div>
