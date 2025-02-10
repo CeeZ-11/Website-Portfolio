@@ -1,5 +1,13 @@
 import "../styles/About.css";
 import JavaScriptIcon from "../components/Icons/JavscriptIcon";
+import ReactIcon from "../components/Icons/ReactIcon";
+import Html5Icon from "../components/Icons/Html5Icon";
+import Css3Icon from "../components/Icons/Css3";
+import GitIcon from "../components/Icons/GitIcon";
+import GithubIcon from "../components/Icons/GithubIcon";
+import NodejsIcon from "../components/Icons/NodejsIcon";
+import WebpackIcon from "../components/Icons/WebpackIcon";
+import NpmIcon from "../components/Icons/NpmIcon";
 
 export default function About() {
   return (
@@ -35,11 +43,38 @@ export default function About() {
           <div className="tech-stack">
             <JavaScriptIcon /> JavaScript (ES6+)
           </div>
-          <div className="tech-stack">React (In Progress)</div>
-          <div className="tech-stack">HTML5 & CSS3</div>
-          <div className="tech-stack">Git & GitHub</div>
-          <div className="tech-stack">API Integration</div>
-          <div className="tech-stack">Webpack & npm</div>
+          <div className="tech-stack">
+            {" "}
+            <ReactIcon /> React (In Progress)
+          </div>
+          <div className="tech-stack">
+            {" "}
+            <Html5Icon /> HTML5
+          </div>
+          <div className="tech-stack">
+            {" "}
+            <Css3Icon /> CSS3
+          </div>
+          <div className="tech-stack">
+            <GitIcon />
+            Git
+          </div>
+          <div className="tech-stack">
+            <GithubIcon />
+            GitHub
+          </div>
+          <div className="tech-stack">
+            <NodejsIcon />
+            NodeJS
+          </div>
+          <div className="tech-stack">
+            <WebpackIcon />
+            Webpack
+          </div>
+          <div className="tech-stack">
+            <NpmIcon />
+            npm
+          </div>
         </div>
       </div>
 
