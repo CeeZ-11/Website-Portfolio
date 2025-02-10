@@ -36,3 +36,8 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.info-title {
+  text-align: start;
+  width: 100%;
+}

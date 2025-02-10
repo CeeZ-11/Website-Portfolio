@@ -53,7 +53,10 @@ export default function Resume() {
         </div>
       </div>
       <div className="additional-info">
-        <h2>Additional Information</h2>
+        <div className="info-title">
+          <h2>Additional Information</h2>
+        </div>
+
         <div className="info-container">
           <nav className="info-nav">
             <ul>
