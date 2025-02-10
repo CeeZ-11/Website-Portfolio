@@ -21,6 +21,9 @@ aside {
   padding: 3rem 2rem;
   border-radius: 15px;
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 main {
@@ -64,19 +67,12 @@ aside .profile-card img {
   text-align: center;
 }
 
-.short-line {
-  width: 40%;
-  border: 0;
-  border-top: 1px solid #ffffff;
-  margin: 5px auto;
-}
-
 .divider-line {
   max-width: 200px;
   width: 70%;
   border: 0;
-  border-top: 1px solid gray;
-  margin: 20px auto;
+  border-top: 1.5px solid rgba(66, 66, 66, 0.3);
+  margin: 10px auto;
 }
 
 .profile-details {
@@ -88,6 +84,7 @@ aside .profile-card img {
   height: auto;
   gap: 25px;
   padding-left: 15px;
+  margin: 20px auto;
 }
 
 .profile-details h5 {
@@ -111,6 +108,20 @@ aside .profile-card img {
   height: auto;
   word-break: break-all;
   align-items: center;
+}
+
+.profile-socials {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 15px;
+}
+
+.profile-socials img {
+  width: clamp(25px, 3vw, 35px);
+  height: clamp(25px, 3vw, 35px);
+  filter: invert(1);
 }
 
 @media (max-width: 900px) {
