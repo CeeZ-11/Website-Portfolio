@@ -12,7 +12,8 @@ p {
   font-size: clamp(0.5rem, 1vw, 0.6rem);
 }
 
-main p {
+main p,
+main li {
   font-size: clamp(0.7rem, 1vw, 1rem);
 }
 
@@ -146,7 +147,7 @@ main nav ul {
 
 main nav ul li a {
   text-decoration: none;
-  padding: 10px;
+  padding: 15px;
   display: block;
   color: white;
   background: #131313;
@@ -178,5 +179,18 @@ main nav ul li a:hover {
 @media (max-width: 300px) {
   aside {
     min-width: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  main nav ul li a {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 340px) {
+  main nav ul li a {
+    padding: 5px;
+    font-size: 8px;
   }
 }
