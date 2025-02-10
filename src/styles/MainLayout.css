@@ -124,6 +124,30 @@ aside .profile-card img {
   filter: invert(1);
 }
 
+main nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+main nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  color: white;
+  background: #131313;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+main nav ul li a:hover {
+  background: #131313;
+  color: #ff7300;
+  text-shadow: 0 0 6px rgba(255, 115, 0, 0.5), 0 0 10px rgba(255, 115, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 @media (max-width: 900px) {
   .Main {
     flex-direction: column;
