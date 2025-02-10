@@ -1,3 +1,3 @@
 export default function Resume() {
-  return;
+  return <h1>Resume Page</h1>;
 }

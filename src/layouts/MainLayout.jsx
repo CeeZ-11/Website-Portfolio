@@ -1,4 +1,6 @@
+import React, { Suspense } from "react";
 import "../styles/MainLayout.css";
+import { Link, Route, Routes } from "react-router-dom";
 import profileImgSmall from "../assets/profile-small.webp";
 import profileImgLarge from "../assets/profile-large.webp";
 import emailIcon from "../assets/email.svg";
@@ -11,6 +13,10 @@ import facebookIcon from "../assets/facebook.svg";
 import ProfileCard from "../components/ProfileCard.jsx";
 import ProfileDetail from "../components/ProfileDetail.jsx";
 import SocialLinks from "../components/SocialLinks.jsx";
+const About = React.lazy(() => import("../pages/About.jsx"));
+const Resume = React.lazy(() => import("../pages/Resume.jsx"));
+const Portfolio = React.lazy(() => import("../pages/Portfolio.jsx"));
+const Contact = React.lazy(() => import("../pages/Contact.jsx"));
 
 export default function MainLayout() {
   const socialLinks = [
@@ -62,6 +68,31 @@ export default function MainLayout() {
       </aside>
       <main>
         <h1>Main</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link to="/resume">Resume</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/" element={<About />} />
+          </Routes>
+        </Suspense>
       </main>
     </div>
   );

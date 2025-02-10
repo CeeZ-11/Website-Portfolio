@@ -1,21 +1,13 @@
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
-import { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  const [heading, setHeading] = useState("Magnificent Monkeys");
-
-  const clickHandler = () => {
-    setHeading("Radical Rhinos");
-  };
-
   return (
     <div className="App">
-      <MainLayout />
-      <button type="button" onClick={clickHandler}>
-        Click Me
-      </button>
-      <h1>{heading}</h1>
+      <BrowserRouter basename="/Website-Portfolio">
+        <MainLayout />
+      </BrowserRouter>
     </div>
   );
 }
