@@ -1,6 +1,8 @@
 import PageTitle from "../components/PageTitle";
 import "../styles/Resume.css";
 import { useState } from "react";
+import EducIcon from "../components/Icons/EducIcon";
+import ExpIcon from "../components/Icons/ExpIcon";
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("languages");
@@ -10,18 +12,36 @@ export default function Resume() {
       <PageTitle name="Resume" />
       <div className="experience">
         <div className="exp-title">
-          <h2>Experience</h2>
+          <div className="resume-heads">
+            <ExpIcon />
+            <h2>Experience</h2>
+          </div>
+
           <div className="exp-info-container">
             <div className="exp-line"></div>
             <div className="exp-details">
               <ul>
                 <li>
-                  <h4>Web Consultant (Freelance) </h4>
-                  <h5>OCT 2024 - PRESENT</h5>
-                  <ul>
-                    <li>
+                  <div className="exp-details-head">
+                    <h4>Web Consultant (Freelance) </h4>
+                    <h5>OCT 2024 - PRESENT</h5>
+                  </div>
+                  <ul className="resume-ul-desc">
+                    <li className="resume-desc">
                       Maintained and managed client websites hosted on GoDaddy
                       and built on WordPress, ensuring reliability and uptime.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div className="exp-details-head">
+                    <h4>Monitor Engineer, MID Construction Group </h4>
+                    <h5>MAY 2024 - OCT 2024</h5>
+                  </div>
+                  <ul className="resume-ul-desc">
+                    <li className="resume-desc">
+                      Oversee 45+ Google Meet sessions, identifying and
+                      reporting inactive employees
                     </li>
                   </ul>
                 </li>
@@ -32,7 +52,10 @@ export default function Resume() {
       </div>
       <div className="education">
         <div className="edu-title">
-          <h2>Education</h2>
+          <div className="resume-heads">
+            <EducIcon />
+            <h2>Education</h2>
+          </div>
           <div className="edu-info-container">
             <div className="edu-line"></div>
             <div className="edu-details">
@@ -40,8 +63,8 @@ export default function Resume() {
                 <li>
                   <h4>The Odin Project Curriculum</h4>
                   <h5>Nov 2023 - Present</h5>
-                  <ul>
-                    <li>
+                  <ul className="resume-ul-desc">
+                    <li className="resume-desc">
                       Comprehensive coursework covering full-stack web
                       development.
                     </li>
