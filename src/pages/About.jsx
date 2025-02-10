@@ -42,11 +42,11 @@ export default function About() {
 
       <div className="aboutC cur-learning">
         <h2>Currently Learning</h2>
-        <p>
-          - Advanced React (State Management, Context API) - Full-stack
-          Development with Node.js & Express - Mobile App Development (Future
-          Goal)
-        </p>
+        <ul>
+          <li>Advanced React (State Management, Context API)</li>
+          <li>Full-stack Development with Node.js & Express</li>
+          <li>Mobile App Development (Future Goal)</li>
+        </ul>
       </div>
     </div>
   );

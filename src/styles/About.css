@@ -3,7 +3,7 @@
   width: 50%;
   border: 0;
   border-top: 2px solid #ff7300;
-  box-shadow: 1px 1px 10px rgb(255, 102, 0, 0.8);
+  box-shadow: 0 0 5px rgb(255, 102, 0, 0.8);
 }
 
 .about {
@@ -18,4 +18,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.tech-stack-list {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
 }
