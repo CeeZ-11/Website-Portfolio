@@ -16,9 +16,8 @@ export default function MainLayout() {
         <div className="profile-card">
           <img
             src={profileImgSmall}
-            srcSet={`${profileImgSmall} 600w, ${profileImgLarge} 1200w`}
+            srcSet={`${profileImgSmall} 200w, ${profileImgLarge} 300w`}
             alt="profile"
-            loading="lazy"
           />
           <div className="profile-name">
             <h2>Seamor Estrabon</h2>
