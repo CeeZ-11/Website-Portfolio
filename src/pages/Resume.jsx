@@ -63,10 +63,23 @@ export default function Resume() {
                 <li>
                   <h4>The Odin Project Curriculum</h4>
                   <h5>Nov 2023 - Present</h5>
-                  <ul className="resume-ul-desc">
-                    <li className="resume-desc">
+                  <ul className="edu-ul-desc">
+                    <li className="edu-desc">
                       Comprehensive coursework covering full-stack web
                       development.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>University of St. La Salle</h4>
+                  <h5>Jun 2013 - Mar 2017</h5>
+                  <ul className="edu-ul-desc">
+                    <li className="edu-desc">
+                      Major in Web and Mobile Development
+                    </li>
+                    <li className="edu-desc">
+                      Thesis on &quot;Information Management System for Sacred
+                      Heart Shrine Lupit Church&quot;.
                     </li>
                   </ul>
                 </li>
