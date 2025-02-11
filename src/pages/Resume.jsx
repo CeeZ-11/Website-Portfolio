@@ -4,6 +4,7 @@ import { useState } from "react";
 import EducIcon from "../components/Icons/EducIcon";
 import ExpIcon from "../components/Icons/ExpIcon";
 import ExperienceList from "../components/ExperienceList.jsx";
+import EducationList from "../components/EducationList.jsx";
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("languages");
@@ -32,6 +33,21 @@ export default function Resume() {
       job: "Professor, University of St. La Salle",
       date: "July 2017 - April 2021",
       desc: "Taught HTML, CSS, PHP, and JavaScript, while also facilitating research methodology sessions to enhance students' programming and research skills.",
+    },
+  ];
+
+  const educList = [
+    {
+      id: 1,
+      school: "The Odin Project",
+      year: "Nov 2023 - Present",
+      desc: "Completed full-stack web development coursework, gaining hands-on experience with modern technologies and best practices.",
+    },
+    {
+      id: 2,
+      school: "University of St. La Salle ",
+      year: "Jun 2013 - Mar 2017",
+      desc: "Major in Web and Mobile Development, with a thesis on Information Management System for Sacred Heart Shrine Lupit Church.",
     },
   ];
 
@@ -65,29 +81,7 @@ export default function Resume() {
             <div className="edu-line"></div>
             <div className="edu-details">
               <ul>
-                <li>
-                  <h4>The Odin Project Curriculum</h4>
-                  <h5>Nov 2023 - Present</h5>
-                  <ul className="edu-ul-desc">
-                    <li className="edu-desc">
-                      Comprehensive coursework covering full-stack web
-                      development.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <h4>University of St. La Salle</h4>
-                  <h5>Jun 2013 - Mar 2017</h5>
-                  <ul className="edu-ul-desc">
-                    <li className="edu-desc">
-                      Major in Web and Mobile Development
-                    </li>
-                    <li className="edu-desc">
-                      Thesis on &quot;Information Management System for Sacred
-                      Heart Shrine Lupit Church&quot;.
-                    </li>
-                  </ul>
-                </li>
+                <EducationList educList={educList} />
               </ul>
             </div>
           </div>
