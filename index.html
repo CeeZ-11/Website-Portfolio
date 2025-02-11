@@ -24,6 +24,13 @@
     />
     <meta name="robots" content="index, follow" />
     <title>Website Portfolio</title>
+    <script>
+      if (window.location.hostname !== "localhost") {
+        document.write(
+          '<meta http-equiv="refresh" content="0; url=/Website-Portfolio/" />'
+        );
+      }
+    </script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
