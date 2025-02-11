@@ -3,9 +3,37 @@ import "../styles/Resume.css";
 import { useState } from "react";
 import EducIcon from "../components/Icons/EducIcon";
 import ExpIcon from "../components/Icons/ExpIcon";
+import ExperienceList from "../components/ExperienceList.jsx";
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("languages");
+
+  const expList = [
+    {
+      id: 1,
+      job: "Web Consultant (Freelance)",
+      date: "OCT 2024 - PRESENT",
+      desc: "Managed and maintained WordPress websites on GoDaddy, handling updates, design adjustments, performance optimization, and client collaboration.",
+    },
+    {
+      id: 2,
+      job: "Monitor Engineer, MID Construction Group",
+      date: "MAY 2024 - OCT 2024",
+      desc: "Monitored 45+ Google Meet sessions, tracked attendance, enforced rules, provided technical support, evaluated performance, and optimized workflows.",
+    },
+    {
+      id: 3,
+      job: "Logistics Coordinator, Rulewave",
+      date: "September 2021 - June 2023",
+      desc: "Optimized supply chain operations, managed customer inquiries, analyzed reports, tracked shipments, and improved logistics processes for efficiency.",
+    },
+    {
+      id: 4,
+      job: "Professor, University of St. La Salle",
+      date: "July 2017 - April 2021",
+      desc: "Taught HTML, CSS, PHP, and JavaScript, while also facilitating research methodology sessions to enhance students' programming and research skills.",
+    },
+  ];
 
   return (
     <>
@@ -21,30 +49,7 @@ export default function Resume() {
             <div className="exp-line"></div>
             <div className="exp-details">
               <ul>
-                <li>
-                  <div className="exp-details-head">
-                    <h4>Web Consultant (Freelance) </h4>
-                    <h5>OCT 2024 - PRESENT</h5>
-                  </div>
-                  <ul className="resume-ul-desc">
-                    <li className="resume-desc">
-                      Maintained and managed client websites hosted on GoDaddy
-                      and built on WordPress, ensuring reliability and uptime.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div className="exp-details-head">
-                    <h4>Monitor Engineer, MID Construction Group </h4>
-                    <h5>MAY 2024 - OCT 2024</h5>
-                  </div>
-                  <ul className="resume-ul-desc">
-                    <li className="resume-desc">
-                      Oversee 45+ Google Meet sessions, identifying and
-                      reporting inactive employees
-                    </li>
-                  </ul>
-                </li>
+                <ExperienceList expList={expList} />
               </ul>
             </div>
           </div>
