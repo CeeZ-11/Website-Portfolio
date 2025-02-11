@@ -192,6 +192,32 @@ main nav ul li a.active {
   box-shadow: 0 0 5px rgb(255, 102, 0, 0.8);
 }
 
+.main-scroll {
+  width: 100%;
+  height: 90%;
+  overflow: auto;
+}
+
+.main-scroll::-webkit-scrollbar {
+  width: 1.5px;
+}
+
+.main-scroll::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 5px;
+}
+
+.main-scroll::-webkit-scrollbar-thumb {
+  background: #ff7300;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgb(255, 115, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.main-scroll::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 5px 2px rgb(255, 115, 0, 0.7);
+}
+
 @media (max-width: 900px) {
   .Main {
     flex-direction: column;
