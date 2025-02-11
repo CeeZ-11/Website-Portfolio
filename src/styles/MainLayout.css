@@ -224,9 +224,21 @@ main nav ul li a.active {
   }
 }
 
+@media (max-width: 900px) and (max-height: 660px) {
+  aside {
+    overflow: none;
+  }
+}
+
 @media (max-width: 300px) {
   aside {
     min-width: 0;
+  }
+}
+
+@media (min-width: 900px) and (max-height: 750px) {
+  aside {
+    overflow-x: auto;
   }
 }
 
