@@ -1,13 +1,13 @@
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/Website-Portfolio/">
+      <HashRouter>
         <MainLayout />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
