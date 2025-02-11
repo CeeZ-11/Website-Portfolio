@@ -5,6 +5,7 @@ import EducIcon from "../components/Icons/EducIcon";
 import ExpIcon from "../components/Icons/ExpIcon";
 import ExperienceList from "../components/ExperienceList.jsx";
 import EducationList from "../components/EducationList.jsx";
+import NavButton from "../components/NavButton.jsx";
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("languages");
@@ -51,6 +52,12 @@ export default function Resume() {
     },
   ];
 
+  const navButtons = [
+    { id: "languages", name: "Languages" },
+    { id: "certifications", name: "Certifications" },
+    { id: "trainings", name: "Trainings & Seminars" },
+  ];
+
   return (
     <>
       <PageTitle name="Resume" />
@@ -95,30 +102,11 @@ export default function Resume() {
         <div className="info-container">
           <nav className="info-nav">
             <ul>
-              <li>
-                <button
-                  onClick={() => setActiveTab("languages")}
-                  className={activeTab === "languages" ? "active" : ""}
-                >
-                  Languages
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setActiveTab("certifications")}
-                  className={activeTab === "certifications" ? "active" : ""}
-                >
-                  Certifications
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setActiveTab("trainings")}
-                  className={activeTab === "trainings" ? "active" : ""}
-                >
-                  Trainings & Seminars
-                </button>
-              </li>
+              <NavButton
+                navButtons={navButtons}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
             </ul>
           </nav>
           <div className="info-content">
