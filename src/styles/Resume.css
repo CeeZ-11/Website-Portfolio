@@ -66,19 +66,6 @@
   background-color: rgb(255, 255, 255, 0.5);
 }
 
-.additional-info nav ul li button {
-  background: none;
-  color: inherit;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-}
-
-.additional-info nav ul li button.active {
-  color: #ff7300;
-  text-shadow: 0 0 6px rgba(255, 115, 0, 0.5), 0 0 10px rgba(255, 115, 0, 0.4);
-}
-
 .info-container {
   background: rgba(255, 255, 255, 0.02);
   padding: 1rem 2rem 2rem 2rem;

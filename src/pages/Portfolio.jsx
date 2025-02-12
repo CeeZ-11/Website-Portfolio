@@ -1,9 +1,10 @@
 import PageTitle from "../components/PageTitle";
 import NavButton from "../components/NavButton";
 import { useState } from "react";
+import "../styles/Portfolio.css";
 
 export default function Portfolio() {
-  const [activeTab, setActiveTab] = useState("All Projects");
+  const [activeTab, setActiveTab] = useState("all-projects");
 
   const navButtons = [
     { id: "all-projects", name: "All Projects" },
@@ -16,8 +17,8 @@ export default function Portfolio() {
   return (
     <>
       <PageTitle name="Portfolio" />
-      <div className="project-container">
-        <nav className="project-nav">
+      <div className="project-container nav-container">
+        <nav className="info-nav">
           <ul>
             <NavButton
               navButtons={navButtons}

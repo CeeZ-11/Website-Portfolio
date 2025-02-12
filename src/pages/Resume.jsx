@@ -99,7 +99,7 @@ export default function Resume() {
           <h2>Additional Information</h2>
         </div>
 
-        <div className="info-container">
+        <div className="info-container nav-container">
           <nav className="info-nav">
             <ul>
               <NavButton
