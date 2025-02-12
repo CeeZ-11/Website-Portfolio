@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function EducationList({ educList }) {
   return educList.map((educ) => (
     <li key={educ.id}>
@@ -9,3 +11,14 @@ export default function EducationList({ educList }) {
     </li>
   ));
 }
+
+EducationList.propTypes = {
+  educList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      school: PropTypes.string.isRequired,
+      year: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
