@@ -1,6 +1,7 @@
 import PageTitle from "../components/PageTitle";
 import NavButton from "../components/NavButton";
 import { useState } from "react";
+import Projects from "../components/Projects";
 import "../styles/Portfolio.css";
 
 export default function Portfolio() {
@@ -12,6 +13,33 @@ export default function Portfolio() {
     { id: "mini-projects", name: "Mini Projects" },
     { id: "personal-projects", name: "Personal Projects" },
     { id: "collaborations", name: "Collaborations" },
+  ];
+
+  const projectList = [
+    {
+      id: 1,
+      name: "Memory Card",
+      url: null,
+      category: "odin-projects",
+    },
+    {
+      id: 2,
+      name: "CV Application",
+      url: null,
+      category: "odin-projects",
+    },
+    {
+      id: 3,
+      name: "Weather App",
+      url: null,
+      category: "odin-projects",
+    },
+    {
+      id: 4,
+      name: "Pokemon-Guessing-Game",
+      url: null,
+      category: "mini-projects",
+    },
   ];
 
   return (
@@ -29,29 +57,35 @@ export default function Portfolio() {
         </nav>
         <div className="project-content">
           {activeTab === "all-projects" && (
-            <>
-              <h4> All Projects </h4>
-            </>
+            <Projects projectList={projectList} />
           )}
           {activeTab === "odin-projects" && (
-            <>
-              <h4> Odin Projects </h4>
-            </>
+            <Projects
+              projectList={projectList.filter(
+                (project) => project.category === "odin-projects"
+              )}
+            />
           )}
           {activeTab === "mini-projects" && (
-            <>
-              <h4> Mini Projects </h4>
-            </>
+            <Projects
+              projectList={projectList.filter(
+                (project) => project.category === "mini-projects"
+              )}
+            />
           )}
           {activeTab === "personal-projects" && (
-            <>
-              <h4> Personal Projects </h4>
-            </>
+            <Projects
+              projectList={projectList.filter(
+                (project) => project.category === "personal-projects"
+              )}
+            />
           )}
           {activeTab === "collaborations" && (
-            <>
-              <h4> Collaborations </h4>
-            </>
+            <Projects
+              projectList={projectList.filter(
+                (project) => project.category === "collaborations"
+              )}
+            />
           )}
         </div>
       </div>

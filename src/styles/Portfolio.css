@@ -3,5 +3,56 @@
 }
 
 .project-content {
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-content ul {
+  width: 100%;
+  min-height: 450px;
+  list-style-type: none;
+  display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-content ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 250px;
+  height: auto;
+}
+
+.project-content ul li img {
+  border: 1px solid rgb(255, 255, 255, 0.3);
+  border-radius: 15px;
+  width: 100%;
+  min-height: 200px;
+  text-align: center;
+}
+
+.project-image {
+  height: auto;
+}
+
+@media (max-width: 560px) {
+  .info-nav ul {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1052px) {
+  .project-content ul {
+    justify-content: center;
+  }
 }
