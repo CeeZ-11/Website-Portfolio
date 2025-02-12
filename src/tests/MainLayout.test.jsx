@@ -1,4 +1,3 @@
-// tests/MainLayout.test.js
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { MemoryRouter } from "react-router-dom";
@@ -12,12 +11,10 @@ describe("MainLayout", () => {
       </MemoryRouter>
     );
 
-    // Profile card
     expect(screen.getByAltText(/profile/i)).toBeInTheDocument();
     expect(screen.getByText(/Seamor Estrabon/)).toBeInTheDocument();
     expect(screen.getByText(/Front-End Developer/)).toBeInTheDocument();
 
-    // Profile details
     expect(screen.getByText(/Email/i)).toBeInTheDocument();
     expect(screen.getByText(/seamorestrabon@gmail.com/i)).toBeInTheDocument();
     expect(screen.getByText(/Phone/i)).toBeInTheDocument();
@@ -35,7 +32,6 @@ describe("MainLayout", () => {
       </MemoryRouter>
     );
 
-    // Navigation links
     const links = ["About", "Resume", "Portfolio", "Contact"];
     links.forEach((link) => {
       expect(screen.getByText(new RegExp(link, "i"))).toBeInTheDocument();

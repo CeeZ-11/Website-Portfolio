@@ -1,5 +1,10 @@
 const JavaScriptIcon = () => (
-  <svg className="tech-icons" viewBox="0 0 128 128">
+  <svg
+    className="tech-icons"
+    viewBox="0 0 128 128"
+    alt="JavaScript Icon"
+    data-testid="javascript-icon"
+  >
     <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path>
     <path
       fill="#323330"
