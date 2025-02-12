@@ -29,10 +29,10 @@ export default function About() {
       <PageTitle name="About Me" />
       <div className="intro">
         <p>
-          Hi, I’m <span className="name">Seamor Estrabon</span>, a passionate
+          Hi, I’m <span className="name">Seamor Estrabon</span>, a passionate{" "}
           <strong>front-end developer</strong> transitioning from IT education
           and freelance web consulting into modern web development. I’m
-          currently mastering
+          currently mastering{" "}
           <strong>React, JavaScript, and full-stack development</strong>through
           The Odin Project.
         </p>
