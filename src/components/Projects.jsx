@@ -1,3 +1,5 @@
+import OpenLinkIcon from "../components/Icons/openLinkIcon";
+
 export default function Projects({ projectList }) {
   if (projectList.length === 0) {
     return (
@@ -25,12 +27,15 @@ export default function Projects({ projectList }) {
                   alt={project.name}
                   loading="lazy"
                 />
-              </div>
-              <div className="project-details">
-                <h5>{project.name}</h5>
-                <h3>{project.category}</h3>
+                <div className="visit-site-icon">
+                  <OpenLinkIcon />
+                </div>
               </div>
             </a>
+            <div className="project-details">
+              <h5>{project.name}</h5>
+              <h3>{project.category}</h3>
+            </div>
           </li>
         );
       })}

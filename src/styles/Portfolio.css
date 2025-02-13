@@ -25,12 +25,13 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
-.project-content ul li a {
+.project-content ul li {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 250px;
   height: auto;
+  transition: transform 0.3s ease;
 }
 
 .project-content ul li img {
@@ -39,10 +40,42 @@
   max-width: 100%;
   text-align: center;
   height: 170px;
+  transition: transform 0.3s ease;
+}
+
+.project-content ul li img:hover {
+  transform: scale(1.05);
+  opacity: 0.2;
+}
+
+.project-content ul li:hover .visit-site-icon {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-image {
   height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.visit-site-icon {
+  position: absolute;
+  top: 40%;
+  left: 41%;
+  transform: translate(0%, 150%);
+  color: white;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  width: 20px;
+  height: 25px;
+}
+
+.project-content ul li:active .visit-site-icon svg {
+  transform: scale(1.5);
+  transition: transform 0.1s ease;
 }
 
 @media (max-width: 560px) {
