@@ -1,4 +1,4 @@
-import OpenLinkIcon from "../components/Icons/openLinkIcon";
+import OpenLinkIcon from "../components/Icons/OpenLinkIcon";
 
 export default function Projects({ projectList }) {
   if (projectList.length === 0) {
