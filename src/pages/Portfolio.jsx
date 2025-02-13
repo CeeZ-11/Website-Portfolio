@@ -25,24 +25,28 @@ export default function Portfolio() {
       name: "Memory Card",
       image: memoryCardScreenshot,
       category: "odin-projects",
+      url: "https://ceez-11.github.io/Odin-Project-Memory-Card/",
     },
     {
       id: 2,
       name: "CV Application",
       image: cvApplicationScreenshot,
       category: "odin-projects",
+      url: "https://ceez-11.github.io/Odin-Project-CV-Application/",
     },
     {
       id: 3,
       name: "Weather App",
       image: weatherAppScreenshot,
       category: "odin-projects",
+      url: "https://ceez-11.github.io/Odin-Project-Weather-App/",
     },
     {
       id: 4,
       name: "Pokemon-Guessing-Game",
       image: pokemonGuessingGameScreenshot,
       category: "mini-projects",
+      url: "https://ceez-11.github.io/Pokemon-Guessing-Game/",
     },
   ];
 
