@@ -4,6 +4,9 @@ import { useState } from "react";
 import Projects from "../components/Projects";
 import "../styles/Portfolio.css";
 import memoryCardScreenshot from "../assets/memory-card.webp";
+import cvApplicationScreenshot from "../assets/cv-application.webp";
+import pokemonGuessingGameScreenshot from "../assets/pokemon-guessing-game.webp";
+import weatherAppScreenshot from "../assets/weather-app.webp";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("all-projects");
@@ -26,19 +29,19 @@ export default function Portfolio() {
     {
       id: 2,
       name: "CV Application",
-      image: null,
+      image: cvApplicationScreenshot,
       category: "odin-projects",
     },
     {
       id: 3,
       name: "Weather App",
-      image: null,
+      image: weatherAppScreenshot,
       category: "odin-projects",
     },
     {
       id: 4,
       name: "Pokemon-Guessing-Game",
-      image: null,
+      image: pokemonGuessingGameScreenshot,
       category: "mini-projects",
     },
   ];
