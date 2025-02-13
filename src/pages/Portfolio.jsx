@@ -3,6 +3,7 @@ import NavButton from "../components/NavButton";
 import { useState } from "react";
 import Projects from "../components/Projects";
 import "../styles/Portfolio.css";
+import memoryCardScreenshot from "../assets/memory-card.webp";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("all-projects");
@@ -19,25 +20,25 @@ export default function Portfolio() {
     {
       id: 1,
       name: "Memory Card",
-      url: null,
+      image: memoryCardScreenshot,
       category: "odin-projects",
     },
     {
       id: 2,
       name: "CV Application",
-      url: null,
+      image: null,
       category: "odin-projects",
     },
     {
       id: 3,
       name: "Weather App",
-      url: null,
+      image: null,
       category: "odin-projects",
     },
     {
       id: 4,
       name: "Pokemon-Guessing-Game",
-      url: null,
+      image: null,
       category: "mini-projects",
     },
   ];

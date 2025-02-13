@@ -13,7 +13,12 @@ export default function Projects({ projectList }) {
         return (
           <li key={project.id}>
             <div className="project-image">
-              <img src={project.url} alt={project.name} />
+              <img
+                src={project.image}
+                srcSet={project.image}
+                alt={project.name}
+                loading="lazy"
+              />
             </div>
             <div className="project-details">
               <h5>{project.name}</h5>
