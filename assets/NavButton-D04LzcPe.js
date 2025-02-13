@@ -1,1 +1,0 @@
-import{j as a}from"./index-BQr0H803.js";function c({navButtons:e,activeTab:r,setActiveTab:s}){return e.map(i=>a.jsx("li",{children:a.jsx("button",{onClick:()=>s(`${i.id}`),className:r===`${i.id}`?"active":"",children:i.name})},i.id))}export{c as N};
