@@ -33,7 +33,7 @@ export default function Map() {
       {location && (
         <div style={{ textAlign: "center" }}>
           <iframe
-            width="1000"
+            width="1250"
             height="500"
             style={{ border: "0", borderRadius: "10px" }}
             loading="lazy"

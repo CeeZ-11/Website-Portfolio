@@ -1,4 +1,90 @@
+.Map {
+  width: 100%;
+}
+
 .Map iframe {
   max-width: 100%;
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+.contact-form {
+  max-width: 100%;
+  padding: 30px;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.form-group-input {
+  flex: 1;
+  padding: 8px;
+}
+
+.form-group-input label {
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.form-group-input:nth-child(1) {
+  min-width: calc(50% - 8px);
+}
+
+.form-group-input:nth-child(3) {
+  min-width: calc(50% - 8px);
+}
+
+.form-group-input input,
+.form-group-input textarea {
+  background: rgba(255, 255, 255, 0.02);
+  color: white;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s;
+  border: none;
+}
+
+.form-group-input input:focus,
+.form-group-input textarea:focus {
+  border-color: rgb(255, 115, 0);
+  box-shadow: 0 0 3px rgb(255, 255, 255);
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+}
+
+.contact-button {
+  padding: 8px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 20%;
+  padding: 10px;
+  background-color: #131313;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff7300;
 }
