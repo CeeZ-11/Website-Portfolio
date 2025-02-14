@@ -7,6 +7,14 @@ import memoryCardScreenshot from "../assets/memory-card.webp";
 import cvApplicationScreenshot from "../assets/cv-application.webp";
 import pokemonGuessingGameScreenshot from "../assets/pokemon-guessing-game.webp";
 import weatherAppScreenshot from "../assets/weather-app.webp";
+import battleShipScreenshot from "../assets/battleship.webp";
+import rockPaperScissorsScreenshot from "../assets/rock-paper-scissors.webp";
+import libraryScreenshot from "../assets/library.webp";
+import todoListScreenshot from "../assets/todo-list.webp";
+import restaurantPage from "../assets/restaurant-page.webp";
+import ticTacToeScreenshot from "../assets/tic-tac-toe.webp";
+import adminDashboardScreenshot from "../assets/admin-dashboard.webp";
+import signUpFormScreenshot from "../assets/signup-form.webp";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("all-projects");
@@ -51,56 +59,56 @@ export default function Portfolio() {
     {
       id: 5,
       name: "Battleship Game",
-      image: null,
+      image: battleShipScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Battleship/",
     },
     {
       id: 6,
       name: "Rock Paper Scissors Game",
-      image: null,
+      image: rockPaperScissorsScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Rock-Paper-Scissors/",
     },
     {
       id: 7,
       name: "Library App",
-      image: null,
+      image: libraryScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Library/",
     },
     {
       id: 8,
       name: "Todo List App",
-      image: null,
+      image: todoListScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-TodoList/",
     },
     {
       id: 9,
       name: "Restaurant Page",
-      image: null,
+      image: restaurantPage,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Restaurant-Page/",
     },
     {
       id: 10,
       name: "Tic-Tac-Toe Game",
-      image: null,
+      image: ticTacToeScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Tic-Tac-Toe/",
     },
     {
       id: 11,
       name: "Admin Dashboard",
-      image: null,
+      image: adminDashboardScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Admin-Dashboard/",
     },
     {
       id: 12,
       name: "Sign Up Form",
-      image: null,
+      image: signUpFormScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Sign-up-Form/",
     },
