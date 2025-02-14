@@ -15,6 +15,9 @@ import restaurantPage from "../assets/restaurant-page.webp";
 import ticTacToeScreenshot from "../assets/tic-tac-toe.webp";
 import adminDashboardScreenshot from "../assets/admin-dashboard.webp";
 import signUpFormScreenshot from "../assets/signup-form.webp";
+import calculatorScreenshot from "../assets/calculator.webp";
+import etchASketchScreenshot from "../assets/etch-a-sketch.webp";
+import landingPageScreenshot from "../assets/landing-page.webp";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("all-projects");
@@ -111,6 +114,27 @@ export default function Portfolio() {
       image: signUpFormScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Sign-up-Form/",
+    },
+    {
+      id: 13,
+      name: "Calculator App",
+      image: calculatorScreenshot,
+      category: "odin-projects",
+      url: "https://ceez-11.github.io/Odin-Project-Calculator/",
+    },
+    {
+      id: 14,
+      name: "Etch a Sketch",
+      image: etchASketchScreenshot,
+      category: "odin-projects",
+      url: "https://ceez-11.github.io/Odin-Project-Etch-a-Sketch/",
+    },
+    {
+      id: 15,
+      name: "Landing Page",
+      image: landingPageScreenshot,
+      category: "odin-projects",
+      url: "https://ceez-11.github.io/Odin-Project-Landing-Page/",
     },
   ];
 
