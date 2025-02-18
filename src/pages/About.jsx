@@ -1,4 +1,5 @@
 import "../styles/About.css";
+import { useState, useEffect } from "react";
 import JavaScriptIcon from "../components/Icons/JavscriptIcon";
 import ReactIcon from "../components/Icons/ReactIcon";
 import Html5Icon from "../components/Icons/Html5Icon";
@@ -12,6 +13,8 @@ import TechStack from "../components/TechStack.jsx";
 import PageTitle from "../components/PageTitle.jsx";
 
 export default function About() {
+  const [isAboutVisible, setAboutIsVisible] = useState(false);
+
   const techStackSkills = [
     { icon: JavaScriptIcon, name: "JavaScript (ES6+)" },
     { icon: ReactIcon, name: "React (In Progress)" },
@@ -24,10 +27,16 @@ export default function About() {
     { icon: NpmIcon, name: "NPM" },
   ];
 
+  useEffect(() => {
+    setAboutIsVisible(true);
+  }, []);
+
   return (
     <>
       <PageTitle name="About Me" />
-      <div className="intro">
+      <div
+        className={`fade-in staggered intro ${isAboutVisible ? "visible" : ""}`}
+      >
         <p>
           Hi, I’m Seamor Estrabon, a passionate front-end developertransitioning
           from IT education and freelance web consulting into modern web
@@ -36,7 +45,11 @@ export default function About() {
         </p>
       </div>
 
-      <div className="aboutC journey">
+      <div
+        className={`fade-in staggered aboutC journey ${
+          isAboutVisible ? "visible" : ""
+        }`}
+      >
         <h2>My Journey</h2>
         <p>
           I started as an IT professor teaching HTML, CSS, JavaScript, and PHP
@@ -46,7 +59,11 @@ export default function About() {
         </p>
       </div>
 
-      <div className="aboutC tech-stack-container">
+      <div
+        className={`fade-in staggered aboutC tech-stack-container ${
+          isAboutVisible ? "visible" : ""
+        }`}
+      >
         <h2>Tech Stack</h2>
         <ul className="tech-stack-list">
           {techStackSkills.map((tech) => (
@@ -55,7 +72,11 @@ export default function About() {
         </ul>
       </div>
 
-      <div className="aboutC cur-learning">
+      <div
+        className={`fade-in staggered aboutC cur-learning ${
+          isAboutVisible ? "visible" : ""
+        }`}
+      >
         <h2>Currently Learning</h2>
         <ul>
           <li>Advanced React (State Management, Context API)</li>
