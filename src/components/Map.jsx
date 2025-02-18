@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
+
 import axios from "axios";
 
 export default function Map() {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
-  const apiKey = "AIzaSyBM_Q2dA0Nbxa19lZ5Otw8Qi1Efm0ed3pE";
-  const ipGeoApiKey = "159234c99fb545ada50544206108bb6b";
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const ipGeoApiKey = import.meta.env.VITE_IP_GEO_API_KEY;
 
   const fetchDefaultLocation = async () => {
     try {
-      const defaultLatitude = 10.611094064898788;
-      const defaultLongitude = 122.93151727050274;
+      const defaultLatitude = 10.6761;
+      const defaultLongitude = 122.9511;
+
       setLocation(`${defaultLatitude},${defaultLongitude}`);
 
       const response = await axios.get(
