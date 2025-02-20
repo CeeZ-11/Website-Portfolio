@@ -29,6 +29,9 @@ export default function About() {
 
   useEffect(() => {
     setAboutIsVisible(true);
+    return () => {
+      setAboutIsVisible(false);
+    };
   }, []);
 
   return (

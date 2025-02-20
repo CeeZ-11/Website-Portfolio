@@ -62,6 +62,9 @@ export default function Resume() {
 
   useEffect(() => {
     setIsVisible(true);
+    return () => {
+      setIsVisible(false);
+    };
   }, []);
 
   return (

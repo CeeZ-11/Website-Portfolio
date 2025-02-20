@@ -141,6 +141,10 @@ export default function Portfolio() {
 
   useEffect(() => {
     setPortIsVisible(true);
+
+    return () => {
+      setPortIsVisible(false);
+    };
   }, []);
 
   return (
