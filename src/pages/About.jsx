@@ -82,10 +82,23 @@ export default function About() {
       >
         <h2>Currently Learning</h2>
         <ul>
-          <li>Advanced React (State Management, Context API)</li>
           <li>Full-stack Development with Node.js & Express</li>
           <li>Mobile App Development (Future Goal)</li>
         </ul>
+      </div>
+
+      <div
+        className={`fade-in staggered aboutC projects ${
+          isAboutVisible ? "visible" : ""
+        }`}
+      >
+        <h2>Currently Working On</h2>
+        <p>
+          Developing a full-featured School Management System using the MERN
+          stack, enabling student enrollment, scheduling, attendance tracking,
+          grade management, and role-based authentication with real-time
+          notifications.
+        </p>
       </div>
     </>
   );
