@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import {
   TextField,
@@ -9,8 +9,12 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
+  const recaptchaRef = useRef(null);
+  const [captchaToken, setCaptchaToken] = useState("");
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -23,12 +27,30 @@ export default function ContactForm() {
     severity: "success",
   });
 
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      setSnackbar({
+        open: true,
+        message: "Please complete the reCAPTCHA first!",
+        severity: "warning",
+      });
+      return;
+    }
+    if (recaptchaRef.current) {
+      recaptchaRef.current.reset();
+    }
+
+    setCaptchaToken("");
 
     emailjs
       .sendForm(
@@ -129,7 +151,6 @@ export default function ContactForm() {
             }}
           />
         </Box>
-
         <TextField
           label="Message"
           name="message"
@@ -155,7 +176,11 @@ export default function ContactForm() {
             },
           }}
         />
-
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+          onChange={handleCaptchaChange}
+        />
         <Button
           type="submit"
           variant="contained"
@@ -170,7 +195,6 @@ export default function ContactForm() {
         </Button>
       </Box>
 
-      {/* Snackbar for Success/Error Messages */}
       <Snackbar
         open={snackbar.open}
         autoHideDuration={4000}
