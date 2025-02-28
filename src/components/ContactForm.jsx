@@ -1,12 +1,26 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { TextField, Button, Container, Typography, Box } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Container,
+  Typography,
+  Box,
+  Snackbar,
+  Alert,
+} from "@mui/material";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     message: "",
+  });
+
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "success",
   });
 
   const handleChange = (e) => {
@@ -26,12 +40,20 @@ export default function ContactForm() {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
+          setSnackbar({
+            open: true,
+            message: "Message sent successfully!",
+            severity: "success",
+          });
           setFormData({ fullName: "", email: "", message: "" });
         },
         (error) => {
           console.error("FAILED...", error);
-          alert("Failed to send message. Please try again.");
+          setSnackbar({
+            open: true,
+            message: "Failed to send message. Please try again.",
+            severity: "error",
+          });
         }
       );
   };
@@ -66,7 +88,7 @@ export default function ContactForm() {
             fullWidth
             sx={{
               flex: 1,
-              minWidth: "150px",
+              minWidth: "100px",
               input: { color: "white" },
               label: { color: "white" },
               "& .MuiOutlinedInput-root": {
@@ -91,7 +113,7 @@ export default function ContactForm() {
             fullWidth
             sx={{
               flex: 1,
-              minWidth: "150px",
+              minWidth: "100px",
               input: { color: "white" },
               label: { color: "white" },
               "& .MuiOutlinedInput-root": {
@@ -121,6 +143,7 @@ export default function ContactForm() {
             input: { color: "white" },
             label: { color: "white" },
             "& .MuiOutlinedInput-root": {
+              color: "white",
               "& fieldset": { borderColor: "rgba(255, 255, 255, 0.2)" },
               "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.2)" },
               "&.Mui-focused fieldset": {
@@ -146,6 +169,20 @@ export default function ContactForm() {
           Send Message
         </Button>
       </Box>
+
+      {/* Snackbar for Success/Error Messages */}
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={4000}
+        onClose={() => setSnackbar({ ...snackbar, open: false })}
+      >
+        <Alert
+          severity={snackbar.severity}
+          onClose={() => setSnackbar({ ...snackbar, open: false })}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }
