@@ -1,0 +1,1 @@
+import{j as a}from"./index-CIo-Eto6.js";function c({navButtons:e,activeTab:r,setActiveTab:s}){return e.map(i=>a.jsx("li",{children:a.jsx("button",{onClick:()=>s(`${i.id}`),className:r===`${i.id}`?"active":"",children:i.name})},i.id))}export{c as N};
