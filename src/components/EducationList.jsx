@@ -1,17 +1,7 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
-export default function EducationList({ educList, isVisible, setIsVisible }) {
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
+export default function EducationList({ educList }) {
   return educList.map((educ) => (
-    <li
-      key={educ.id}
-      className={`fade-in staggered-education exp-info-container ${
-        isVisible ? "visible" : ""
-      }`}
-    >
+    <li key={educ.id} className={`exp-info-container`}>
       <h4>{educ.school}</h4>
       <h5>{educ.year}</h5>
       <ul className="edu-ul-desc">

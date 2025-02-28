@@ -1,6 +1,6 @@
 import PageTitle from "../components/PageTitle";
 import "../styles/Resume.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import EducIcon from "../components/Icons/EducIcon";
 import ExpIcon from "../components/Icons/ExpIcon";
 import ExperienceList from "../components/ExperienceList.jsx";
@@ -8,8 +8,6 @@ import EducationList from "../components/EducationList.jsx";
 import NavButton from "../components/NavButton.jsx";
 
 export default function Resume() {
-  const [isVisible, setIsVisible] = useState(false);
-
   const [activeTab, setActiveTab] = useState("languages");
 
   const expList = [
@@ -60,40 +58,21 @@ export default function Resume() {
     { id: "trainings", name: "Trainings & Seminars" },
   ];
 
-  useEffect(() => {
-    setIsVisible(true);
-    return () => {
-      setIsVisible(false);
-    };
-  }, []);
-
   return (
     <>
       <PageTitle name="Resume" />
       <div className="experience">
         <div className="exp-title">
-          <div
-            className={`fade-in staggered-experience resume-heads ${
-              isVisible ? "visible" : ""
-            }`}
-          >
+          <div className={`resume-heads`}>
             <ExpIcon />
             <h2>Experience</h2>
           </div>
 
-          <div
-            className={`fade-in staggered-experience exp-info-container ${
-              isVisible ? "visible" : ""
-            }`}
-          >
+          <div className={`exp-info-container`}>
             <div className="exp-line"></div>
             <div className="exp-details">
               <ul>
-                <ExperienceList
-                  expList={expList}
-                  isVisible={isVisible}
-                  setIsVisible={setIsVisible}
-                />
+                <ExperienceList expList={expList} />
               </ul>
             </div>
           </div>
@@ -101,11 +80,7 @@ export default function Resume() {
       </div>
       <div className="education">
         <div className="edu-title">
-          <div
-            className={`fade-in staggered-education resume-heads ${
-              isVisible ? "visible" : ""
-            }`}
-          >
+          <div className={`resume-heads`}>
             <EducIcon />
             <h2>Education</h2>
           </div>
@@ -113,30 +88,18 @@ export default function Resume() {
             <div className="edu-line"></div>
             <div className="edu-details">
               <ul>
-                <EducationList
-                  educList={educList}
-                  isVisible={isVisible}
-                  setIsVisible={setIsVisible}
-                />
+                <EducationList educList={educList} />
               </ul>
             </div>
           </div>
         </div>
       </div>
       <div className="additional-info">
-        <div
-          className={`fade-in staggered-info info-title ${
-            isVisible ? "visible" : ""
-          }`}
-        >
+        <div className={` info-title`}>
           <h2>Additional Information</h2>
         </div>
 
-        <div
-          className={`fade-in staggered-info info-container nav-container ${
-            isVisible ? "visible" : ""
-          }`}
-        >
+        <div className={` info-container nav-container`}>
           <nav className="info-nav">
             <ul>
               <NavButton

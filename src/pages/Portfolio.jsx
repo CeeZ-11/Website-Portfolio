@@ -1,6 +1,6 @@
 import PageTitle from "../components/PageTitle";
 import NavButton from "../components/NavButton";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Projects from "../components/Projects";
 import "../styles/Portfolio.css";
 import memoryCardScreenshot from "../assets/memory-card.webp";
@@ -21,7 +21,6 @@ import landingPageScreenshot from "../assets/landing-page.webp";
 import shoppingCartScreenshot from "../assets/shopping-cart.webp";
 
 export default function Portfolio() {
-  const [isPortVisible, setPortIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("all-projects");
 
   const navButtons = [
@@ -147,23 +146,11 @@ export default function Portfolio() {
     },
   ];
 
-  useEffect(() => {
-    setPortIsVisible(true);
-
-    return () => {
-      setPortIsVisible(false);
-    };
-  }, []);
-
   return (
     <>
       <PageTitle name="Portfolio" />
       <div className="project-container nav-container">
-        <nav
-          className={`fade-in staggered info-nav ${
-            isPortVisible ? "visible" : ""
-          }`}
-        >
+        <nav className={`info-nav`}>
           <ul>
             <NavButton
               navButtons={navButtons}
@@ -172,11 +159,7 @@ export default function Portfolio() {
             />
           </ul>
         </nav>
-        <div
-          className={`fade-in staggered project-content ${
-            isPortVisible ? "visible" : ""
-          }`}
-        >
+        <div className={`project-content`}>
           {activeTab === "all-projects" && (
             <Projects projectList={projectList} />
           )}

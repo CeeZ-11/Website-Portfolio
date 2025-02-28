@@ -1,5 +1,4 @@
 import "../styles/About.css";
-import { useState, useEffect } from "react";
 import JavaScriptIcon from "../components/Icons/JavscriptIcon";
 import ReactIcon from "../components/Icons/ReactIcon";
 import Html5Icon from "../components/Icons/Html5Icon";
@@ -13,8 +12,6 @@ import TechStack from "../components/TechStack.jsx";
 import PageTitle from "../components/PageTitle.jsx";
 
 export default function About() {
-  const [isAboutVisible, setAboutIsVisible] = useState(false);
-
   const techStackSkills = [
     { icon: JavaScriptIcon, name: "JavaScript (ES6+)" },
     { icon: ReactIcon, name: "React (In Progress)" },
@@ -27,19 +24,10 @@ export default function About() {
     { icon: NpmIcon, name: "NPM" },
   ];
 
-  useEffect(() => {
-    setAboutIsVisible(true);
-    return () => {
-      setAboutIsVisible(false);
-    };
-  }, []);
-
   return (
     <>
       <PageTitle name="About Me" />
-      <div
-        className={`fade-in staggered intro ${isAboutVisible ? "visible" : ""}`}
-      >
+      <div className={"intro"}>
         <p>
           Hi, I’m Seamor Estrabon, a passionate front-end developertransitioning
           from IT education and freelance web consulting into modern web
@@ -48,11 +36,7 @@ export default function About() {
         </p>
       </div>
 
-      <div
-        className={`fade-in staggered aboutC journey ${
-          isAboutVisible ? "visible" : ""
-        }`}
-      >
+      <div className={`aboutC journey`}>
         <h2>My Journey</h2>
         <p>
           I started as an IT professor teaching HTML, CSS, JavaScript, and PHP
@@ -62,11 +46,7 @@ export default function About() {
         </p>
       </div>
 
-      <div
-        className={`fade-in staggered aboutC tech-stack-container ${
-          isAboutVisible ? "visible" : ""
-        }`}
-      >
+      <div className={`aboutC tech-stack-container`}>
         <h2>Tech Stack</h2>
         <ul className="tech-stack-list">
           {techStackSkills.map((tech) => (
@@ -75,11 +55,7 @@ export default function About() {
         </ul>
       </div>
 
-      <div
-        className={`fade-in staggered aboutC cur-learning ${
-          isAboutVisible ? "visible" : ""
-        }`}
-      >
+      <div className={`aboutC cur-learning`}>
         <h2>Currently Learning</h2>
         <ul>
           <li>Full-stack Development with Node.js & Express</li>
@@ -87,11 +63,7 @@ export default function About() {
         </ul>
       </div>
 
-      <div
-        className={`fade-in staggered aboutC projects ${
-          isAboutVisible ? "visible" : ""
-        }`}
-      >
+      <div className={`aboutC projects`}>
         <h2>Currently Working On</h2>
         <p>
           Developing a full-featured School Management System using the MERN

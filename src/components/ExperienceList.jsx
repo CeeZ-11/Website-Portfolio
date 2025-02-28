@@ -1,18 +1,7 @@
-import { useEffect } from "react";
-
-export default function ExperienceList({ expList, isVisible, setIsVisible }) {
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
+export default function ExperienceList({ expList }) {
   return expList.map((exp) => {
     return (
-      <li
-        key={exp.id}
-        className={`fade-in staggered-experience exp-info-container ${
-          isVisible ? "visible" : ""
-        }`}
-      >
+      <li key={exp.id} className={`exp-info-container`}>
         <div className="exp-details-head">
           <h4>{exp.job}</h4>
           <h5>{exp.date}</h5>
