@@ -14,7 +14,7 @@ import PageTitle from "../components/PageTitle.jsx";
 export default function About() {
   const techStackSkills = [
     { icon: JavaScriptIcon, name: "JavaScript (ES6+)" },
-    { icon: ReactIcon, name: "React (In Progress)" },
+    { icon: ReactIcon, name: "React" },
     { icon: Html5Icon, name: "HTML5" },
     { icon: Css3Icon, name: "CSS3" },
     { icon: GitIcon, name: "Git" },
