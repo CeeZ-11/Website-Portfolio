@@ -29,10 +29,10 @@ export default function About() {
       <PageTitle name="About Me" />
       <div className={"intro"}>
         <p>
-          Hi, I’m Seamor Estrabon, a passionate front-end developertransitioning
-          from IT education and freelance web consulting into modern web
-          development. I’m currently mastering React, JavaScript, and full-stack
-          development through The Odin Project.
+          Hi, I’m Seamor Estrabon, a passionate front-end developer
+          transitioning from IT education and freelance web consulting into
+          modern web development. I’m currently mastering React, JavaScript, and
+          full-stack development through The Odin Project.
         </p>
       </div>
 
