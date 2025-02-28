@@ -1,4 +1,6 @@
-import ProjectItem from "./ProjectItem";
+import { lazy } from "react";
+
+const ProjectItem = lazy(() => import("./ProjectItem"));
 
 export default function Projects({ projectList }) {
   if (projectList.length === 0) {

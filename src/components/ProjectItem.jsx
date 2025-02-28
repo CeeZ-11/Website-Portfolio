@@ -13,12 +13,7 @@ const ProjectItem = ({ project }) => {
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <div className="project-image">
-          <img
-            src={project.image}
-            srcSet={project.image}
-            alt={project.name}
-            loading="lazy"
-          />
+          <img src={project.image} srcSet={project.image} alt={project.name} />
           <div className="visit-site-icon">
             <OpenLinkIcon />
           </div>
