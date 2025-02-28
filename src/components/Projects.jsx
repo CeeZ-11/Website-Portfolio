@@ -1,8 +1,13 @@
-import { lazy } from "react";
-
+import { lazy, useMemo } from "react";
 const ProjectItem = lazy(() => import("./ProjectItem"));
 
 export default function Projects({ projectList }) {
+  const memoizedProjects = useMemo(() => {
+    return projectList.map((project) => (
+      <ProjectItem key={project.id} project={project} />
+    ));
+  }, [projectList]);
+
   if (projectList.length === 0) {
     return (
       <ul>
@@ -11,11 +16,5 @@ export default function Projects({ projectList }) {
     );
   }
 
-  return (
-    <ul>
-      {projectList.map((project) => (
-        <ProjectItem key={project.id} project={project} />
-      ))}
-    </ul>
-  );
+  return <ul>{memoizedProjects}</ul>;
 }
