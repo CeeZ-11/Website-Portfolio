@@ -1,4 +1,4 @@
-import OpenLinkIcon from "../components/Icons/OpenLinkIcon";
+import ProjectItem from "./ProjectItem";
 
 export default function Projects({ projectList }) {
   if (projectList.length === 0) {
@@ -11,34 +11,9 @@ export default function Projects({ projectList }) {
 
   return (
     <ul>
-      {projectList.map((project) => {
-        return (
-          <li key={project.id}>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <div className="project-image">
-                <img
-                  src={project.image}
-                  srcSet={project.image}
-                  alt={project.name}
-                  loading="lazy"
-                />
-                <div className="visit-site-icon">
-                  <OpenLinkIcon />
-                </div>
-              </div>
-            </a>
-            <div className="project-details">
-              <h5>{project.name}</h5>
-              <h3>{project.category}</h3>
-            </div>
-          </li>
-        );
-      })}
+      {projectList.map((project) => (
+        <ProjectItem key={project.id} project={project} />
+      ))}
     </ul>
   );
 }
