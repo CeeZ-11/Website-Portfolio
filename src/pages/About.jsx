@@ -28,19 +28,26 @@ export default function About() {
     <>
       <PageTitle name="About Me" />
       <div className={"intro"}>
+        <h2>
+          Hi, I’m Seamor Estrabon <span className="wave">👋</span>
+        </h2>
+
         <p>
-          Hi, I&apos;m Seamor Estrabon, a front-end developer with a background
-          in IT education and freelance web consulting. I earned a
-          Bachelor&apos;s in Information Technology from the University of St.
-          La Salle, where I built an &quot;Information Management System for
-          Sacred Heart Shrine Lupit Church&quot; as my thesis. Currently,
-          I&apos;m mastering React, JavaScript, and full-stack development
-          through The Odin Project to create modern, scalable applications.
+          A Front-end Developer with a background in IT education and freelance
+          web consulting. I hold a{" "}
+          <strong>Bachelor’s in Information Technology</strong> from the
+          University of St. La Salle, where I developed an Information
+          Management System for my thesis.
+        </p>
+        <p>
+          Currently, I’m advancing my skills in{" "}
+          <strong>React and full-stack development </strong>
+          through The Odin Project to build scalable, modern applications.
         </p>
       </div>
 
       <div className={`aboutC journey`}>
-        <h2>My Journey</h2>
+        <h2>My Journey 🚀</h2>
         <p>
           I began my career as an IT professor, teaching HTML, CSS, JavaScript,
           and PHP, helping students build a strong foundation in web
@@ -49,14 +56,16 @@ export default function About() {
         </p>
         <p>
           Now, I’m fully focused on modern web development, continuously
-          improving my skills in front-end technologies, UI/UX, and application
-          scalability. In the future, I aim to explore mobile development to
-          further expand my expertise.
+          improving my skills in
+          <strong> front-end technologies</strong> and{" "}
+          <strong>application scalability</strong>. In the future, I aim to
+          explore <strong>mobile development</strong> to further expand my
+          expertise.
         </p>
       </div>
 
       <div className={`aboutC tech-stack-container`}>
-        <h2>Tech Stack</h2>
+        <h2>Tech Stack 🛠️</h2>
         <ul className="tech-stack-list">
           {techStackSkills.map((tech) => (
             <TechStack key={tech.name} icon={tech.icon} name={tech.name} />
@@ -65,31 +74,35 @@ export default function About() {
       </div>
 
       <div className={`aboutC cur-learning`}>
-        <h2>Expanding My Tech Stack</h2>
+        <h2>Expanding My Tech Stack 📚</h2>
         <ul>
           <li>
-            {" "}
-            Full-stack Development – Completed JavaScript front-end curriculum
-            in The Odin Project; currently learning back-end development with
-            Node.js, Express, Authentication, ORMs, and APIs.{" "}
+            <strong>Full-stack Development:</strong> Completed JavaScript
+            front-end curriculum in The Odin Project; now learning{" "}
+            <strong>Node.js, Express, Authentication, ORMs, and APIs</strong>.
           </li>
-
           <li>
-            Mobile App Development (Future Goal) – Planning to learn React
-            Native, Flutter, Swift, Kotlin, Firebase, and other essential tools
-            for cross-platform and native mobile app development.
+            <strong>Mobile App Development (Future Goal):</strong> Planning to
+            learn{" "}
+            <strong>React Native, Flutter, Swift, Kotlin, and Firebase</strong>{" "}
+            for cross-platform and native app development.
           </li>
         </ul>
       </div>
 
       <div className={`aboutC projects`}>
-        <h2>Major Projects in Development</h2>
-        <p>
-          Developing a full-featured School Management System using the MERN
-          stack, enabling student enrollment, scheduling, attendance tracking,
-          grade management, and role-based authentication with real-time
-          notifications.
-        </p>
+        <h2>Major Projects in Development 🏗️</h2>
+        <ul>
+          <li>
+            <strong>School Management System (MERN stack)</strong>
+          </li>
+          <ul>
+            <li>✅ Student Enrollment</li>
+            <li>✅ Scheduling & Attendance Tracking</li>
+            <li>✅ Grade Management</li>
+            <li>✅ Role-based Authentication & Real-time Notifications</li>
+          </ul>
+        </ul>
       </div>
     </>
   );
