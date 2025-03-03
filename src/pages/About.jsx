@@ -29,20 +29,29 @@ export default function About() {
       <PageTitle name="About Me" />
       <div className={"intro"}>
         <p>
-          Hi, I’m Seamor Estrabon, a passionate front-end developer
-          transitioning from IT education and freelance web consulting into
-          modern web development. I’m currently mastering React, JavaScript, and
-          full-stack development through The Odin Project.
+          Hi, I&apos;m Seamor Estrabon, a front-end developer with a background
+          in IT education and freelance web consulting. I earned a
+          Bachelor&apos;s in Information Technology from the University of St.
+          La Salle, where I built an &quot;Information Management System for
+          Sacred Heart Shrine Lupit Church&quot; as my thesis. Currently,
+          I&apos;m mastering React, JavaScript, and full-stack development
+          through The Odin Project to create modern, scalable applications.
         </p>
       </div>
 
       <div className={`aboutC journey`}>
         <h2>My Journey</h2>
         <p>
-          I started as an IT professor teaching HTML, CSS, JavaScript, and PHP
-          before moving into freelance web consulting. Now, I’m focused on
-          building modern, scalable applications and exploring mobile
-          development in the future.
+          I began my career as an IT professor, teaching HTML, CSS, JavaScript,
+          and PHP, helping students build a strong foundation in web
+          development. Later, I transitioned into freelance web consulting,
+          managing and optimizing WordPress-based websites for clients.
+        </p>
+        <p>
+          Now, I’m fully focused on modern web development, continuously
+          improving my skills in front-end technologies, UI/UX, and application
+          scalability. In the future, I aim to explore mobile development to
+          further expand my expertise.
         </p>
       </div>
 
@@ -56,15 +65,25 @@ export default function About() {
       </div>
 
       <div className={`aboutC cur-learning`}>
-        <h2>Currently Learning</h2>
+        <h2>Expanding My Tech Stack</h2>
         <ul>
-          <li>Full-stack Development with Node.js & Express</li>
-          <li>Mobile App Development (Future Goal)</li>
+          <li>
+            {" "}
+            Full-stack Development – Completed JavaScript front-end curriculum
+            in The Odin Project; currently learning back-end development with
+            Node.js, Express, Authentication, ORMs, and APIs.{" "}
+          </li>
+
+          <li>
+            Mobile App Development (Future Goal) – Planning to learn React
+            Native, Flutter, Swift, Kotlin, Firebase, and other essential tools
+            for cross-platform and native mobile app development.
+          </li>
         </ul>
       </div>
 
       <div className={`aboutC projects`}>
-        <h2>Currently Working On</h2>
+        <h2>Major Projects in Development</h2>
         <p>
           Developing a full-featured School Management System using the MERN
           stack, enabling student enrollment, scheduling, attendance tracking,

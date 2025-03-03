@@ -1,7 +1,13 @@
 .aboutC {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .tech-stack-list {
