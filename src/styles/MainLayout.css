@@ -23,7 +23,7 @@ main h1 {
 }
 
 main h2 {
-  font-size: clamp(1rem, 1.4vw, 1.9rem);
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
 }
 
 aside {
