@@ -31,7 +31,7 @@ export default function Resume() {
     },
     {
       id: 4,
-      job: "Professor, University of St. La Salle",
+      job: "IT Teacher, University of St. La Salle",
       date: "July 2017 - April 2021",
       desc: "Taught HTML, CSS, PHP, and JavaScript, while also facilitating research methodology sessions to enhance students' programming and research skills.",
     },

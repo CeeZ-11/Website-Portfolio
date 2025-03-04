@@ -49,7 +49,7 @@ export default function About() {
       <div className={`aboutC journey`}>
         <h2>My Journey 🚀</h2>
         <p>
-          I began my career as an IT professor, teaching HTML, CSS, JavaScript,
+          I began my career as an IT teacher, teaching HTML, CSS, JavaScript,
           and PHP, helping students build a strong foundation in web
           development. Later, I transitioned into freelance web consulting,
           managing and optimizing WordPress-based websites for clients.
