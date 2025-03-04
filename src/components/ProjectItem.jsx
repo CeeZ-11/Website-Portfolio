@@ -20,8 +20,8 @@ const ProjectItem = ({ project }) => {
         </div>
       </a>
       <div className="project-details">
-        <h5>{project.name}</h5>
-        <h3>{project.category}</h3>
+        <h3>{project.name}</h3>
+        <h5>#{project.category}</h5>
       </div>
     </li>
   );

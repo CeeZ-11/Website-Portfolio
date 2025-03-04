@@ -28,9 +28,10 @@
 .project-content ul li {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
   width: 250px;
   height: auto;
+  text-align: center;
 }
 
 .project-content ul li img {
@@ -40,6 +41,7 @@
   text-align: center;
   height: 170px;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .project-content ul li img:hover {
