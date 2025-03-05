@@ -42,7 +42,7 @@ export default function Resume() {
       id: 1,
       school: "The Odin Project",
       year: "Nov 2023 - Present",
-      desc: "Completed full-stack web development coursework, gaining hands-on experience with modern technologies and best practices.",
+      desc: "Currently studying full-stack web development. Completed the front-end portion and now focusing on backend development, gaining hands-on experience with modern technologies and best practices.",
     },
     {
       id: 2,
