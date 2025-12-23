@@ -33,36 +33,43 @@ export default function About() {
         </h2>
 
         <p>
-          A Front-end Developer with a background in IT education and freelance
-          web consulting. I hold a{" "}
+          A <strong>Web Developer</strong> with a background in IT education,
+          freelance web consulting, and digital marketing support. I hold a{" "}
           <strong>Bachelor’s in Information Technology</strong> from the
           University of St. La Salle, where I developed an Information
           Management System for my thesis.
         </p>
+
         <p>
-          Currently, I’m advancing my skills in{" "}
-          <strong>React and full-stack development </strong>
-          through The Odin Project to build scalable, modern applications.
+          Currently, I work as a{" "}
+          <strong>Web Developer / Digital Marketing Analyst at PMW (YesVIRTUAL)</strong>,
+          focusing on building, optimizing, and improving websites through
+          hands-on development, performance optimization, accessibility, and
+          SEO-driven enhancements.
         </p>
       </div>
 
       <div className={`aboutC journey`}>
         <h2>My Journey 🚀</h2>
+
         <p>
-          I began my career as an IT teacher, teaching HTML, CSS, JavaScript,
-          and PHP, helping students build a strong foundation in web
-          development. Later, I transitioned into freelance web consulting,
-          managing and optimizing WordPress-based websites for clients.
+          I started my career as an <strong>IT teacher</strong>, teaching HTML,
+          CSS, JavaScript, and PHP, and helping students develop a strong
+          foundation in web development and technical problem-solving. I later
+          transitioned into <strong>freelance web consulting</strong>, managing
+          and optimizing WordPress-based websites for clients.
         </p>
+
         <p>
-          Now, I’m fully focused on modern web development, continuously
-          improving my skills in
-          <strong> front-end technologies</strong> and{" "}
-          <strong>application scalability</strong>. In the future, I aim to
-          explore <strong>mobile development</strong> to further expand my
-          expertise.
+          Today, I focus on <strong>modern web development</strong>, combining
+          front-end development with performance optimization and technical
+          SEO. Alongside my professional work, I’m advancing my skills in{" "}
+          <strong>React and full-stack JavaScript</strong> through The Odin
+          Project, with plans to explore <strong>mobile development</strong>{" "}
+          in the future.
         </p>
       </div>
+
 
       <div className={`aboutC tech-stack-container`}>
         <h2>Tech Stack 🛠️</h2>
