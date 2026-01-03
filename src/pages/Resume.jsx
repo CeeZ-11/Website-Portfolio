@@ -15,31 +15,31 @@ export default function Resume() {
       id: 1,
       job: "Web Developer / Digital Marketing Analyst, YesVIRTUAL (PMW)",
       date: "MARCH 2025 - PRESENT",
-      desc: "Develops and maintains high-performance websites using HTML, CSS, JavaScript, and Liquid[cite: 16]. Integrates technical SEO best practices, including JSON-LD structured data and AI/LLM-facing signals (llms.txt), to maximize search visibility and rich result eligibility[cite: 78, 80]. Optimizes Core Web Vitals and ADA compliance to ensure superior user experience and accessibility[cite: 79, 134].",
+      desc: "Develops and maintains high-performance websites using HTML, CSS, JavaScript, and Liquid. Integrates technical SEO best practices, including JSON-LD structured data and AI/LLM-facing signals (llms.txt), to maximize search visibility and rich result eligibility. Optimizes Core Web Vitals and ADA compliance to ensure superior user experience and accessibility.",
     },
     {
       id: 2,
       job: "Web Consultant (Freelance)",
       date: "OCT 2024 - PRESENT",
-      desc: "Provides end-to-end web services including WordPress development, performance optimization, and domain/DNS management[cite: 23, 86]. Implements full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients[cite: 85, 87].",
+      desc: "Provides end-to-end web services including WordPress development, performance optimization, and domain/DNS management. Implements full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.",
     },
     {
       id: 3,
       job: "Monitor Engineer, MID Construction Group",
       date: "MAY 2024 - OCT 2024",
-      desc: "Managed digital security and auditing through daily log monitoring to ensure data policy compliance[cite: 29]. Provided technical support for remote operations and built tracking systems to report on system performance metrics[cite: 30, 31].",
+      desc: "Managed digital security and auditing through daily log monitoring to ensure data policy compliance. Provided technical support for remote operations and built tracking systems to report on system performance metrics.",
     },
     {
       id: 4,
       job: "Logistics Coordinator & Data Analyst, Rulewave",
       date: "SEPTEMBER 2021 - JUNE 2023",
-      desc: "Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors[cite: 35, 36]. Generated weekly performance reports and optimized supply chain documentation processes[cite: 35, 36].",
+      desc: "Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors. Generated weekly performance reports and optimized supply chain documentation processes.",
     },
     {
       id: 5,
       job: "IT Teacher / ICT Instructor, University of St. La Salle",
       date: "JULY 2017 - APRIL 2021",
-      desc: "Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy[cite: 40]. Mentored students on technical documentation and research methodologies for complex IT thesis projects[cite: 41].",
+      desc: "Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy. Mentored students on technical documentation and research methodologies for complex IT thesis projects.",
     },
   ];
 

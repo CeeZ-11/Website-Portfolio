@@ -41,7 +41,7 @@ export default function About() {
         <p>
           Currently, I am a{" "}
           <strong>Web Developer & Digital Marketing Analyst at YesVIRTUAL (PMW)</strong>,
-          where I bridge the gap between clean code and search visibility. My work focuses on building high-performance websites using <strong>HTML, CSS, JavaScript, and Liquid</strong>, while implementing advanced optimizations for <strong>Core Web Vitals, accessibility (ADA), and AI/LLM search readiness</strong>].
+          where I bridge the gap between clean code and search visibility. My work focuses on building high-performance websites using <strong>HTML, CSS, JavaScript, and Liquid</strong>, while implementing advanced optimizations for <strong>Core Web Vitals, accessibility (ADA), and AI/LLM search readiness</strong>.
         </p>
       </div>
 
