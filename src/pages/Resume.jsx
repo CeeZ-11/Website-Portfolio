@@ -129,8 +129,11 @@ export default function Resume() {
               <>
                 <h4> Certifications </h4>
                 <ul>
-                  <li>SAP Business One Certification (Jan 2016)</li>
-                  <li>Apple Teacher Certification (Oct 2019)</li>
+                  <li>SEO Essentials - Semrush (2025)</li>
+                  <li>SEO Fundamentals - Semrush (2025)</li>
+                  <li>Local SEO - Semrush (2025)</li>
+                  <li>SAP Business One Certification (2016)</li>
+                  <li>Apple Teacher Certification (2019)</li>
                 </ul>
               </>
             )}
