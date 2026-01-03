@@ -33,19 +33,15 @@ export default function About() {
         </h2>
 
         <p>
-          A <strong>Web Developer</strong> with a background in IT education,
-          freelance web consulting, and digital marketing support. I hold a{" "}
+          A <strong>Front-End Developer & Technical SEO Specialist</strong>  with a background in IT education and digital marketing operations. I hold a{" "}
           <strong>Bachelor’s in Information Technology</strong> from the
-          University of St. La Salle, where I developed an Information
-          Management System for my thesis.
+          University of St. La Salle, where I specialized in Web and Mobile Development.
         </p>
 
         <p>
-          Currently, I work as a{" "}
-          <strong>Web Developer / Digital Marketing Analyst at PMW (YesVIRTUAL)</strong>,
-          focusing on building, optimizing, and improving websites through
-          hands-on development, performance optimization, accessibility, and
-          SEO-driven enhancements.
+          Currently, I am a{" "}
+          <strong>Web Developer & Digital Marketing Analyst at YesVIRTUAL (PMW)</strong>,
+          where I bridge the gap between clean code and search visibility. My work focuses on building high-performance websites using <strong>HTML, CSS, JavaScript, and Liquid</strong>, while implementing advanced optimizations for <strong>Core Web Vitals, accessibility (ADA), and AI/LLM search readiness</strong>].
         </p>
       </div>
 
@@ -53,20 +49,15 @@ export default function About() {
         <h2>My Journey 🚀</h2>
 
         <p>
-          I started my career as an <strong>IT teacher</strong>, teaching HTML,
-          CSS, JavaScript, and PHP, and helping students develop a strong
-          foundation in web development and technical problem-solving. I later
-          transitioned into <strong>freelance web consulting</strong>, managing
-          and optimizing WordPress-based websites for clients.
+          My foundation began as an <strong>IT Instructor</strong>, where I taught web development and mentored students on technical research. This passion for technical clarity led me into <strong>freelance web consulting</strong>, where I managed end-to-end WordPress solutions, domain configurations, and SEO strategies for small businesses.
         </p>
 
         <p>
-          Today, I focus on <strong>modern web development</strong>, combining
-          front-end development with performance optimization and technical
-          SEO. Alongside my professional work, I’m advancing my skills in{" "}
-          <strong>React and full-stack JavaScript</strong> through The Odin
-          Project, with plans to explore <strong>mobile development</strong>{" "}
-          in the future.
+          Today, I specialize in <strong>Technical SEO Engineering</strong>—ensuring that modern web applications are not only responsive but also fully discoverable through <strong>structured data (JSON-LD) and semantic SEO</strong>. 
+        </p>
+        
+        <p>
+          I am currently deepening my expertise in the <strong>MERN stack</strong> through The Odin Project, with a long-term focus on building scalable, full-stack applications and exploring <strong>mobile development</strong>.
         </p>
       </div>
 
