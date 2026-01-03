@@ -10,30 +10,36 @@ import NavButton from "../components/NavButton.jsx";
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("languages");
 
-  const expList = [
+ const expList = [
     {
       id: 1,
-      job: "Web Consultant (Freelance)",
-      date: "OCT 2024 - PRESENT",
-      desc: "Managed and maintained WordPress websites on GoDaddy, handling updates, design adjustments, performance optimization, and client collaboration.",
+      job: "Web Developer / Digital Marketing Analyst, YesVIRTUAL (PMW)",
+      date: "MARCH 2025 - PRESENT",
+      desc: "Develops and maintains high-performance websites using HTML, CSS, JavaScript, and Liquid[cite: 16]. Integrates technical SEO best practices, including JSON-LD structured data and AI/LLM-facing signals (llms.txt), to maximize search visibility and rich result eligibility[cite: 78, 80]. Optimizes Core Web Vitals and ADA compliance to ensure superior user experience and accessibility[cite: 79, 134].",
     },
     {
       id: 2,
-      job: "Monitor Engineer, MID Construction Group",
-      date: "MAY 2024 - OCT 2024",
-      desc: "Monitored 45+ Google Meet sessions, tracked attendance, enforced rules, provided technical support, evaluated performance, and optimized workflows.",
+      job: "Web Consultant (Freelance)",
+      date: "OCT 2024 - PRESENT",
+      desc: "Provides end-to-end web services including WordPress development, performance optimization, and domain/DNS management[cite: 23, 86]. Implements full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients[cite: 85, 87].",
     },
     {
       id: 3,
-      job: "Logistics Coordinator, Rulewave",
-      date: "September 2021 - June 2023",
-      desc: "Optimized supply chain operations, managed customer inquiries, analyzed reports, tracked shipments, and improved logistics processes for efficiency.",
+      job: "Monitor Engineer, MID Construction Group",
+      date: "MAY 2024 - OCT 2024",
+      desc: "Managed digital security and auditing through daily log monitoring to ensure data policy compliance[cite: 29]. Provided technical support for remote operations and built tracking systems to report on system performance metrics[cite: 30, 31].",
     },
     {
       id: 4,
-      job: "IT Teacher, University of St. La Salle",
-      date: "July 2017 - April 2021",
-      desc: "Taught HTML, CSS, PHP, and JavaScript, while also facilitating research methodology sessions to enhance students' programming and research skills.",
+      job: "Logistics Coordinator & Data Analyst, Rulewave",
+      date: "SEPTEMBER 2021 - JUNE 2023",
+      desc: "Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors[cite: 35, 36]. Generated weekly performance reports and optimized supply chain documentation processes[cite: 35, 36].",
+    },
+    {
+      id: 5,
+      job: "IT Teacher / ICT Instructor, University of St. La Salle",
+      date: "JULY 2017 - APRIL 2021",
+      desc: "Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy[cite: 40]. Mentored students on technical documentation and research methodologies for complex IT thesis projects[cite: 41].",
     },
   ];
 
