@@ -18,7 +18,9 @@ import signUpFormScreenshot from "../assets/signup-form.webp";
 import calculatorScreenshot from "../assets/calculator.webp";
 import etchASketchScreenshot from "../assets/etch-a-sketch.webp";
 import landingPageScreenshot from "../assets/landing-page.webp";
+import weddingRsvp from "../assets/weddingRsvp.png";
 import shoppingCartScreenshot from "../assets/shopping-cart.webp";
+
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("all-projects");
@@ -143,6 +145,13 @@ export default function Portfolio() {
       image: landingPageScreenshot,
       category: "odin-projects",
       url: "https://ceez-11.github.io/Odin-Project-Landing-Page/",
+    },
+    {
+      id: 17,
+      name: "Wedding RSVP",
+      image: weddingRsvp,
+      category: "personal-projects",
+      url: "https://wedding-rsvp-bay-iota.vercel.app/",
     },
   ];
 
