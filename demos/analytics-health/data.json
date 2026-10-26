@@ -1,0 +1,6702 @@
+{
+ "summary": {
+  "generatedAt": "2026-10-26T09:00:00.000Z",
+  "lastRunAt": "2026-10-25T19:18:48.000Z",
+  "total": 25,
+  "healthy": 14,
+  "warning": 7,
+  "critical": 4
+ },
+ "sites": [
+  {
+   "id": "oakridge-pm",
+   "name": "Oakridge Property Management",
+   "domain": "oakridgepm.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:00:00.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 532,
+    "sessions": 817,
+    "events": 4728,
+    "conversions": 10
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1986
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 946
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 851
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 142
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 57
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 520
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 28
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 7
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 3
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 715,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 702,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 940,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 948,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 924,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 895,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 974,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 680,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 800,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1004,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 927,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 887,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 985,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 920,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 716,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 820,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 969,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 938,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 910,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 997,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 938,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 738,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 725,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1047,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 987,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 969,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 947,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1020,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 761,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 817,
+     "conversions": 10
+    }
+   ]
+  },
+  {
+   "id": "harbor-lane",
+   "name": "Harbor Lane Rentals",
+   "domain": "harborlanerentals.example",
+   "status": "critical",
+   "lastChecked": "2026-10-25T19:00:47.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "fail"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 1
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "fail",
+     "detail": "No generate_lead or rental_application_start in the last 7 days."
+    }
+   ],
+   "last24h": {
+    "users": 424,
+    "sessions": 670,
+    "events": 3662,
+    "conversions": 0
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1538
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 732
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 659
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 110
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 44
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 403
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 22
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "rental_application_start",
+     "result": "fail",
+     "count24h": 0
+    }
+   ],
+   "issues": [
+    {
+     "severity": "critical",
+     "category": "analytics",
+     "title": "Conversions dropped to zero",
+     "detail": "Traffic and events look normal, but no conversions were recorded in the last 7 days. The contact form may have changed or its GTM trigger stopped firing.",
+     "comparison": {
+      "metric": "conversions",
+      "previous": 58,
+      "current": 0,
+      "changePct": -100
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 666,
+     "conversions": 5
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 663,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 866,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 901,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 917,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 865,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 934,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 727,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 688,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 842,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 827,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 835,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 877,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 823,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 655,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 721,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 848,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 903,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 891,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 938,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 912,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 710,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 724,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 822,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 877,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 930,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 868,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 930,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 749,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 670,
+     "conversions": 0
+    }
+   ]
+  },
+  {
+   "id": "summit-residential",
+   "name": "Summit Residential",
+   "domain": "summitresidential.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:01:34.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 1055,
+    "sessions": 1428,
+    "events": 8047,
+    "conversions": 10
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 3380
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 1609
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 1448
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 241
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 97
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 885
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 48
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 7
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 3
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 1554,
+     "conversions": 10
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 1509,
+     "conversions": 12
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1852,
+     "conversions": 14
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1864,
+     "conversions": 13
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 2043,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 1808,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1824,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 1536,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 1508,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1942,
+     "conversions": 17
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 2030,
+     "conversions": 14
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1827,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1845,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1918,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 1456,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 1549,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1871,
+     "conversions": 17
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1942,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 2024,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1873,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1776,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 1450,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 1613,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1858,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 1812,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 2016,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 2041,
+     "conversions": 17
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1889,
+     "conversions": 15
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 1506,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 1428,
+     "conversions": 10
+    }
+   ]
+  },
+  {
+   "id": "cedar-point",
+   "name": "Cedar Point Homes",
+   "domain": "cedarpointhomes.example",
+   "status": "critical",
+   "lastChecked": "2026-10-25T19:02:21.000Z",
+   "checks": {
+    "ga4": "fail",
+    "gtm": "fail",
+    "data": "fail",
+    "events": "fail",
+    "conversions": "fail"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 3
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "fail",
+     "detail": "No gtag.js or GA4 config found on any of 14 crawled pages."
+    },
+    {
+     "label": "GTM detected",
+     "result": "fail",
+     "detail": "GTM container snippet not found in <head> on any crawled page."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "fail",
+     "detail": "No measurement ID present to compare."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "fail",
+     "detail": "No requests to google-analytics.com/g/collect observed during page loads."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "fail",
+     "detail": "0 sessions in the last 72 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "fail"
+    },
+    {
+     "label": "Conversions received",
+     "result": "fail"
+    }
+   ],
+   "last24h": {
+    "users": 0,
+    "sessions": 0,
+    "events": 0,
+    "conversions": 0
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "scroll",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "click",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "form_start",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "form_submit",
+     "result": "fail",
+     "count24h": 0
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "fail",
+     "count24h": 0
+    }
+   ],
+   "issues": [
+    {
+     "severity": "critical",
+     "category": "tracking",
+     "title": "GTM container missing",
+     "detail": "The expected GTM container is no longer on the site. This often happens after a theme update or site rebuild."
+    },
+    {
+     "severity": "critical",
+     "category": "tracking",
+     "title": "No GA4 tracking requests detected",
+     "detail": "The crawler loaded pages in a real browser and saw no GA4 collect requests."
+    },
+    {
+     "severity": "critical",
+     "category": "analytics",
+     "title": "No recent GA4 data",
+     "detail": "GA4 has recorded no sessions for this property in the last 72 hours.",
+     "comparison": {
+      "metric": "users",
+      "previous": 1927,
+      "current": 1154,
+      "changePct": -40.1
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 345,
+     "conversions": 2
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 324,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 433,
+     "conversions": 5
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 425,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 428,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 433,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 391,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 304,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 336,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 415,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 404,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 406,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 414,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 444,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 352,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 339,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 419,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 387,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 414,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 429,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 437,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 350,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 312,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 431,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 388,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 395,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 428,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 0,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 0,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 0,
+     "conversions": 0
+    }
+   ]
+  },
+  {
+   "id": "brightwater",
+   "name": "Brightwater Property Group",
+   "domain": "brightwaterpg.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:03:08.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 736,
+    "sessions": 1002,
+    "events": 5658,
+    "conversions": 5
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 2376
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 1132
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 1018
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 170
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 68
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 622
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 34
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 4
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 1050,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 1065,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1274,
+     "conversions": 11
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1388,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1294,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 1246,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1344,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 1063,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 1007,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1255,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1300,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1383,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1252,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1355,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 963,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 1007,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1249,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1267,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 1371,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1258,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1329,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 947,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 967,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1275,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 1443,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 1414,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 1291,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1400,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 980,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 1002,
+     "conversions": 5
+    }
+   ]
+  },
+  {
+   "id": "mesa-verde-pm",
+   "name": "Mesa Verde PM",
+   "domain": "mesaverdepm.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:03:55.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "warn"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "warn",
+     "detail": "rental_application_start not received in the last 5 days."
+    }
+   ],
+   "last24h": {
+    "users": 406,
+    "sessions": 544,
+    "events": 3184,
+    "conversions": 4
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1337
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 637
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 573
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 96
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 38
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 350
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 19
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 3
+    },
+    {
+     "name": "rental_application_start",
+     "result": "warn",
+     "count24h": 0
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "data-quality",
+     "title": "Expected conversion \"rental_application_start\" missing",
+     "detail": "generate_lead is still arriving, but rental_application_start has stopped. The apply-now link may point to a new portal URL.",
+     "comparison": {
+      "metric": "conversions",
+      "previous": 46,
+      "current": 28,
+      "changePct": -39.1
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 489,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 546,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 634,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 672,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 692,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 688,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 656,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 533,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 547,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 702,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 664,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 651,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 707,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 683,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 533,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 558,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 685,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 674,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 651,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 656,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 660,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 500,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 531,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 649,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 628,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 719,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 630,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 671,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 535,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 544,
+     "conversions": 4
+    }
+   ]
+  },
+  {
+   "id": "northgate",
+   "name": "Northgate Leasing",
+   "domain": "northgateleasing.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:04:42.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 291,
+    "sessions": 415,
+    "events": 2210,
+    "conversions": 3
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 928
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 442
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 398
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 66
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 27
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 405,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 417,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 503,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 497,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 546,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 519,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 564,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 424,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 418,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 520,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 541,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 559,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 547,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 533,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 416,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 389,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 559,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 567,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 538,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 510,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 511,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 398,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 454,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 556,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 562,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 557,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 588,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 533,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 436,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 415,
+     "conversions": 3
+    }
+   ]
+  },
+  {
+   "id": "pinecrest",
+   "name": "Pinecrest Management",
+   "domain": "pinecrestmgmt.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:05:29.000Z",
+   "checks": {
+    "ga4": "warn",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "warn",
+     "detail": "Found G-XXX0WRONG0 on 3 of 12 crawled pages instead of the expected ID."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 637,
+    "sessions": 833,
+    "events": 3754,
+    "conversions": 5
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1577
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 751
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 676
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 113
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 45
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 413
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 23
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 4
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "tracking",
+     "title": "Incorrect Measurement ID on some pages",
+     "detail": "3 pages (the blog templates) send data to a different GA4 stream, so their traffic is missing from this property."
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 813,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 724,
+     "conversions": 5
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 959,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1019,
+     "conversions": 5
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1003,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 981,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1050,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 791,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 819,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1067,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1022,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 966,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1094,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1097,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 779,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 757,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1052,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 980,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 1104,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 988,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 999,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 819,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 833,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1055,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 995,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 1005,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 1092,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1050,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 778,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 833,
+     "conversions": 5
+    }
+   ]
+  },
+  {
+   "id": "riverbend",
+   "name": "Riverbend Realty & PM",
+   "domain": "riverbendrealty.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:06:16.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 1595,
+    "sessions": 2106,
+    "events": 11121,
+    "conversions": 27
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 4671
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 2224
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 2002
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 334
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 133
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 1223
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 67
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 19
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 8
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 2123,
+     "conversions": 27
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 1939,
+     "conversions": 20
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 2651,
+     "conversions": 33
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 2790,
+     "conversions": 27
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 2756,
+     "conversions": 21
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 2687,
+     "conversions": 20
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 2555,
+     "conversions": 31
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 2065,
+     "conversions": 25
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 2078,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 2699,
+     "conversions": 28
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 2645,
+     "conversions": 29
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 2873,
+     "conversions": 33
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 2605,
+     "conversions": 21
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 2550,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 2083,
+     "conversions": 17
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 2128,
+     "conversions": 18
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 2875,
+     "conversions": 32
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 2766,
+     "conversions": 32
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 2637,
+     "conversions": 25
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 2558,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 2809,
+     "conversions": 29
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 2201,
+     "conversions": 29
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 2103,
+     "conversions": 15
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 2823,
+     "conversions": 30
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 2841,
+     "conversions": 28
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 2655,
+     "conversions": 27
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 2785,
+     "conversions": 35
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 2654,
+     "conversions": 34
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 2218,
+     "conversions": 20
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 2106,
+     "conversions": 27
+    }
+   ]
+  },
+  {
+   "id": "silver-oak",
+   "name": "Silver Oak Rentals",
+   "domain": "silveroakrentals.example",
+   "status": "critical",
+   "lastChecked": "2026-10-25T19:07:03.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "fail",
+    "events": "unknown",
+    "conversions": "unknown"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 1
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "fail",
+     "detail": "GA4 Data API returned 403 PERMISSION_DENIED for the monitoring service account."
+    },
+    {
+     "label": "Recent data received",
+     "result": "unknown",
+     "detail": "Not checked — property not accessible."
+    },
+    {
+     "label": "Events received",
+     "result": "unknown"
+    },
+    {
+     "label": "Conversions received",
+     "result": "unknown"
+    }
+   ],
+   "last24h": null,
+   "events": [
+    {
+     "name": "page_view",
+     "result": "unknown",
+     "count24h": null
+    },
+    {
+     "name": "scroll",
+     "result": "unknown",
+     "count24h": null
+    },
+    {
+     "name": "click",
+     "result": "unknown",
+     "count24h": null
+    },
+    {
+     "name": "form_start",
+     "result": "unknown",
+     "count24h": null
+    },
+    {
+     "name": "form_submit",
+     "result": "unknown",
+     "count24h": null
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "unknown",
+     "count24h": null
+    }
+   ],
+   "issues": [
+    {
+     "severity": "critical",
+     "category": "analytics",
+     "title": "GA4 property inaccessible",
+     "detail": "The monitoring service account no longer has Viewer access to this GA4 property, so no analytics checks could run. Re-grant access in GA4 → Admin → Property access management."
+    }
+   ],
+   "history": []
+  },
+  {
+   "id": "keystone",
+   "name": "Keystone Property Co.",
+   "domain": "keystoneproperty.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:07:50.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 434,
+    "sessions": 614,
+    "events": 3198,
+    "conversions": 5
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1343
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 640
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 576
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 96
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 38
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 4
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 563,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 576,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 703,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 754,
+     "conversions": 10
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 797,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 791,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 747,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 620,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 579,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 792,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 740,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 708,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 771,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 804,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 620,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 591,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 740,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 735,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 734,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 760,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 741,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 599,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 582,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 717,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 766,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 794,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 773,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 830,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 616,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 614,
+     "conversions": 5
+    }
+   ]
+  },
+  {
+   "id": "lakeshore",
+   "name": "Lakeshore Residential",
+   "domain": "lakeshoreres.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:08:37.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "warn",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "warn",
+     "detail": "Users down 38% vs the previous 7 days."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 482,
+    "sessions": 633,
+    "events": 2790,
+    "conversions": 4
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1172
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 558
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 502
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 84
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 33
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 307
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 17
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 3
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 1
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "analytics",
+     "title": "Sudden traffic drop",
+     "detail": "Users fell sharply across all channels. Check for an SEO/indexing change or a paused ad campaign.",
+     "comparison": {
+      "metric": "users",
+      "previous": 6460,
+      "current": 3980,
+      "changePct": -38.4
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 1027,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 982,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1271,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1271,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1207,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 1261,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1261,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 1017,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 970,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1249,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1374,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1250,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1371,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1190,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 1034,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 1044,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1201,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1245,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 1342,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1315,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1354,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 1071,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 938,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 805,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 765,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 843,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 839,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 779,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 612,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 633,
+     "conversions": 4
+    }
+   ]
+  },
+  {
+   "id": "granite-peak",
+   "name": "Granite Peak PM",
+   "domain": "granitepeakpm.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:09:24.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 224,
+    "sessions": 318,
+    "events": 1584,
+    "conversions": 3
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 665
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 317
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 285
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 48
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 19
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 281,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 292,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 369,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 370,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 395,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 396,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 377,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 294,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 305,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 387,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 362,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 388,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 414,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 375,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 289,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 293,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 398,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 376,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 364,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 379,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 398,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 311,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 298,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 400,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 358,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 397,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 394,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 404,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 326,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 318,
+     "conversions": 3
+    }
+   ]
+  },
+  {
+   "id": "willow-creek",
+   "name": "Willow Creek Homes",
+   "domain": "willowcreekhomes.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:10:11.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "warn",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "warn",
+     "detail": "schedule_showing not received in the last 7 days."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 321,
+    "sessions": 458,
+    "events": 2469,
+    "conversions": 7
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1037
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 494
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 444
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 74
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 30
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 272
+    },
+    {
+     "name": "schedule_showing",
+     "result": "warn",
+     "count24h": 0
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 5
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "data-quality",
+     "title": "Expected event \"schedule_showing\" missing",
+     "detail": "This event averaged 11/day over the prior 4 weeks and hasn’t been received in 7 days."
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 422,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 439,
+     "conversions": 5
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 585,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 551,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 604,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 544,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 582,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 458,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 423,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 590,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 609,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 578,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 551,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 545,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 474,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 415,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 549,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 622,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 595,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 598,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 607,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 481,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 456,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 545,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 625,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 602,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 604,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 555,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 480,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 458,
+     "conversions": 7
+    }
+   ]
+  },
+  {
+   "id": "coastal-key",
+   "name": "Coastal Key Management",
+   "domain": "coastalkey.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:10:58.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 956,
+    "sessions": 1301,
+    "events": 7557,
+    "conversions": 7
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 3174
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 1511
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 1360
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 227
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 91
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 831
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 45
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 5
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 1203,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 1253,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1669,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1557,
+     "conversions": 12
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1651,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 1595,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1631,
+     "conversions": 14
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 1242,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 1259,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1685,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1694,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1478,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1598,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1513,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 1262,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 1258,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1701,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1688,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 1566,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1726,
+     "conversions": 14
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1591,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 1243,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 1234,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1613,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 1667,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 1630,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 1550,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1486,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 1275,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 1301,
+     "conversions": 7
+    }
+   ]
+  },
+  {
+   "id": "redstone",
+   "name": "Redstone Leasing Group",
+   "domain": "redstoneleasing.example",
+   "status": "critical",
+   "lastChecked": "2026-10-25T19:11:45.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "fail",
+    "events": "fail",
+    "conversions": "fail"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 1
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "fail",
+     "detail": "0 sessions recorded since yesterday 00:00."
+    },
+    {
+     "label": "Events received",
+     "result": "fail"
+    },
+    {
+     "label": "Conversions received",
+     "result": "fail"
+    }
+   ],
+   "last24h": {
+    "users": 0,
+    "sessions": 0,
+    "events": 0,
+    "conversions": 0
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "scroll",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "click",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "form_start",
+     "result": "fail",
+     "count24h": 0
+    },
+    {
+     "name": "form_submit",
+     "result": "fail",
+     "count24h": 0
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "fail",
+     "count24h": 0
+    }
+   ],
+   "issues": [
+    {
+     "severity": "critical",
+     "category": "analytics",
+     "title": "No recent GA4 data",
+     "detail": "Tags and collect requests are present on the site, but GA4 has recorded no data for 2 days. Check the data stream and any data filters on the property.",
+     "comparison": {
+      "metric": "users",
+      "previous": 2286,
+      "current": 1762,
+      "changePct": -22.9
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 389,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 356,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 477,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 485,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 473,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 486,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 490,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 390,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 359,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 463,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 525,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 510,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 464,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 492,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 415,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 409,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 515,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 526,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 497,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 486,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 457,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 395,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 364,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 540,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 499,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 511,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 470,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 508,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 0,
+     "conversions": 0
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 0,
+     "conversions": 0
+    }
+   ]
+  },
+  {
+   "id": "ironwood",
+   "name": "Ironwood Property Partners",
+   "domain": "ironwoodpp.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:12:32.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 501,
+    "sessions": 745,
+    "events": 4022,
+    "conversions": 11
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1689
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 804
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 724
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 121
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 48
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 442
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 24
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 8
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 3
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 703,
+     "conversions": 11
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 768,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1031,
+     "conversions": 15
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 919,
+     "conversions": 9
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1008,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 944,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1000,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 745,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 746,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1006,
+     "conversions": 17
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1044,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1015,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1024,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 970,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 769,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 787,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 943,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1030,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 917,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1018,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1027,
+     "conversions": 15
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 778,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 722,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1014,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 977,
+     "conversions": 13
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 990,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 975,
+     "conversions": 15
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 947,
+     "conversions": 16
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 767,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 745,
+     "conversions": 11
+    }
+   ]
+  },
+  {
+   "id": "bluebird",
+   "name": "Bluebird Rentals",
+   "domain": "bluebirdrentals.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:13:19.000Z",
+   "checks": {
+    "ga4": "warn",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "warn",
+     "detail": "page_view fired twice per load: once from a hard-coded gtag.js snippet and once from GTM."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 358,
+    "sessions": 457,
+    "events": 4331,
+    "conversions": 7
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1819
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 866
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 780
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 130
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 52
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 5
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "tracking",
+     "title": "Potential duplicate tracking",
+     "detail": "Two GA4 installations on the same pages inflate page views and events. Remove the hard-coded snippet and keep GTM.",
+     "comparison": {
+      "metric": "events",
+      "previous": 28835,
+      "current": 39647,
+      "changePct": 37.5
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 493,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 465,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 567,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 632,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 623,
+     "conversions": 12
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 626,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 581,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 473,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 491,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 630,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 631,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 591,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 618,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 607,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 490,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 478,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 662,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 607,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 621,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 659,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 628,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 461,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 458,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 660,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 657,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 589,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 602,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 645,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 485,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 457,
+     "conversions": 7
+    }
+   ]
+  },
+  {
+   "id": "heritage",
+   "name": "Heritage Home Management",
+   "domain": "heritagehm.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:14:06.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 621,
+    "sessions": 915,
+    "events": 4743,
+    "conversions": 6
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1992
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 949
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 854
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 142
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 57
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 522
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 28
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 4
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 2
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 868,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 835,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1230,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1148,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1158,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 1138,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1226,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 968,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 909,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1214,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1077,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1148,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1130,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1270,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 953,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 926,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1116,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1104,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 1291,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1247,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1174,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 884,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 875,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1197,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 1168,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 1143,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 1125,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1078,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 897,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 915,
+     "conversions": 6
+    }
+   ]
+  },
+  {
+   "id": "prairie-wind",
+   "name": "Prairie Wind PM",
+   "domain": "prairiewindpm.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:14:53.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "warn",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "warn",
+     "detail": "Event volume down 41% vs the previous 7 days while users are flat."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 257,
+    "sessions": 365,
+    "events": 1023,
+    "conversions": 4
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 430
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 205
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 184
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 31
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 12
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 113
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 6
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 3
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 1
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "analytics",
+     "title": "Sudden event drop",
+     "detail": "Users are steady but events per session fell — likely a GTM tag or trigger that was paused or removed.",
+     "comparison": {
+      "metric": "events",
+      "previous": 14075,
+      "current": 8611,
+      "changePct": -38.8
+     }
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 328,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 372,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 440,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 429,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 492,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 473,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 429,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 329,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 323,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 451,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 417,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 480,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 477,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 477,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 381,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 351,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 440,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 468,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 454,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 454,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 467,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 356,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 375,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 472,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 474,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 457,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 489,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 453,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 368,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 365,
+     "conversions": 4
+    }
+   ]
+  },
+  {
+   "id": "crescent",
+   "name": "Crescent City Leasing",
+   "domain": "crescentleasing.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:15:40.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 1276,
+    "sessions": 1878,
+    "events": 10706,
+    "conversions": 19
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 4497
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 2141
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 1927
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 321
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 128
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 1178
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 64
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 13
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 6
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 1656,
+     "conversions": 16
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 1726,
+     "conversions": 23
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 2207,
+     "conversions": 22
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 2291,
+     "conversions": 28
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 2254,
+     "conversions": 34
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 2075,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 2359,
+     "conversions": 22
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 1665,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 1662,
+     "conversions": 24
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 2031,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 2255,
+     "conversions": 25
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 2267,
+     "conversions": 28
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 2035,
+     "conversions": 30
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 2011,
+     "conversions": 18
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 1726,
+     "conversions": 22
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 1720,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 2324,
+     "conversions": 31
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 2268,
+     "conversions": 28
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 2143,
+     "conversions": 27
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 2117,
+     "conversions": 23
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 2273,
+     "conversions": 31
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 1617,
+     "conversions": 15
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 1742,
+     "conversions": 17
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 2226,
+     "conversions": 26
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 2191,
+     "conversions": 21
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 2193,
+     "conversions": 20
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 2433,
+     "conversions": 32
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 2391,
+     "conversions": 31
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 1717,
+     "conversions": 26
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 1878,
+     "conversions": 19
+    }
+   ]
+  },
+  {
+   "id": "evergreen",
+   "name": "Evergreen Residential",
+   "domain": "evergreenres.example",
+   "status": "warning",
+   "lastChecked": "2026-10-25T19:16:27.000Z",
+   "checks": {
+    "ga4": "unknown",
+    "gtm": "unknown",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 1,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "unknown",
+     "detail": "Crawl timed out after 60s — the homepage never finished loading."
+    },
+    {
+     "label": "GTM detected",
+     "result": "unknown"
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "unknown"
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "unknown"
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "unknown"
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 412,
+    "sessions": 545,
+    "events": 3089,
+    "conversions": 5
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1297
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 618
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 556
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 93
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 37
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 4
+    }
+   ],
+   "issues": [
+    {
+     "severity": "warning",
+     "category": "tracking",
+     "title": "Site crawl timed out",
+     "detail": "Tracking checks couldn’t run because the site didn’t respond in time. GA4 data checks still ran normally."
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 603,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 552,
+     "conversions": 7
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 712,
+     "conversions": 10
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 731,
+     "conversions": 11
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 746,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 696,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 689,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 525,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 586,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 714,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 744,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 716,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 707,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 671,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 588,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 574,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 691,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 684,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 737,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 682,
+     "conversions": 10
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 712,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 593,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 590,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 714,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 701,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 724,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 728,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 720,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 535,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 545,
+     "conversions": 5
+    }
+   ]
+  },
+  {
+   "id": "maple-row",
+   "name": "Maple Row Property Mgmt",
+   "domain": "maplerowpm.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:17:14.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 187,
+    "sessions": 294,
+    "events": 1321,
+    "conversions": 2
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 555
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 264
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 238
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 40
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 16
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 1
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 286,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 304,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 361,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 354,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 376,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 411,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 347,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 296,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 318,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 387,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 378,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 416,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 411,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 381,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 312,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 295,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 371,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 391,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 422,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 376,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 403,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 308,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 304,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 405,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 418,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 409,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 420,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 365,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 301,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 294,
+     "conversions": 2
+    }
+   ]
+  },
+  {
+   "id": "high-desert",
+   "name": "High Desert Rentals",
+   "domain": "highdesertrentals.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:18:01.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 337,
+    "sessions": 474,
+    "events": 2464,
+    "conversions": 3
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1035
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 493
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 444
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 74
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 30
+    },
+    {
+     "name": "view_listing",
+     "result": "pass",
+     "count24h": 271
+    },
+    {
+     "name": "schedule_showing",
+     "result": "pass",
+     "count24h": 15
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 2
+    },
+    {
+     "name": "rental_application_start",
+     "result": "pass",
+     "count24h": 1
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 438,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 438,
+     "conversions": 2
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 581,
+     "conversions": 4
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 548,
+     "conversions": 3
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 609,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 632,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 567,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 491,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 453,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 546,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 590,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 618,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 619,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 580,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 484,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 466,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 619,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 587,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 595,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 612,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 644,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 511,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 484,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 627,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 631,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 642,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 630,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 622,
+     "conversions": 3
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 486,
+     "conversions": 2
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 474,
+     "conversions": 3
+    }
+   ]
+  },
+  {
+   "id": "fairview",
+   "name": "Fairview Leasing",
+   "domain": "fairviewleasing.example",
+   "status": "healthy",
+   "lastChecked": "2026-10-25T19:18:48.000Z",
+   "checks": {
+    "ga4": "pass",
+    "gtm": "pass",
+    "data": "pass",
+    "events": "pass",
+    "conversions": "pass"
+   },
+   "issueCounts": {
+    "warning": 0,
+    "critical": 0
+   },
+   "tracking": [
+    {
+     "label": "GA4 detected",
+     "result": "pass",
+     "detail": "GA4 config found on every crawled page."
+    },
+    {
+     "label": "GTM detected",
+     "result": "pass",
+     "detail": "Expected GTM container found in <head>."
+    },
+    {
+     "label": "Measurement ID matches inventory",
+     "result": "pass",
+     "detail": "All pages send to the expected GA4 stream."
+    },
+    {
+     "label": "Tracking request detected",
+     "result": "pass",
+     "detail": "GA4 collect requests observed on page load."
+    },
+    {
+     "label": "No duplicate tracking",
+     "result": "pass",
+     "detail": "One GA4 installation per page."
+    }
+   ],
+   "ga4": [
+    {
+     "label": "Property accessible",
+     "result": "pass",
+     "detail": "GA4 Data API query succeeded."
+    },
+    {
+     "label": "Recent data received",
+     "result": "pass",
+     "detail": "Sessions recorded in the last 24 hours."
+    },
+    {
+     "label": "Events received",
+     "result": "pass",
+     "detail": "All expected events received."
+    },
+    {
+     "label": "Conversions received",
+     "result": "pass",
+     "detail": "All expected conversions received."
+    }
+   ],
+   "last24h": {
+    "users": 585,
+    "sessions": 897,
+    "events": 4469,
+    "conversions": 7
+   },
+   "events": [
+    {
+     "name": "page_view",
+     "result": "pass",
+     "count24h": 1877
+    },
+    {
+     "name": "scroll",
+     "result": "pass",
+     "count24h": 894
+    },
+    {
+     "name": "click",
+     "result": "pass",
+     "count24h": 804
+    },
+    {
+     "name": "form_start",
+     "result": "pass",
+     "count24h": 134
+    },
+    {
+     "name": "form_submit",
+     "result": "pass",
+     "count24h": 54
+    }
+   ],
+   "conversions": [
+    {
+     "name": "generate_lead",
+     "result": "pass",
+     "count24h": 5
+    }
+   ],
+   "issues": [],
+   "history": [
+    {
+     "date": "2026-09-26",
+     "sessions": 808,
+     "conversions": 5
+    },
+    {
+     "date": "2026-09-27",
+     "sessions": 860,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-28",
+     "sessions": 1170,
+     "conversions": 8
+    },
+    {
+     "date": "2026-09-29",
+     "sessions": 1012,
+     "conversions": 6
+    },
+    {
+     "date": "2026-09-30",
+     "sessions": 1054,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-01",
+     "sessions": 1147,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-02",
+     "sessions": 1076,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-03",
+     "sessions": 790,
+     "conversions": 4
+    },
+    {
+     "date": "2026-10-04",
+     "sessions": 832,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-05",
+     "sessions": 1067,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-06",
+     "sessions": 1071,
+     "conversions": 9
+    },
+    {
+     "date": "2026-10-07",
+     "sessions": 1196,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-08",
+     "sessions": 1079,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-09",
+     "sessions": 1070,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-10",
+     "sessions": 839,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-11",
+     "sessions": 909,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-12",
+     "sessions": 1128,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-13",
+     "sessions": 1175,
+     "conversions": 11
+    },
+    {
+     "date": "2026-10-14",
+     "sessions": 1107,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-15",
+     "sessions": 1160,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-16",
+     "sessions": 1186,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-17",
+     "sessions": 801,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-18",
+     "sessions": 887,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-19",
+     "sessions": 1092,
+     "conversions": 6
+    },
+    {
+     "date": "2026-10-20",
+     "sessions": 1068,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-21",
+     "sessions": 1089,
+     "conversions": 5
+    },
+    {
+     "date": "2026-10-22",
+     "sessions": 1158,
+     "conversions": 7
+    },
+    {
+     "date": "2026-10-23",
+     "sessions": 1082,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-24",
+     "sessions": 914,
+     "conversions": 8
+    },
+    {
+     "date": "2026-10-25",
+     "sessions": 897,
+     "conversions": 7
+    }
+   ]
+  }
+ ]
+}

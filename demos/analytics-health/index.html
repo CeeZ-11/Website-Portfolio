@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analytics Health Demo</title>
+    <meta name="description" content="Demo of Analytics Health, a GA4 and Google Tag Manager tracking monitor by Seamor Estrabon, using fictional sample sites." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="../demo.css" />
+    <style>
+      .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+      .tile .value { font-size: 28px; font-weight: 600; }
+      .tile .name { color: var(--muted); font-size: 12px; }
+      .tile.healthy .value { color: var(--good); }
+      .tile.warning .value { color: var(--warn); }
+      .tile.critical .value { color: var(--poor); }
+      .dist { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 16px; background: var(--line); }
+      .dist span { display: block; height: 100%; }
+      .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+      table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px; }
+      th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+      th { color: var(--muted); font-weight: 600; font-size: 12px; background: var(--panel); }
+      tbody tr { cursor: pointer; }
+      tbody tr:hover, tbody tr[aria-selected="true"] { background: var(--panel-2); }
+      td small { display: block; color: var(--muted); }
+      .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+      .pass { background: var(--good); }
+      .warn { background: var(--warn); }
+      .fail { background: var(--poor); }
+      .unknown { background: var(--line); }
+      .pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 999px; }
+      .pill.healthy { background: rgba(60, 207, 122, 0.15); color: var(--good); }
+      .pill.warning { background: rgba(252, 195, 97, 0.15); color: var(--warn); }
+      .pill.critical { background: rgba(255, 90, 90, 0.15); color: var(--poor); }
+      .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+      .checks { list-style: none; padding: 0; margin: 0; }
+      .checks li { display: grid; grid-template-columns: 14px 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+      .checks li:last-child { border-bottom: 0; }
+      .checks .dot { margin-top: 5px; }
+      .checks small { display: block; color: var(--muted); }
+      .issue { border-left: 3px solid var(--warn); padding: 8px 12px; margin-bottom: 8px; background: var(--panel-2); border-radius: 0 8px 8px 0; }
+      .issue.critical { border-left-color: var(--poor); }
+      .issue p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+      .change { font-weight: 600; color: var(--poor); }
+      .totals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; }
+      .totals .value { font-size: 20px; font-weight: 600; }
+      .totals .name { font-size: 11px; color: var(--muted); }
+      svg.chart { width: 100%; height: 140px; display: block; }
+      .legend { font-size: 12px; color: var(--muted); display: flex; gap: 16px; margin-top: 4px; }
+      .legend i { display: inline-block; width: 10px; height: 3px; vertical-align: middle; margin-right: 6px; }
+      h3 { font-size: 15px; margin: 0 0 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="back" href="/#/portfolio">← Back to portfolio</a>
+        <h1>Analytics Health: demo</h1>
+        <p class="meta">A tracking monitor I built at work: are Google Analytics and Tag Manager still working on every site?</p>
+      </header>
+
+      <div class="note">
+        <strong>How this demo works:</strong> an automation checks each website every day: is the
+        tracking code on the page, is Google Analytics receiving data, and did key events like
+        form submissions suddenly drop? This dashboard shows the results.
+        <strong>All 25 sites here are fictional sample data</strong> (<code>.example</code> domains).
+        Click a row to see a site's details.
+      </div>
+
+      <section class="card">
+        <div class="tiles" id="tiles"></div>
+        <div class="dist" id="dist"></div>
+      </section>
+
+      <div class="bar">
+        <div class="meta" id="run-meta"></div>
+        <div class="toggle" role="group" aria-label="Filter by health" id="filters"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Site</th><th>GA4</th><th>GTM</th><th>Data</th><th>Events</th><th>Conversions</th><th>Issues</th><th>Health</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+      <section id="detail"></section>
+
+      <footer>
+        Built with TypeScript and Vite (dashboard) and n8n (daily checks, GA4 Data API, Slack alerts).
+        Source code is private (company project). · <a href="/#/portfolio">Seamor Estrabon</a>
+      </footer>
+    </div>
+
+    <script>
+      const ORDER = { critical: 0, warning: 1, healthy: 2 };
+      const LABEL = { healthy: 'Healthy', warning: 'Warning', critical: 'Critical' };
+      const esc = (s) =>
+        String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+      const num = (n) => (n == null ? '–' : n.toLocaleString());
+      const dot = (r) => `<span class="dot ${esc(r)}" title="${esc(r)}"></span>`;
+
+      let data;
+      let filter = 'all';
+      let selected = null;
+
+      function renderSummary() {
+        const s = data.summary;
+        document.getElementById('tiles').innerHTML = [
+          ['', s.total, 'Monitored sites'],
+          ['healthy', s.healthy, 'Healthy'],
+          ['warning', s.warning, 'Warning'],
+          ['critical', s.critical, 'Critical'],
+        ].map(([cls, v, n]) => `<div class="tile ${cls}"><div class="value">${v}</div><div class="name">${n}</div></div>`).join('');
+        document.getElementById('dist').innerHTML = ['healthy', 'warning', 'critical']
+          .map((k) => `<span style="width:${(s[k] / s.total) * 100}%;background:var(--${k === 'healthy' ? 'good' : k === 'warning' ? 'warn' : 'poor'})"></span>`)
+          .join('');
+        const when = new Date(s.lastRunAt).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+        document.getElementById('run-meta').textContent = `Last check run: ${when}`;
+        document.getElementById('filters').innerHTML = ['all', 'critical', 'warning', 'healthy']
+          .map((f) => `<button type="button" data-filter="${f}" aria-pressed="${f === filter}">${f === 'all' ? 'All' : LABEL[f]}</button>`)
+          .join('');
+        document.querySelectorAll('#filters button').forEach((b) =>
+          b.addEventListener('click', () => {
+            filter = b.dataset.filter;
+            document.querySelectorAll('#filters button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+            renderRows();
+          }),
+        );
+      }
+
+      function renderRows() {
+        const sites = data.sites
+          .filter((s) => filter === 'all' || s.status === filter)
+          .sort((a, b) => ORDER[a.status] - ORDER[b.status] || a.name.localeCompare(b.name));
+        document.getElementById('rows').innerHTML = sites.map((s) => {
+          const c = s.checks;
+          const issues = s.issueCounts.critical + s.issueCounts.warning;
+          return `<tr data-id="${esc(s.id)}" aria-selected="${s.id === selected}">
+            <td>${esc(s.name)}<small>${esc(s.domain)}</small></td>
+            <td>${dot(c.ga4)}</td><td>${dot(c.gtm)}</td><td>${dot(c.data)}</td><td>${dot(c.events)}</td><td>${dot(c.conversions)}</td>
+            <td>${issues || '–'}</td>
+            <td><span class="pill ${esc(s.status)}">${LABEL[s.status]}</span></td>
+          </tr>`;
+        }).join('');
+        document.querySelectorAll('#rows tr').forEach((tr) => tr.addEventListener('click', () => select(tr.dataset.id, true)));
+      }
+
+      function chart(history) {
+        if (!history.length) return '';
+        const w = 600, h = 140, pad = 6;
+        const line = (key, color) => {
+          const max = Math.max(...history.map((d) => d[key]), 1);
+          const pts = history.map((d, i) => `${(pad + (i / (history.length - 1)) * (w - pad * 2)).toFixed(1)},${(h - pad - (d[key] / max) * (h - pad * 2)).toFixed(1)}`);
+          return `<polyline fill="none" stroke="${color}" stroke-width="2" points="${pts.join(' ')}" />`;
+        };
+        return `<svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Sessions and conversions, last 30 days">
+            ${line('sessions', 'var(--accent)')}${line('conversions', 'var(--good)')}
+          </svg>
+          <div class="legend"><span><i style="background:var(--accent)"></i>Sessions</span><span><i style="background:var(--good)"></i>Conversions</span><span>Last ${history.length} days, each line scaled to its own maximum</span></div>`;
+      }
+
+      function select(id, scroll) {
+        selected = id;
+        const s = data.sites.find((x) => x.id === id);
+        renderRows();
+        const checks = (list) => `<ul class="checks">${list.map((c) => `<li>${dot(c.result)}<div>${esc(c.label)}${c.detail ? `<small>${esc(c.detail)}</small>` : ''}</div></li>`).join('')}</ul>`;
+        const expected = (list) => `<ul class="checks">${list.map((e) => `<li>${dot(e.result)}<div><code>${esc(e.name)}</code><small>${e.count24h == null ? 'Not checked' : `${num(e.count24h)} in the last 24 hours`}</small></div></li>`).join('')}</ul>`;
+        const t = s.last24h;
+        document.getElementById('detail').innerHTML = `
+          <h2>${esc(s.name)} <span class="pill ${esc(s.status)}">${LABEL[s.status]}</span></h2>
+          <p class="meta">${esc(s.domain)}</p>
+          ${s.issues.length ? `<div class="card" style="margin-bottom:12px"><h3>Issues</h3>${s.issues.map((i) => `<div class="issue ${esc(i.severity)}">
+              <strong>${esc(i.title)}</strong>
+              ${i.comparison ? ` <span class="change">${esc(i.comparison.metric)}: ${num(i.comparison.previous)} → ${num(i.comparison.current)} (${i.comparison.changePct > 0 ? '+' : ''}${i.comparison.changePct}%)</span>` : ''}
+              <p>${esc(i.detail)}</p>
+            </div>`).join('')}</div>` : ''}
+          <div class="detail-grid">
+            <div class="card"><h3>Tracking on the page</h3>${checks(s.tracking)}</div>
+            <div class="card"><h3>Google Analytics</h3>${checks(s.ga4)}</div>
+            <div class="card"><h3>Last 24 hours</h3>${t ? `<div class="totals">${['users', 'sessions', 'events', 'conversions'].map((k) => `<div><div class="value">${num(t[k])}</div><div class="name">${k}</div></div>`).join('')}</div>` : '<p class="meta">GA4 data unavailable.</p>'}
+              <div style="margin-top:12px">${chart(s.history)}</div></div>
+            <div class="card"><h3>Expected events</h3>${expected(s.events)}<h3 style="margin-top:14px">Expected conversions</h3>${expected(s.conversions)}</div>
+          </div>`;
+        if (scroll) document.getElementById('detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      fetch('data.json')
+        .then((r) => r.json())
+        .then((d) => {
+          data = d;
+          renderSummary();
+          renderRows();
+          // Open on a site whose issue shows a before/after number: the clearest example of what the monitor catches.
+          const showcase = data.sites.find((s) => s.issues.some((i) => i.comparison)) ?? data.sites[0];
+          select(showcase.id, false);
+        })
+        .catch(() => {
+          document.getElementById('detail').textContent = 'Could not load the demo data.';
+        });
+    </script>
+  </body>
+</html>

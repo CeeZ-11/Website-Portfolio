@@ -1,0 +1,48 @@
+{
+ "note": "Fictional sample data for the portfolio demo. Client names are made up.",
+ "today": "2026-10-27",
+ "briefing": "Good morning. You have 3 tasks due in the next two days: the CLS fix for Oakridge PM is a day overdue, so start there, then finish the Harbor Lane location pages due tomorrow. Two items are waiting on review and one is blocked on client PDFs. Friday looks heavy (4 tasks due), so move the FAQ schema work earlier if you can.",
+ "dueNow": [
+  { "name": "Fix layout shift (CLS) on Oakridge PM homepage", "status": "Working on it", "due": "2026-10-26", "skill": "SPD", "size": "M" },
+  { "name": "Build location pages for Harbor Lane Rentals", "status": "Working on it", "due": "2026-10-28", "skill": "DEV", "size": "L" },
+  { "name": "Compress hero images on Bluebird Rentals", "status": "Not started", "due": "2026-10-29", "skill": "SPD", "size": "S" }
+ ],
+ "upcoming": [
+  { "name": "Add FAQ schema to Cedar Point Homes", "status": "Not started", "due": "2026-10-30", "skill": "LOR", "size": "M" },
+  { "name": "Set up weekly analytics alert for Summit Residential", "status": "Not started", "due": "2026-10-30", "skill": "CRF", "size": "M" },
+  { "name": "Check AI crawler access for Lakeshore Residential", "status": "Not started", "due": "2026-10-30", "skill": "ORC", "size": "S" },
+  { "name": "Fix heading order on Pinecrest Management", "status": "Not started", "due": "2026-10-30", "skill": "EMP", "size": "S" }
+ ],
+ "review": [
+  { "name": "Accessibility pass on Juniper Hill PM contact form", "status": "Ready for Review", "skill": "EMP", "size": "M" },
+  { "name": "Speed audit report for Granite Peak PM", "status": "Monitoring", "skill": "SPD", "size": "L" }
+ ],
+ "blocked": [
+  { "name": "Upload owner handbook PDFs for Willow Creek Homes", "status": "Waiting on Client", "since": "20 days", "skill": "GEN", "size": "S" }
+ ],
+ "stale": [
+  { "name": "Old redesign notes for Fairview Leasing", "status": "Working on it", "due": "2026-08-14", "updated": "2026-09-02" }
+ ],
+ "crunch": [{ "day": "2026-10-30", "count": 4 }],
+ "doneToday": [
+  { "name": "Site speed audit for Ironwood Property Partners", "skill": "SPD", "size": "L" },
+  { "name": "Add llms.txt to Coastal Key Management", "skill": "ORC", "size": "S" }
+ ],
+ "progress": {
+  "xp": 2510,
+  "level": 7,
+  "levelStartXp": 2160,
+  "nextLevelXp": 2940,
+  "title": "Pagewarden",
+  "skills": {
+   "SPD": { "xp": 760, "level": 5 },
+   "CRF": { "xp": 400, "level": 4 },
+   "INS": { "xp": 330, "level": 3 },
+   "DEV": { "xp": 290, "level": 3 },
+   "ORC": { "xp": 260, "level": 3 },
+   "LOR": { "xp": 210, "level": 3 },
+   "EMP": { "xp": 180, "level": 3 },
+   "GEN": { "xp": 80, "level": 2 }
+  }
+ }
+}

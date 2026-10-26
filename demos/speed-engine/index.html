@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speed Engine Demo</title>
+    <meta name="description" content="Real output from the Speed Engine, a website performance auditing tool by Seamor Estrabon, run on a deliberately slow demo site." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="../demo.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="back" href="/#/portfolio">← Back to portfolio</a>
+        <h1>Speed Engine: demo report</h1>
+        <p class="meta">A website performance auditing tool I built at work. Below is its real output.</p>
+      </header>
+
+      <div class="note">
+        <strong>How this demo works:</strong> the tool itself runs on a computer (it drives a real
+        Chrome browser), so this page shows its output. I built a
+        <a href="https://ceez-11.github.io/slow-demo-site/" target="_blank" rel="noopener">deliberately slow website</a>
+        for a fictional company, planted 10 problems in it
+        (<a href="https://github.com/CeeZ-11/slow-demo-site#answer-key-the-planted-issues" target="_blank" rel="noopener">answer key</a>),
+        then audited it. No client data is used.
+      </div>
+
+      <div class="bar">
+        <div class="meta" id="site-meta"></div>
+        <div class="toggle" role="group" aria-label="Device">
+          <button type="button" data-device="mobile" aria-pressed="true">Mobile</button>
+          <button type="button" data-device="desktop" aria-pressed="false">Desktop</button>
+        </div>
+      </div>
+
+      <section class="summary">
+        <div class="card score">
+          <div class="ring" id="ring"><span id="score">–</span></div>
+          <small>Performance score</small>
+        </div>
+        <div class="card">
+          <div class="vitals" id="vitals"></div>
+        </div>
+      </section>
+
+      <h2>Fix this first</h2>
+      <div class="top3" id="top3"></div>
+
+      <h2>All findings <span class="meta" id="count"></span></h2>
+      <p class="meta">Each finding names the root cause, the evidence it was based on (measured or calculated), and a fix with code.</p>
+      <div id="findings"></div>
+
+      <footer>
+        Built with TypeScript, Playwright, Lighthouse and the Chrome DevTools Protocol.
+        Source code is private (company project). · <a href="/#/portfolio">Seamor Estrabon</a>
+      </footer>
+    </div>
+
+    <script>
+      const VITALS = [
+        ['lcp', 'Largest Contentful Paint', 'ms'],
+        ['cls', 'Cumulative Layout Shift', ''],
+        ['fcp', 'First Contentful Paint', 'ms'],
+        ['tbt', 'Total Blocking Time', 'ms'],
+        ['ttfb', 'Server response (TTFB)', 'ms'],
+        ['speedIndex', 'Speed Index', 'ms'],
+      ];
+      const RATING = { good: 'Good', 'needs-improvement': 'Needs work', poor: 'Poor' };
+
+      const esc = (s) =>
+        String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+      // Backticks in the engine's text mark code, e.g. `alt`.
+      const text = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
+      const fmt = (v, unit) => {
+        if (v == null) return '–';
+        if (unit === 'ms') return v >= 1000 ? (v / 1000).toFixed(1) + ' s' : Math.round(v) + ' ms';
+        return v.toFixed(2);
+      };
+
+      function renderDevice(data, device) {
+        const d = data.devices.find((x) => x.device === device);
+        const color = d.score >= 90 ? 'var(--good)' : d.score >= 50 ? 'var(--warn)' : 'var(--poor)';
+        document.getElementById('score').textContent = d.score;
+        document.getElementById('score').style.color = color;
+        document.getElementById('ring').style.background = `conic-gradient(${color} ${d.score * 3.6}deg, var(--line) 0)`;
+        document.getElementById('vitals').innerHTML = VITALS.map(([key, name, unit]) => {
+          const v = d.vitals[key];
+          if (!v) return '';
+          const value = unit === 'ms' ? v.valueMs : v.value;
+          const rating = v.rating && v.rating !== 'unknown' ? v.rating : '';
+          return `<div class="vital ${rating}">
+            <div class="name">${esc(name)}</div>
+            <div class="value">${fmt(value, unit)}</div>
+            <div class="rating ${rating}">${esc(RATING[rating] ?? '')}</div>
+          </div>`;
+        }).join('');
+        document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.device === device)));
+      }
+
+      function renderFindings(data) {
+        // "Fix this first": the top performance fixes, one per metric.
+        const perf = ['LCP', 'CLS', 'FCP', 'TBT', 'INP'];
+        const picked = [];
+        for (const f of data.findings) {
+          if (perf.includes(f.metric) && !picked.some((p) => p.metric === f.metric)) picked.push(f);
+          if (picked.length === 3) break;
+        }
+        document.getElementById('top3').innerHTML = picked.map((f) => `<div class="card">
+            <span class="tag ${esc(f.priority)}">${esc(f.metric)}</span>
+            <p>${text(f.recommendation)}</p>
+          </div>`).join('');
+
+        document.getElementById('count').textContent = `(${data.findings.length})`;
+        document.getElementById('findings').innerHTML = data.findings.map((f) => `<details class="finding">
+            <summary>
+              <span class="tag ${esc(f.priority)}">${esc(f.priority)}</span><span class="tag">${esc(f.metric)}</span>
+              ${text(f.recommendation)}
+            </summary>
+            <div class="body">
+              <h4>Root cause</h4>
+              <p>${text(f.rootCause)} <span class="kind">(confidence: ${esc(f.confidence)})</span></p>
+              ${f.evidence.length ? `<h4>Evidence</h4><ul>${f.evidence.map((e) => `<li>${text(e.statement)} <span class="kind">${esc(e.kind)}</span></li>`).join('')}</ul>` : ''}
+              ${f.implementationGuidance ? `<h4>How to fix</h4><p>${text(f.implementationGuidance)}</p>` : ''}
+              ${f.codeExample ? `<div class="code"><pre class="before">${esc(f.codeExample.before)}</pre><pre class="after">${esc(f.codeExample.after)}</pre></div>` : ''}
+              ${f.relatedResources.length ? `<h4>Learn more</h4><ul>${f.relatedResources.map((u) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join('')}</ul>` : ''}
+            </div>
+          </details>`).join('');
+      }
+
+      fetch('data.json')
+        .then((r) => r.json())
+        .then((data) => {
+          const when = new Date(data.site.auditedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+          document.getElementById('site-meta').innerHTML = `Audited <a href="${esc(data.site.url)}" target="_blank" rel="noopener">${esc(data.site.url)}</a> on ${esc(when)}`;
+          renderDevice(data, 'mobile');
+          renderFindings(data);
+          document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => renderDevice(data, b.dataset.device)));
+        })
+        .catch(() => {
+          document.getElementById('findings').textContent = 'Could not load the demo data.';
+        });
+    </script>
+  </body>
+</html>

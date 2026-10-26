@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site QA Demo</title>
+    <meta name="description" content="Real output from Site QA, an automated website quality check (accessibility, broken links, images, layout), run on Seamor Estrabon's own websites." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="../demo.css" />
+    <style>
+      .toggle { flex-wrap: wrap; border-radius: 12px; }
+      .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+      .tile .value { font-size: 26px; font-weight: 600; }
+      .tile .name { color: var(--muted); font-size: 12px; }
+      .tile.zero .value { color: var(--good); }
+      .tag.critical, .tag.serious { background: rgba(255, 90, 90, 0.15); color: var(--poor); }
+      .tag.moderate, .tag.minor, .tag.warn { background: rgba(252, 195, 97, 0.15); color: var(--warn); }
+      .tag.ok { background: rgba(60, 207, 122, 0.15); color: var(--good); }
+      .rows { list-style: none; padding: 0; margin: 0; }
+      .rows li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13px; overflow-wrap: anywhere; }
+      .rows li:last-child { border-bottom: 0; }
+      .rows small { display: block; color: var(--muted); }
+      .empty { color: var(--good); font-size: 13px; }
+      code { font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="back" href="/#/portfolio">← Back to portfolio</a>
+        <h1>Site QA: demo report</h1>
+        <p class="meta">An automated website quality check my team runs before sites go live. Below is its real output.</p>
+      </header>
+
+      <div class="note">
+        <strong>How this demo works:</strong> the check opens every page in a real browser
+        (Playwright) and looks for accessibility problems (axe-core, WCAG 2.1 AA), broken links,
+        unclear link text, oversized images, missing headings and layouts that wrap badly on
+        desktop, tablet and phone. A teammate wrote the original script; I turned it into the
+        team's shared, version-controlled tool and planned the QA platform around it. Here it ran on
+        four of my own sites. No client data is used.
+      </div>
+
+      <div class="bar">
+        <div class="meta" id="site-meta"></div>
+        <div class="toggle" role="group" aria-label="Website" id="site-tabs"></div>
+      </div>
+
+      <section class="card"><div class="tiles" id="tiles"></div></section>
+
+      <div id="sections"></div>
+
+      <footer>
+        Built with Node.js, Playwright and axe-core. Source code is private (company project).
+        · <a href="/#/portfolio">Seamor Estrabon</a>
+      </footer>
+    </div>
+
+    <script>
+      const LABELS = {
+        'ceez-11.github.io': 'Slow demo site',
+        'website-portfolio-nine-beige.vercel.app': 'Portfolio',
+        'wed-snap-nine.vercel.app': 'WedSnap',
+        'wedding-rsvp-bay-iota.vercel.app': 'Wedding RSVP',
+      };
+      const esc = (s) =>
+        String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+      const host = (url) => new URL(url).host;
+      const label = (s) => LABELS[host(s.site)] ?? host(s.site);
+
+      function section(title, intro, items, row) {
+        return `<details class="finding" ${items.length ? 'open' : ''}>
+          <summary><span class="tag ${items.length ? 'warn' : 'ok'}">${items.length || 'Pass'}</span>${esc(title)}</summary>
+          <div class="body">
+            <p class="meta">${esc(intro)}</p>
+            ${items.length ? `<ul class="rows">${items.map(row).join('')}</ul>` : '<p class="empty">Nothing found.</p>'}
+          </div>
+        </details>`;
+      }
+
+      function render(site) {
+        const when = new Date(site.auditedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+        document.getElementById('site-meta').innerHTML = `Checked <a href="${esc(site.site)}/" target="_blank" rel="noopener">${esc(site.site.replace('https://', ''))}</a> · ${site.pagesAudited} page(s) · ${esc(when)}`;
+        document.querySelectorAll('#site-tabs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.site === site.site)));
+
+        const realBroken = site.brokenLinks.filter((l) => !l.likelyBotBlock).length;
+        const tiles = [
+          [site.accessibility.length, 'Accessibility rules failed'],
+          [realBroken, 'Broken links'],
+          [site.ambiguousLinks.length, 'Unclear link text'],
+          [site.oversizedImages.length, 'Oversized images'],
+          [site.wrapping.length, 'Layout wrapping'],
+          [site.h1Issues + site.duplicateMeta, 'Heading & meta issues'],
+        ];
+        document.getElementById('tiles').innerHTML = tiles
+          .map(([v, n]) => `<div class="tile ${v === 0 ? 'zero' : ''}"><div class="value">${v}</div><div class="name">${esc(n)}</div></div>`)
+          .join('');
+
+        document.getElementById('sections').innerHTML = [
+          '<h2>Findings</h2>',
+          section('Accessibility (axe-core, WCAG 2.1 AA)', 'Problems that make the page harder to use with a screen reader, keyboard or low vision.', site.accessibility, (a) =>
+            `<li><span class="tag ${esc(a.impact)}">${esc(a.impact)}</span>${esc(a.help)} <small>${a.elements} element(s), e.g. <code>${esc(a.example)}</code> · <a href="${esc(a.helpUrl)}" target="_blank" rel="noopener">how to fix</a></small></li>`),
+          section('Broken links', 'Links that returned an error. Some social networks block automated checks, so those are marked as likely false alarms.', site.brokenLinks, (l) =>
+            `<li><span class="tag ${l.likelyBotBlock ? 'minor' : 'serious'}">${esc(l.status)}</span><code>${esc(l.href)}</code>${l.text ? ` (“${esc(l.text)}”)` : ''}
+              <small>${l.likelyBotBlock ? 'Likely a false alarm: this site blocks automated checks.' : `Linked from ${esc(l.page)}.`}</small></li>`),
+          section('Unclear link text', 'Links a screen reader would announce without saying where they go.', site.ambiguousLinks, (l) =>
+            `<li><code>${esc(l.href)}</code><small>${esc(l.reason)}${l.text ? `: “${esc(l.text)}”` : ''}</small></li>`),
+          section('Oversized images', 'Images wider than 1920 px, which are heavier than any screen needs.', site.oversizedImages, (i) =>
+            `<li><code>${esc(i.src)}</code><small>${i.width} × ${i.height} px</small></li>`),
+          section('Layout wrapping', 'Rows of cards or columns that wrap onto a new line, leaving an uneven last row (checked at desktop, tablet and phone widths).', site.wrapping, (w) =>
+            `<li><code>${esc(w.element)}</code><small>Wraps on ${esc(w.viewports.join(', '))}</small></li>`),
+        ].join('');
+      }
+
+      fetch('data.json')
+        .then((r) => r.json())
+        .then(({ sites }) => {
+          document.getElementById('site-tabs').innerHTML = sites
+            .map((s) => `<button type="button" data-site="${esc(s.site)}">${esc(label(s))}</button>`)
+            .join('');
+          document.querySelectorAll('#site-tabs button').forEach((b) =>
+            b.addEventListener('click', () => render(sites.find((s) => s.site === b.dataset.site))),
+          );
+          render(sites[0]);
+        })
+        .catch(() => {
+          document.getElementById('sections').textContent = 'Could not load the demo data.';
+        });
+    </script>
+  </body>
+</html>
