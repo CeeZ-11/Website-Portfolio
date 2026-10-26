@@ -2,11 +2,12 @@
  "sites": [
   {
    "site": "https://website-portfolio-nine-beige.vercel.app",
-   "scannedAt": "2026-10-26T09:06:11.618Z",
+   "scannedAt": "2026-10-26T10:19:56.224Z",
    "pagesScanned": 1,
+   "robotsFound": true,
    "sitemap": {
     "found": true,
-    "urls": 4
+    "urls": 6
    },
    "llmsTxt": false,
    "crawlers": [
@@ -85,53 +86,11 @@
    ],
    "insights": [
     {
-     "severity": "high",
-     "title": "3 sitemap pages don't load",
-     "detail": "The sitemap tells Google these pages exist, but they return an error.",
-     "action": "Fix these pages, or remove them from the sitemap if they're gone for good.",
-     "evidence": "Strong",
-     "pages": [
-      "/Website-Portfolio/about (404)",
-      "/Website-Portfolio/projects (404)",
-      "/Website-Portfolio/contact (404)"
-     ]
-    },
-    {
-     "severity": "med",
-     "title": "The homepage is live at 3 addresses",
-     "detail": "/ and /index.html and /Website-Portfolio/ show the same content. This isn't a penalty: Google picks one version to show. But it has to guess, and links and Search Console data can be split between the addresses.",
-     "action": "301-redirect the copies to / (best), or point their canonical tag at it. Delete leftover test copies.",
-     "evidence": "Strong",
-     "pages": [
-      "/ → canonical none",
-      "/index.html → canonical none",
-      "/Website-Portfolio/ → canonical none"
-     ]
-    },
-    {
-     "severity": "low",
-     "title": "The homepage's main address isn't in the sitemap",
-     "detail": "The sitemap doesn't list /. Google will still find the homepage, but the sitemap should list the address you want shown.",
-     "action": "List the homepage as / in the sitemap (and not /index).",
-     "evidence": "Strong",
-     "pages": []
-    },
-    {
      "severity": "low",
      "title": "1 key page has no main heading",
      "detail": "A clear main heading helps visitors and is one of the sources Google uses for the title it shows.",
      "action": "Give each page one prominent heading that says what the page is about.",
      "evidence": "Medium",
-     "pages": [
-      "/"
-     ]
-    },
-    {
-     "severity": "low",
-     "title": "1 key page doesn't state its preferred address",
-     "detail": "Optional: Google picks one itself. A canonical tag removes the guesswork, for example when tracking links add extra versions of the address.",
-     "action": "Add a self-referencing canonical tag when convenient (usually one template change).",
-     "evidence": "Strong",
      "pages": [
       "/"
      ]
@@ -169,13 +128,119 @@
      "action": "No action. Firewall or Cloudflare bot settings can still block bots, which robots.txt can't show; check those once.",
      "evidence": "Strong",
      "pages": []
+    },
+    {
+     "severity": "ok",
+     "title": "Every sitemap page we checked loads (6 pages)",
+     "detail": "Checked all regular pages.",
+     "action": "No action.",
+     "evidence": "Strong",
+     "pages": []
     }
-   ]
+   ],
+   "before": {
+    "scannedAt": "2026-10-26T09:06:11.618Z",
+    "robotsFound": false,
+    "sitemap": {
+     "found": true,
+     "urls": 4
+    },
+    "insights": [
+     {
+      "severity": "high",
+      "title": "3 sitemap pages don't load",
+      "detail": "The sitemap tells Google these pages exist, but they return an error.",
+      "action": "Fix these pages, or remove them from the sitemap if they're gone for good.",
+      "evidence": "Strong",
+      "pages": [
+       "/Website-Portfolio/about (404)",
+       "/Website-Portfolio/projects (404)",
+       "/Website-Portfolio/contact (404)"
+      ]
+     },
+     {
+      "severity": "med",
+      "title": "The homepage is live at 3 addresses",
+      "detail": "/ and /index.html and /Website-Portfolio/ show the same content. This isn't a penalty: Google picks one version to show. But it has to guess, and links and Search Console data can be split between the addresses.",
+      "action": "301-redirect the copies to / (best), or point their canonical tag at it. Delete leftover test copies.",
+      "evidence": "Strong",
+      "pages": [
+       "/ → canonical none",
+       "/index.html → canonical none",
+       "/Website-Portfolio/ → canonical none"
+      ]
+     },
+     {
+      "severity": "low",
+      "title": "The homepage's main address isn't in the sitemap",
+      "detail": "The sitemap doesn't list /. Google will still find the homepage, but the sitemap should list the address you want shown.",
+      "action": "List the homepage as / in the sitemap (and not /index).",
+      "evidence": "Strong",
+      "pages": []
+     },
+     {
+      "severity": "low",
+      "title": "1 key page has no main heading",
+      "detail": "A clear main heading helps visitors and is one of the sources Google uses for the title it shows.",
+      "action": "Give each page one prominent heading that says what the page is about.",
+      "evidence": "Medium",
+      "pages": [
+       "/"
+      ]
+     },
+     {
+      "severity": "low",
+      "title": "1 key page doesn't state its preferred address",
+      "detail": "Optional: Google picks one itself. A canonical tag removes the guesswork, for example when tracking links add extra versions of the address.",
+      "action": "Add a self-referencing canonical tag when convenient (usually one template change).",
+      "evidence": "Strong",
+      "pages": [
+       "/"
+      ]
+     },
+     {
+      "severity": "low",
+      "title": "Google can't read business details (Organization or LocalBusiness) on the homepage",
+      "detail": "This markup gives Google the business name, logo and contact details in a standard format. It helps how the business is shown, not where it ranks.",
+      "action": "Add Organization (or LocalBusiness) markup with name, logo, phone, address and social profiles.",
+      "evidence": "Hygiene",
+      "pages": []
+     },
+     {
+      "severity": "low",
+      "title": "1 key page has very little text",
+      "detail": "Google has no word-count target and short pages can be fine. But a page with little text may not answer what an owner or renter came to find out.",
+      "action": "Check each page answers the main questions (fees, areas served, how it works). Don't pad it.",
+      "evidence": "Weak",
+      "pages": [
+       "/ (0 words, including some menu text)"
+      ]
+     },
+     {
+      "severity": "low",
+      "title": "Google update in the last 45 days: September 2026 spam update",
+      "detail": "Ranking swings around an update are normal and often settle after it ends. Search Console drops that overlap an update are marked as such and kept at low priority.",
+      "action": "Compare traffic from before the update with 2 weeks after it ends before acting.",
+      "evidence": "Strong",
+      "pages": []
+     },
+     {
+      "severity": "ok",
+      "title": "All search and AI-answer crawlers can read the site",
+      "detail": "robots.txt allows Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot, PerplexityBot and Applebot.",
+      "action": "No action. Firewall or Cloudflare bot settings can still block bots, which robots.txt can't show; check those once.",
+      "evidence": "Strong",
+      "pages": []
+     }
+    ],
+    "fixUrl": "https://github.com/CeeZ-11/Website-Portfolio/commit/2db7311"
+   }
   },
   {
    "site": "https://wed-snap-nine.vercel.app",
    "scannedAt": "2026-10-26T09:06:15.617Z",
    "pagesScanned": 1,
+   "robotsFound": false,
    "sitemap": {
     "found": false,
     "urls": 0
@@ -345,6 +410,7 @@
    "site": "https://wedding-rsvp-bay-iota.vercel.app",
    "scannedAt": "2026-10-26T09:06:19.455Z",
    "pagesScanned": 1,
+   "robotsFound": false,
    "sitemap": {
     "found": false,
     "urls": 0
