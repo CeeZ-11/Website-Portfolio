@@ -82,6 +82,19 @@
   gap: 15px;
 }
 
+.training-group h5 {
+  margin: 0 0 6px;
+  color: #ff7300;
+}
+
+.training-group ul {
+  margin: 0;
+}
+
+.training-date {
+  color: rgba(245, 245, 245, 0.6);
+}
+
 .info-title {
   text-align: start;
   width: 100%;

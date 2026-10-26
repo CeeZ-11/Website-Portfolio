@@ -64,6 +64,53 @@ export default function Resume() {
     },
   ];
 
+  // Internal PMW team trainings, grouped like the team training page. Titles only.
+  const teamTrainings = [
+    {
+      group: "SEO",
+      items: [
+        { title: "AI Content Strategy: Writing Content That Wins SEO & AI Search", date: "Jul 29, 2026" },
+        { title: "AI SEO Strategy 2026: Video Transcripts, Content Repurposing & Algorithm Shifts", date: "2026" },
+        { title: "AI SEO for Property Management Websites: Ranking & Owner Leads" },
+        { title: "AI SEO: Future-Proof Strategies, Workflows & Property Management Growth" },
+        { title: "How AI Is Changing SEO" },
+        { title: "Site Speed Optimization, Core Web Vitals & Website Performance" },
+      ],
+    },
+    {
+      group: "AI",
+      items: [
+        { title: "Claude AI Tools Explained", date: "Jun 3, 2026" },
+        { title: "Design & AI Integrations: Claude, ChatGPT, Figma & Future Workflows", date: "2026" },
+        { title: "Text.com AI Chatbot Walkthrough & Golden Website Templates" },
+      ],
+    },
+    {
+      group: "PMW Products",
+      items: [{ title: "PMW Product Lineup: AMP, SEO Widgets, Reputation Management, Live Chat & More", date: "2026" }],
+    },
+    {
+      group: "Property Management",
+      items: [
+        { title: "Client Journey: Onboarding to Retention, Tools & Automations", date: "Aug 26, 2026" },
+        { title: "What Is Property Management?", date: "Jun 1, 2026" },
+        { title: "AI & Property Management: Reviews, Trust Signals & SEO Strategy" },
+      ],
+    },
+    {
+      group: "DNS",
+      items: [{ title: "DNS Explained: Domain Records, Email Authentication & Website Setup", date: "Jul 15, 2026" }],
+    },
+    {
+      group: "PPC",
+      items: [{ title: "PPC 101: Google Ads, Lead Generation & Paid Search Strategy", date: "Aug 12, 2026" }],
+    },
+    {
+      group: "Compliance",
+      items: [{ title: "Leveling Up Compliance at PMW & Rentvine: Accessibility, SEO & AI" }],
+    },
+  ];
+
   const navButtons = [
     { id: "languages", name: "Languages" },
     { id: "certifications", name: "Certifications" },
@@ -145,7 +192,21 @@ export default function Resume() {
             )}
             {activeTab === "trainings" && (
               <>
-                <h4> Trainings & Seminars </h4>
+                <h4> PMW Team Trainings </h4>
+                {teamTrainings.map(({ group, items }) => (
+                  <div key={group} className="training-group">
+                    <h5>{group}</h5>
+                    <ul>
+                      {items.map((t) => (
+                        <li key={t.title}>
+                          {t.title}
+                          {t.date && <span className="training-date"> ({t.date})</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+                <h4> Other Trainings & Seminars </h4>
                 <ul>
                   <li>JobStreet.com – Jumpstart Session (2016)</li>
                   <li>Google I/O Seminar (2016)</li>
