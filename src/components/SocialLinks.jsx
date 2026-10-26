@@ -7,8 +7,10 @@ export default function SocialLinks({ links }) {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={link.name}
+          title={link.name}
         >
-          <img src={link.icon} alt={link.name} loading="lazy" />
+          <img src={link.icon} alt="" loading="lazy" />
         </a>
       ))}
     </div>

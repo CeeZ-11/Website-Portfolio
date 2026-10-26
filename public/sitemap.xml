@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- The app uses hash routes (#/about), which search engines treat as one page,
+     so only real addresses are listed: the homepage and the demo pages. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ceez-11.github.io/Website-Portfolio/</loc>
+    <loc>https://website-portfolio-nine-beige.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ceez-11.github.io/Website-Portfolio/about</loc>
-    <priority>0.8</priority>
+    <loc>https://website-portfolio-nine-beige.vercel.app/demos/speed-engine/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ceez-11.github.io/Website-Portfolio/projects</loc>
-    <priority>0.8</priority>
+    <loc>https://website-portfolio-nine-beige.vercel.app/demos/visibility/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ceez-11.github.io/Website-Portfolio/contact</loc>
-    <priority>0.6</priority>
+    <loc>https://website-portfolio-nine-beige.vercel.app/demos/analytics-health/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://website-portfolio-nine-beige.vercel.app/demos/site-qa/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://website-portfolio-nine-beige.vercel.app/demos/command-center/index.html</loc>
+    <priority>0.7</priority>
   </url>
 </urlset>

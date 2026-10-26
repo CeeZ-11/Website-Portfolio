@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://website-portfolio-nine-beige.vercel.app/sitemap.xml

@@ -49,7 +49,9 @@ export default function MainLayout() {
       <aside>
         <ProfileCard
           imageSrc={profileImgSmall}
-          imageSrcSet={`${profileImgSmall} 200w, ${profileImgLarge} 300w`}
+          imageSrcSet={`${profileImgSmall} 200w, ${profileImgLarge} 400w`}
+          // Matches the CSS width clamp(100px, 15vw, 200px) in MainLayout.css.
+          imageSizes="(max-width: 666px) 100px, (max-width: 1333px) 15vw, 200px"
           name="Seamor Estrabon"
           title="Front-End Developer"
         />
