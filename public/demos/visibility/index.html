@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visibility Scanner Demo</title>
+    <meta name="description" content="Real output from the Visibility scanner, an SEO and AI-search checker by Seamor Estrabon, run on his own websites." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="../demo.css" />
+    <style>
+      .toggle { flex-wrap: wrap; border-radius: 12px; }
+      .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+      .stat .value { font-size: 26px; font-weight: 600; }
+      .stat .name { color: var(--muted); font-size: 12px; }
+      .crawlers { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+      .crawler { background: var(--panel-2); border-radius: 8px; padding: 8px 12px; font-size: 13px; display: flex; justify-content: space-between; gap: 8px; }
+      .crawler small { color: var(--muted); display: block; font-size: 11px; }
+      .crawler .ok { color: var(--good); }
+      .crawler .no { color: var(--poor); }
+      .tag.high { background: rgba(255, 90, 90, 0.15); color: var(--poor); }
+      .tag.med { background: rgba(252, 195, 97, 0.15); color: var(--warn); }
+      .tag.ok { background: rgba(60, 207, 122, 0.15); color: var(--good); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="back" href="/#/portfolio">← Back to portfolio</a>
+        <h1>Visibility scanner: demo report</h1>
+        <p class="meta">An SEO and AI-search checker I built at work. Below is its real output.</p>
+      </header>
+
+      <div class="note">
+        <strong>How this demo works:</strong> the scanner checks whether Google and AI answer tools
+        (ChatGPT, Claude, Perplexity and others) can find and read a website, using free public
+        checks only. Here it ran on three of my own sites. It was written for property-management
+        websites, so some advice mentions owners and renters. No client data is used.
+      </div>
+
+      <div class="bar">
+        <div class="meta" id="site-meta"></div>
+        <div class="toggle" role="group" aria-label="Website" id="site-tabs"></div>
+      </div>
+
+      <section class="card">
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <h2>Top actions</h2>
+      <div class="top3" id="top3"></div>
+
+      <h2>Can search and AI tools read the site?</h2>
+      <div class="card"><div class="crawlers" id="crawlers"></div></div>
+
+      <h2>All findings <span class="meta" id="count"></span></h2>
+      <div id="findings"></div>
+
+      <footer>
+        Built with TypeScript, Node.js and Cheerio; runs weekly in GitHub Actions.
+        Source code is private (company project). · <a href="/#/portfolio">Seamor Estrabon</a>
+      </footer>
+    </div>
+
+    <script>
+      const SEVERITY = { high: 'Urgent', med: 'Worth doing', low: 'Nice to have', ok: 'Passed' };
+      const ORDER = { high: 0, med: 1, low: 2, ok: 3 };
+      const PURPOSE = { search: 'Search / AI answers', 'user-fetch': 'Opens pages for a user', training: 'AI training' };
+
+      const esc = (s) =>
+        String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+      const host = (url) => new URL(url).host;
+      const LABELS = {
+        'website-portfolio-nine-beige.vercel.app': 'Portfolio',
+        'wed-snap-nine.vercel.app': 'WedSnap',
+        'wedding-rsvp-bay-iota.vercel.app': 'Wedding RSVP',
+      };
+
+      function render(site) {
+        const when = new Date(site.scannedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+        document.getElementById('site-meta').innerHTML = `Scanned <a href="${esc(site.site)}/" target="_blank" rel="noopener">${esc(host(site.site))}</a> on ${esc(when)}`;
+        document.querySelectorAll('#site-tabs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.site === site.site)));
+
+        const insights = [...site.insights].sort((a, b) => ORDER[a.severity] - ORDER[b.severity]);
+        const open = insights.filter((i) => i.severity !== 'ok');
+        const searchBots = site.crawlers.filter((c) => c.purpose === 'search');
+        const stats = [
+          [open.filter((i) => i.severity === 'high').length, 'Urgent fixes'],
+          [open.length, 'Open problems'],
+          [`${searchBots.filter((c) => c.allowed).length}/${searchBots.length}`, 'Search & AI bots allowed'],
+          [site.sitemap.found ? `${site.sitemap.urls} pages` : 'None', 'Sitemap'],
+          [site.llmsTxt ? 'Yes' : 'No', 'llms.txt'],
+        ];
+        document.getElementById('stats').innerHTML = stats
+          .map(([v, n]) => `<div class="stat"><div class="value">${esc(v)}</div><div class="name">${esc(n)}</div></div>`)
+          .join('');
+
+        document.getElementById('top3').innerHTML = open.slice(0, 3).map((i) => `<div class="card">
+            <span class="tag ${esc(i.severity)}">${esc(SEVERITY[i.severity])}</span>
+            <p><strong>${esc(i.title)}</strong></p>
+            <p class="meta">→ ${esc(i.action)}</p>
+          </div>`).join('');
+
+        document.getElementById('crawlers').innerHTML = site.crawlers.map((c) => `<div class="crawler">
+            <div>${esc(c.agent)}<small>${esc(c.company)} · ${esc(PURPOSE[c.purpose] ?? c.purpose)}</small></div>
+            <div class="${c.allowed ? 'ok' : 'no'}">${c.allowed ? 'Allowed' : 'Blocked'}</div>
+          </div>`).join('');
+
+        document.getElementById('count').textContent = `(${insights.length})`;
+        document.getElementById('findings').innerHTML = insights.map((i) => `<details class="finding">
+            <summary><span class="tag ${esc(i.severity)}">${esc(SEVERITY[i.severity])}</span>${esc(i.title)}</summary>
+            <div class="body">
+              <h4>Why it matters</h4><p>${esc(i.detail)}</p>
+              <h4>What to do</h4><p>${esc(i.action)}</p>
+              ${i.pages.length ? `<h4>Pages</h4><ul>${i.pages.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
+              <p class="kind">Evidence: ${esc(i.evidence)}</p>
+            </div>
+          </details>`).join('');
+      }
+
+      fetch('data.json')
+        .then((r) => r.json())
+        .then(({ sites }) => {
+          document.getElementById('site-tabs').innerHTML = sites
+            .map((s) => `<button type="button" data-site="${esc(s.site)}">${esc(LABELS[host(s.site)] ?? host(s.site))}</button>`)
+            .join('');
+          document.querySelectorAll('#site-tabs button').forEach((b) =>
+            b.addEventListener('click', () => render(sites.find((s) => s.site === b.dataset.site))),
+          );
+          render(sites[0]);
+        })
+        .catch(() => {
+          document.getElementById('findings').textContent = 'Could not load the demo data.';
+        });
+    </script>
+  </body>
+</html>

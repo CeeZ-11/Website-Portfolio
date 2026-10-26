@@ -1,0 +1,548 @@
+{
+ "site": {
+  "url": "https://ceez-11.github.io/slow-demo-site/",
+  "auditedAt": "2026-10-26T08:12:51.975Z",
+  "averageScore": 41
+ },
+ "devices": [
+  {
+   "device": "mobile",
+   "score": 33,
+   "vitals": {
+    "lcp": {
+     "valueMs": 51160.067999999985,
+     "rating": "poor"
+    },
+    "inp": {
+     "rating": "unknown"
+    },
+    "cls": {
+     "value": 0.29972312755269,
+     "rating": "poor"
+    },
+    "fcp": {
+     "valueMs": 3463.15,
+     "rating": "poor"
+    },
+    "ttfb": {
+     "valueMs": 61,
+     "rating": "good"
+    },
+    "tbt": {
+     "valueMs": 434.99999999999955,
+     "rating": "needs-improvement"
+    },
+    "speedIndex": {
+     "valueMs": 12081.32675965834
+    }
+   }
+  },
+  {
+   "device": "desktop",
+   "score": 48,
+   "vitals": {
+    "lcp": {
+     "valueMs": 7052.071500000003,
+     "rating": "poor"
+    },
+    "inp": {
+     "rating": "unknown"
+    },
+    "cls": {
+     "value": 0.5736419122668768,
+     "rating": "poor"
+    },
+    "fcp": {
+     "valueMs": 1081.9146907043457,
+     "rating": "good"
+    },
+    "ttfb": {
+     "valueMs": 294,
+     "rating": "good"
+    },
+    "tbt": {
+     "valueMs": 70.99818801879906,
+     "rating": "good"
+    },
+    "speedIndex": {
+     "valueMs": 1944.375017845602
+    }
+   }
+  }
+ ],
+ "findings": [
+  {
+   "priority": "P0",
+   "metric": "LCP",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "The LCP image itself takes a long time to download (3784KB transferred), accounting for 97% of LCP.",
+   "evidence": [
+    {
+     "statement": "LCP is 51.16s, rated \"poor\" (good is <= 2.5s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "LCP element is an image (img.hero-img).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Phase breakdown — TTFB: 203ms, resource load delay: 1681ms, resource load duration: 56062ms, render delay: 14ms.",
+     "kind": "calculated"
+    },
+    {
+     "statement": "LCP image transfer size: 3784KB.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "image (img.hero-img)",
+    "url": "https://ceez-11.github.io/slow-demo-site/img/hero.png"
+   },
+   "recommendation": "Compress the LCP image and/or serve a modern format (WebP/AVIF). Ensure the served image is not larger than its largest rendered size (responsive `srcset`/`sizes`).",
+   "implementationGuidance": "Current format is image/png — converting to WebP or AVIF typically cuts file size 25-50% at equivalent visual quality.",
+   "relatedResources": [
+    "https://web.dev/articles/optimize-lcp"
+   ]
+  },
+  {
+   "priority": "P0",
+   "metric": "Network",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "5 image(s) on this page exceed 300KB transferred, the largest being 3784KB.",
+   "evidence": [
+    {
+     "statement": "https://ceez-11.github.io/slow-demo-site/img/hero.png — 3784KB transferred.",
+     "kind": "observed"
+    },
+    {
+     "statement": "https://ceez-11.github.io/slow-demo-site/img/listing-1.png — 2105KB transferred.",
+     "kind": "observed"
+    },
+    {
+     "statement": "https://ceez-11.github.io/slow-demo-site/img/map.png — 2074KB transferred.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "3784KB image",
+    "url": "https://ceez-11.github.io/slow-demo-site/img/hero.png"
+   },
+   "recommendation": "Compress these images and serve modern formats (WebP/AVIF). Ensure the served resolution matches the largest rendered size — don't ship a 4000px-wide image for a 400px display slot.",
+   "relatedResources": [
+    "https://web.dev/articles/choose-the-right-image-format"
+   ]
+  },
+  {
+   "priority": "P0",
+   "metric": "Accessibility",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "Image(s) missing alt text",
+   "evidence": [
+    {
+     "statement": "Lighthouse audit \"Image elements do not have `[alt]` attributes\" failed for 1 element(s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "section#listings > div.cards > article.card > img — <img src=\"img/listing-2.png\">",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "section#listings > div.cards > article.card > img"
+   },
+   "recommendation": "Add a descriptive `alt` attribute to every `<img>` that conveys content (use `alt=\"\"` only for purely decorative images) — screen reader users otherwise get no information about what the image shows.",
+   "relatedResources": []
+  },
+  {
+   "priority": "P0",
+   "metric": "Accessibility",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "Text with insufficient color contrast",
+   "evidence": [
+    {
+     "statement": "Lighthouse audit \"Background and foreground colors do not have a sufficient contrast ratio.\" failed for 1 element(s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "body > main > section#owners > p.low-contrast — <p class=\"low-contrast\">",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "body > main > section#owners > p.low-contrast"
+   },
+   "recommendation": "Increase the contrast ratio between text and its background to at least 4.5:1 (3:1 for large text) so low-vision users can read it.",
+   "relatedResources": []
+  },
+  {
+   "priority": "P0",
+   "metric": "SEO",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "Page is missing a meta description",
+   "evidence": [
+    {
+     "statement": "Lighthouse audit \"Document does not have a meta description\" failed.",
+     "kind": "observed"
+    }
+   ],
+   "recommendation": "Add a `<meta name=\"description\">` tag with a concise, unique summary of the page — search engines often use it as the snippet shown in results.",
+   "relatedResources": []
+  },
+  {
+   "priority": "P0",
+   "metric": "SEO",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "Page is blocked from indexing",
+   "evidence": [
+    {
+     "statement": "Lighthouse audit \"Page is blocked from indexing\" failed.",
+     "kind": "observed"
+    }
+   ],
+   "recommendation": "Remove any `noindex` directive (meta robots tag or `X-Robots-Tag` header) and check `robots.txt` — search engines cannot index a page that blocks them, no matter how well it otherwise performs.",
+   "relatedResources": []
+  },
+  {
+   "priority": "P0",
+   "metric": "LCP",
+   "severity": "high",
+   "confidence": "high",
+   "rootCause": "The LCP element is discovered late because it is lazy-loaded, delaying the browser from starting the fetch until layout determines it is near the viewport.",
+   "evidence": [
+    {
+     "statement": "LCP is 7.05s, rated \"poor\" (good is <= 2.5s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "LCP element is an image (img.hero-img).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Phase breakdown — TTFB: 211ms, resource load delay: 977ms, resource load duration: 686ms, render delay: 43ms.",
+     "kind": "calculated"
+    },
+    {
+     "statement": "The LCP image has loading=\"lazy\".",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "image (img.hero-img)",
+    "url": "https://ceez-11.github.io/slow-demo-site/img/hero.png"
+   },
+   "recommendation": "Remove lazy loading from the LCP image — it is, by definition, visible immediately and should load eagerly.",
+   "implementationGuidance": "Remove the loading=\"lazy\" attribute (or lazy-load directive from an image component/CMS field) on the LCP element specifically. Keep lazy loading on below-the-fold images.",
+   "codeExample": {
+    "language": "html",
+    "before": "<img loading=\"lazy\" src=\"https://ceez-11.github.io/slow-demo-site/img/hero.png\">",
+    "after": "<img src=\"https://ceez-11.github.io/slow-demo-site/img/hero.png\" width=\"2000\" height=\"1200\" fetchpriority=\"high\">"
+   },
+   "relatedResources": [
+    "https://web.dev/articles/lcp-lazy-loading"
+   ]
+  },
+  {
+   "priority": "P1",
+   "metric": "LCP",
+   "severity": "high",
+   "confidence": "medium",
+   "rootCause": "The LCP element is lazy-loaded, which likely further delays its discovery — however, phase-breakdown evidence points more strongly at another factor as the primary cause, so this is an additional contributing factor rather than the primary one.",
+   "evidence": [
+    {
+     "statement": "LCP is 51.16s, rated \"poor\" (good is <= 2.5s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "LCP element is an image (img.hero-img).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Phase breakdown — TTFB: 203ms, resource load delay: 1681ms, resource load duration: 56062ms, render delay: 14ms.",
+     "kind": "calculated"
+    },
+    {
+     "statement": "The LCP image has loading=\"lazy\".",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "image (img.hero-img)",
+    "url": "https://ceez-11.github.io/slow-demo-site/img/hero.png"
+   },
+   "recommendation": "Remove lazy loading from the LCP image — it is, by definition, visible immediately and should load eagerly.",
+   "implementationGuidance": "Remove the loading=\"lazy\" attribute (or lazy-load directive from an image component/CMS field) on the LCP element specifically. Keep lazy loading on below-the-fold images.",
+   "codeExample": {
+    "language": "html",
+    "before": "<img loading=\"lazy\" src=\"https://ceez-11.github.io/slow-demo-site/img/hero.png\">",
+    "after": "<img src=\"https://ceez-11.github.io/slow-demo-site/img/hero.png\" width=\"2000\" height=\"1200\" fetchpriority=\"high\">"
+   },
+   "relatedResources": [
+    "https://web.dev/articles/lcp-lazy-loading"
+   ]
+  },
+  {
+   "priority": "P1",
+   "metric": "CLS",
+   "severity": "high",
+   "confidence": "medium",
+   "rootCause": "The largest layout shift happens at 3395ms, well after initial load — a signature of dynamically-injected content (e.g. an ad, cookie/consent banner, or a late-loading widget) pushing existing content down.",
+   "evidence": [
+    {
+     "statement": "CLS is 0.300, rated \"poor\" (good is <= 0.1).",
+     "kind": "observed"
+    },
+    {
+     "statement": "1 shift(s) totaling 0.0814 (89% of total non-input shift value), largest at 3395ms, involving: main, header.site-header.",
+     "kind": "observed"
+    },
+    {
+     "statement": "A layout shift occurred during or shortly after font resource loading; this timing overlaps, but does not confirm the font caused the shift.",
+     "kind": "calculated"
+    }
+   ],
+   "culprit": {
+    "description": "main"
+   },
+   "recommendation": "Reserve space (a fixed-height container, or a CSS min-height) for any element that gets injected after initial render — ads, banners, and embeds are the most common causes of late shifts.",
+   "relatedResources": [
+    "https://web.dev/articles/optimize-cls"
+   ]
+  },
+  {
+   "priority": "P1",
+   "metric": "FCP",
+   "severity": "high",
+   "confidence": "medium",
+   "rootCause": "jquery-1.12.4.min.js is also a significant render-blocking contributor, delaying first paint by an estimated 1183ms (56% of total render-blocking time).",
+   "evidence": [
+    {
+     "statement": "FCP is 3.46s, rated \"poor\" (good is <= 1.8s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "TTFB is 61ms, 2% of FCP.",
+     "kind": "calculated"
+    },
+    {
+     "statement": "Render-blocking resources: jquery-1.12.4.min.js (1183ms), fonts.googleapis.com/css2 (919ms), analytics.js (0ms).",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "jquery-1.12.4.min.js",
+    "url": "https://code.jquery.com/jquery-1.12.4.min.js"
+   },
+   "recommendation": "Eliminate render-blocking resources: inline critical CSS, defer non-critical CSS/JS, and use `async`/`defer` on scripts that don't need to run before first paint.",
+   "relatedResources": [
+    "https://web.dev/articles/render-blocking-resources"
+   ]
+  },
+  {
+   "priority": "P1",
+   "metric": "FCP",
+   "severity": "high",
+   "confidence": "medium",
+   "rootCause": "fonts.googleapis.com/css2 is also a significant render-blocking contributor, delaying first paint by an estimated 919ms (44% of total render-blocking time).",
+   "evidence": [
+    {
+     "statement": "FCP is 3.46s, rated \"poor\" (good is <= 1.8s).",
+     "kind": "observed"
+    },
+    {
+     "statement": "TTFB is 61ms, 2% of FCP.",
+     "kind": "calculated"
+    },
+    {
+     "statement": "Render-blocking resources: jquery-1.12.4.min.js (1183ms), fonts.googleapis.com/css2 (919ms), analytics.js (0ms).",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "fonts.googleapis.com/css2",
+    "url": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700"
+   },
+   "recommendation": "Eliminate render-blocking resources: inline critical CSS, defer non-critical CSS/JS, and use `async`/`defer` on scripts that don't need to run before first paint.",
+   "relatedResources": [
+    "https://web.dev/articles/render-blocking-resources"
+   ]
+  },
+  {
+   "priority": "P1",
+   "metric": "CLS",
+   "severity": "high",
+   "confidence": "low",
+   "rootCause": "CLS is 0.574, rated \"poor\" (good is <= 0.1). The largest contributing shift involves section#listings.listings, but the evidence collected isn't specific enough to confidently name a root cause beyond that.",
+   "evidence": [
+    {
+     "statement": "CLS is 0.574, rated \"poor\" (good is <= 0.1).",
+     "kind": "observed"
+    },
+    {
+     "statement": "2 shift(s) totaling 0.5718 (92% of total non-input shift value), largest at 1486ms, involving: section#listings.listings, section#owners.owners, p, div.hero-text.",
+     "kind": "observed"
+    },
+    {
+     "statement": "A layout shift occurred during or shortly after font resource loading; this timing overlaps, but does not confirm the font caused the shift.",
+     "kind": "calculated"
+    }
+   ],
+   "culprit": {
+    "description": "section#listings.listings"
+   },
+   "recommendation": "Inspect the identified element(s) in Chrome DevTools Performance panel around the reported timestamp to determine what triggered the shift.",
+   "relatedResources": []
+  },
+  {
+   "priority": "P2",
+   "metric": "TBT",
+   "severity": "medium",
+   "confidence": "high",
+   "rootCause": "Main-thread execution time is dominated by analytics.js, which alone accounts for 1801ms (57% of total script execution time).",
+   "evidence": [
+    {
+     "statement": "TBT is 435ms, rated \"needs-improvement\" (good is <= 200ms).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Top scripts by main-thread execution time: analytics.js (1801ms), carousel.js (961ms), Unattributable (252ms), ceez-11.github.io/slow-demo-site (119ms).",
+     "kind": "observed"
+    },
+    {
+     "statement": "2 long task(s) observed directly during a live navigation, totaling 695ms.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "analytics.js",
+    "url": "https://ceez-11.github.io/slow-demo-site/js/analytics.js"
+   },
+   "recommendation": "Investigate analytics.js: defer non-critical initialization until after first paint, split large bundles so only what's needed for initial render loads eagerly, and check for unnecessary work running during page load.",
+   "relatedResources": [
+    "https://web.dev/articles/tbt"
+   ]
+  },
+  {
+   "priority": "P2",
+   "metric": "TBT",
+   "severity": "medium",
+   "confidence": "medium",
+   "rootCause": "carousel.js is also a significant contributor to main-thread blocking time, accounting for 961ms (31% of total script execution time).",
+   "evidence": [
+    {
+     "statement": "TBT is 435ms, rated \"needs-improvement\" (good is <= 200ms).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Top scripts by main-thread execution time: analytics.js (1801ms), carousel.js (961ms), Unattributable (252ms), ceez-11.github.io/slow-demo-site (119ms).",
+     "kind": "observed"
+    },
+    {
+     "statement": "2 long task(s) observed directly during a live navigation, totaling 695ms.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "carousel.js",
+    "url": "https://ceez-11.github.io/slow-demo-site/js/carousel.js"
+   },
+   "recommendation": "Investigate carousel.js: defer non-critical initialization until after first paint, split large bundles so only what's needed for initial render loads eagerly, and check for unnecessary work running during page load.",
+   "relatedResources": [
+    "https://web.dev/articles/tbt"
+   ]
+  },
+  {
+   "priority": "P2",
+   "metric": "Best Practices",
+   "severity": "medium",
+   "confidence": "high",
+   "rootCause": "Browser console logged errors while loading the page",
+   "evidence": [
+    {
+     "statement": "Lighthouse audit \"Browser errors were logged to the console\" failed.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "an error logged to the browser console"
+   },
+   "recommendation": "Open the browser console on this page and fix each logged error — a JavaScript error at load time commonly means a feature silently failed to initialize (a broken third-party script, a race condition, a missing dependency), not just log noise.",
+   "relatedResources": []
+  },
+  {
+   "priority": "P2",
+   "metric": "INP",
+   "severity": "medium",
+   "confidence": "medium",
+   "rootCause": "Tapping the menu button (\"Menu\") took 376 ms to respond in the lab test — Google's 'good' limit for INP is 200 ms.",
+   "evidence": [
+    {
+     "statement": "Lab test — measured by simulating a tap on a mid-range phone (4× slower CPU).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Menu button \"Menu\" (button.menu-toggle): 376 ms total — 18 ms waiting to start (input delay), 357 ms running the page's code (processing), 1 ms drawing the result (presentation).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Script app.js (ceez-11.github.io) ran for 351 ms during this interaction (started by BUTTON.onclick).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Other slow interactions in the same test: Accordion \"How do I apply?\" 320 ms; Accordion \"When is rent due?\" 320 ms; Button \"Do you allow pets?\" 320 ms.",
+     "kind": "observed"
+    },
+    {
+     "statement": "4 interaction(s) tested in total. Real users' INP (Google field data) can differ from this lab result.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "Menu button \"Menu\" — slowest script: app.js (ceez-11.github.io)",
+    "url": "https://ceez-11.github.io/slow-demo-site/js/app.js"
+   },
+   "recommendation": "Most of the wait (357 ms) was the page's own code reacting to the tap — the click handler itself is slow. Do only the visible change first (open the menu, show the panel) and move the rest to later, break big pieces of work into smaller chunks, and yield back to the browser between them (for example with scheduler.yield() or setTimeout). The script doing the most work during this interaction was app.js (ceez-11.github.io).",
+   "relatedResources": []
+  },
+  {
+   "priority": "P2",
+   "metric": "INP",
+   "severity": "medium",
+   "confidence": "medium",
+   "rootCause": "Clicking the menu button (\"Menu\") took 360 ms to respond in the lab test — Google's 'good' limit for INP is 200 ms.",
+   "evidence": [
+    {
+     "statement": "Lab test — measured by simulating a click on a desktop computer.",
+     "kind": "observed"
+    },
+    {
+     "statement": "Menu button \"Menu\" (button.menu-toggle): 360 ms total — 1 ms waiting to start (input delay), 351 ms running the page's code (processing), 8 ms drawing the result (presentation).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Script app.js (ceez-11.github.io) ran for 350 ms during this interaction (started by BUTTON.onclick).",
+     "kind": "observed"
+    },
+    {
+     "statement": "Other slow interactions in the same test: Accordion \"How do I apply?\" 304 ms; Accordion \"When is rent due?\" 304 ms; Button \"Do you allow pets?\" 304 ms.",
+     "kind": "observed"
+    },
+    {
+     "statement": "4 interaction(s) tested in total. Real users' INP (Google field data) can differ from this lab result.",
+     "kind": "observed"
+    }
+   ],
+   "culprit": {
+    "description": "Menu button \"Menu\" — slowest script: app.js (ceez-11.github.io)",
+    "url": "https://ceez-11.github.io/slow-demo-site/js/app.js"
+   },
+   "recommendation": "Most of the wait (351 ms) was the page's own code reacting to the tap — the click handler itself is slow. Do only the visible change first (open the menu, show the panel) and move the rest to later, break big pieces of work into smaller chunks, and yield back to the browser between them (for example with scheduler.yield() or setTimeout). The script doing the most work during this interaction was app.js (ceez-11.github.io).",
+   "relatedResources": []
+  }
+ ]
+}

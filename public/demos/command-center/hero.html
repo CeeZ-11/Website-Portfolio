@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero v2 prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121320;--surface:#1a1c2c;--sunk:#22253a;--line:#2d3150;--text:#e9eaf4;--muted:#959abb;--faint:#666b8c;--accent:#e8b95c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--text);font:14px/1.5 "Hanken Grotesk",system-ui,sans-serif;overflow:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3,p{margin:0}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 420px;height:100vh}
+.stageWrap{position:relative;min-width:0}
+#stage{position:absolute;inset:0}
+#stage canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+.hud{position:absolute;left:24px;top:20px;pointer-events:none}
+.hud .name{font-family:Marcellus,serif;font-size:34px;line-height:1}
+.hud .title{color:var(--accent);font-weight:600;margin-top:6px;font-size:15px}
+.hud .armor{color:var(--muted);font-size:13px}
+.hint{position:absolute;left:24px;bottom:18px;color:var(--faint);font-size:12.5px}
+.levelup{position:absolute;left:50%;top:18%;transform:translateX(-50%);font-family:Marcellus,serif;font-size:44px;color:#fff3d6;text-shadow:0 0 24px #e8b95c;opacity:0;pointer-events:none;transition:opacity .4s}
+.levelup.show{opacity:1}
+aside{border-left:1px solid var(--line);background:linear-gradient(180deg,#171930,var(--bg) 60%);overflow:auto;padding:18px 18px 24px;scrollbar-width:thin}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.card h2{font-size:14px;font-weight:700;display:flex;align-items:baseline;gap:8px}
+.card h2 em{margin-left:auto;font-style:normal;font-weight:500;color:var(--faint);font-size:12.5px}
+.sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.presets button,.btn{border:1px solid var(--line);background:var(--sunk);border-radius:10px;min-height:36px;font-weight:600;font-size:12.5px}
+.presets button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#241a06;width:100%;margin-top:10px}
+.lvrow{display:flex;align-items:center;gap:12px;margin-top:10px}
+.lvrow input{flex:1;accent-color:var(--accent)}
+.lvrow b{font-size:22px;font-variant-numeric:tabular-nums;min-width:34px;text-align:right}
+.slot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;padding:10px 0;border-top:1px solid var(--line)}
+.slot:first-of-type{border-top:0}
+.slot b{font-size:13.5px;font-weight:600;display:block}
+.slot small{font-size:12px;color:var(--muted)}
+.slot .item{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:13px}
+.slot .item i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.tiers{display:flex;gap:4px}
+.tiers button{width:22px;height:22px;border-radius:6px;border:1px solid var(--line);background:var(--sunk);padding:0}
+.tiers button[aria-pressed="true"]{outline:2px solid var(--c);outline-offset:1px;background:var(--c)}
+.tiers button span{display:block;width:8px;height:8px;border-radius:2px;margin:auto;background:var(--c)}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12.5px}
+th,td{text-align:left;padding:6px 4px;border-top:1px solid var(--line)}
+th{color:var(--muted);font-weight:600}
+td i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.titles li{display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--line);font-size:13px}
+.titles li:first-child{border-top:0}
+.titles li.on{color:var(--accent);font-weight:700}
+ul{list-style:none;margin:8px 0 0;padding:0}
+@media (max-width:980px){.app{grid-template-columns:1fr;grid-template-rows:60vh auto;height:auto}body{overflow:auto}aside{border-left:0}}
+@media (prefers-reduced-motion:reduce){.levelup{transition:none}}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div class="app">
+  <div class="stageWrap">
+    <div id="stage" role="img" aria-label="3D character"></div>
+    <div class="hud" aria-live="polite">
+      <div class="name">Seamor</div>
+      <div class="title" id="hud-title"></div>
+      <div class="armor" id="hud-armor"></div>
+    </div>
+    <div class="levelup" id="levelup" aria-hidden="true"></div>
+    <p class="hint">Drag to turn the character. This is a prototype; your real numbers drive it in the app.</p>
+  </div>
+  <aside aria-label="Character controls">
+    <section class="card">
+      <h2>Try a loadout</h2>
+      <div class="presets" id="presets"></div>
+      <button type="button" class="btn primary" id="play">Play the level-up moment</button>
+    </section>
+    <section class="card">
+      <h2>Overall level <em>Sets armor and title</em></h2>
+      <div class="lvrow"><input type="range" id="level" min="1" max="30" value="7" aria-label="Overall level"><b id="lv-out">7</b></div>
+      <p class="sub" id="lv-note"></p>
+    </section>
+    <section class="card">
+      <h2>Gear <em>Each slot follows one skill</em></h2>
+      <div id="slots"></div>
+    </section>
+    <section class="card">
+      <h2>Rarity ladder</h2>
+      <p class="sub">Gear upgrades when its skill reaches these levels. Armor follows your overall level.</p>
+      <table><thead><tr><th>Rarity</th><th>Skill level</th><th>Armor at level</th></tr></thead><tbody id="ladder"></tbody></table>
+    </section>
+    <section class="card">
+      <h2>Titles</h2>
+      <ul class="titles" id="titles"></ul>
+    </section>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+/* ---------------- the game rules this prototype proposes ---------------- */
+const RARITY = [
+  { name:'Common',    color:'#a3abc2' },
+  { name:'Uncommon',  color:'#5fd068' },
+  { name:'Rare',      color:'#4f9dff' },
+  { name:'Epic',      color:'#b46bff' },
+  { name:'Legendary', color:'#ffb547' },
+  { name:'Mythic',    color:'#ff4f7a' }
+];
+const SKILL_GATES = [1, 3, 5, 8, 11, 15];   // skill level that unlocks each rarity
+const ARMOR_GATES = [1, 4, 8, 12, 18, 25];  // overall level that unlocks each armor
+const TITLES = [[1,'Novice'],[4,'Apprentice'],[7,'Pagewarden'],[10,'Site Knight'],[14,'Speed Paladin'],[18,'Search Sage'],[25,'Legend of the Web']];
+const SLOTS = [
+  { k:'weapon', skill:'Core Web Vitals',  items:['Practice Stick','Steel Shortsword','Blade of Vitals','Swift Saber','Lighthouse Blade','Lightspeed Edge'] },
+  { k:'helm',   skill:'Technical SEO',    items:['Bare Head','Scout’s Hood','Helm of Insight','Indexer’s Visor','Crown of the Crawl','Canonical Crown'] },
+  { k:'shield', skill:'Accessibility',    items:['No Shield','Wooden Buckler','Aegis of Access','Contrast Kite','WCAG Bulwark','Universal Ward'] },
+  { k:'boots',  skill:'Automation',       items:['Worn Boots','Workflow Treads','Boots of Automation','Trigger Greaves','Webhook Striders','Cron Walkers'] },
+  { k:'cape',   skill:'AI search',        items:['No Cape','Traveler’s Cloak','Mantle of Answers','Overview Mantle','Oracle’s Mantle','Cape of Citations'] },
+  { k:'hands',  skill:'Front-end builds', items:['Bare Hands','Leather Wraps','Builder’s Bracers','Grid Gauntlets','Pixelforged Gauntlets','Gauntlets of the Grid'] },
+  { k:'tome',   skill:'Structured data',  items:['Blank Journal','Field Notes','Tome of Structured Lore','Grimoire of Graphs','Codex of Entities','Schema Omnibus'] }
+];
+const ARMOR_NAMES = ['Cloth Tunic','Ranger’s Leathers','Knight’s Plate','Vanguard Mail','Sovereign Plate','Celestial Aegis'];
+const tierFor = (lv, gates) => gates.reduce((t, g, i) => lv >= g ? i + 1 : t, 1);
+const titleFor = lv => TITLES.reduce((t, x) => lv >= x[0] ? x[1] : t, TITLES[0][1]);
+
+// Seamor today (Oct 23): level 7; skill levels from the real sync.
+const YOU = { level:7, skills:{ weapon:6, helm:3, shield:1, boots:1, cape:1, hands:5, tome:1 } };
+const PRESETS = [
+  { id:'now', label:'You now', level: YOU.level, tiers: Object.fromEntries(Object.entries(YOU.skills).map(([k, lv]) => [k, tierFor(lv, SKILL_GATES)])) },
+  { id:'goal', label:'Level 15 goal', level:15, tiers:{ weapon:4, helm:3, shield:3, boots:3, cape:2, hands:4, tome:3 } },
+  { id:'myth', label:'Mythic', level:25, tiers:{ weapon:6, helm:6, shield:6, boots:6, cape:6, hands:6, tome:6 } }
+];
+const state = { level: YOU.level, tiers: { ...PRESETS[0].tiers } };
+
+/* ---------------- renderer, scene, glow ---------------- */
+const host = document.getElementById('stage');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+host.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = backdrop();
+scene.fog = new THREE.Fog('#141632', 9, 22);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = 0.55;
+
+const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 60);
+camera.position.set(0, 2.0, 9.4);
+camera.lookAt(0, 1.45, 0);
+
+scene.add(new THREE.HemisphereLight('#c8d2ff', '#2a2340', 0.7));
+const key = new THREE.DirectionalLight('#fff0dc', 1.7); key.position.set(3.2, 6, 4.5); key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024); key.shadow.camera.left = -3; key.shadow.camera.right = 3; key.shadow.camera.top = 4; key.shadow.camera.bottom = -1; key.shadow.bias = -0.0004;
+scene.add(key);
+const rim = new THREE.DirectionalLight('#7fa8ff', 1.6); rim.position.set(-4, 3.5, -4); scene.add(rim);
+const fill = new THREE.PointLight('#e8b95c', 1.6, 9, 2); fill.position.set(-2.4, 1.4, 2.6); scene.add(fill);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.6, 0.45, 1.35); // threshold above lit surfaces: only emissive gear blooms, never skin or cloth
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+function backdrop(){
+  const c = document.createElement('canvas'); c.width = 16; c.height = 256;
+  const g = c.getContext('2d'), grad = g.createLinearGradient(0, 0, 0, 256);
+  grad.addColorStop(0, '#0f1024'); grad.addColorStop(0.55, '#1c1f45'); grad.addColorStop(1, '#121320');
+  g.fillStyle = grad; g.fillRect(0, 0, 16, 256);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+
+/* ---------------- materials and shape helpers ---------------- */
+const M = (color, o = {}) => new THREE.MeshStandardMaterial({ color, roughness: o.r ?? 0.6, metalness: o.m ?? 0, emissive: o.e || '#000000', emissiveIntensity: o.ei ?? 0, transparent: !!o.op, opacity: o.op ?? 1, side: o.side || THREE.FrontSide });
+const glow = (color, ei = 2.2) => M(color, { e: color, ei: ei * 1.6, r: 0.3 });
+function mesh(geo, mat, x = 0, y = 0, z = 0, parent){ const n = new THREE.Mesh(geo, mat); n.position.set(x, y, z); n.castShadow = true; n.receiveShadow = true; if (parent) parent.add(n); return n; }
+const cap = (r, len, s = 10) => new THREE.CapsuleGeometry(r, len, 6, s);
+const sph = (r, w = 20, h = 16) => new THREE.SphereGeometry(r, w, h);
+const cyl = (rt, rb, h, s = 20) => new THREE.CylinderGeometry(rt, rb, h, s);
+function extrude(points, depth, bevel = 0.02){
+  const sh = new THREE.Shape(); points.forEach((p, i) => i ? sh.lineTo(p[0], p[1]) : sh.moveTo(p[0], p[1])); sh.closePath();
+  const g = new THREE.ExtrudeGeometry(sh, { depth, bevelEnabled:true, bevelThickness:bevel, bevelSize:bevel, bevelSegments:2, curveSegments:12 });
+  g.translate(0, 0, -depth / 2); return g;
+}
+function clearGroup(g){
+  while (g.children.length){
+    const c = g.children.pop();
+    c.traverse(o => { if (o.geometry) o.geometry.dispose(); if (o.material && o.material !== SKIN_REF) o.material.dispose(); });
+  }
+}
+let SKIN_REF = null;
+
+/* ---------------- the character ---------------- */
+const SKIN = M('#f1c49c', { r:0.75 }); SKIN_REF = SKIN;
+const hero = new THREE.Group(); scene.add(hero);
+const body = new THREE.Group(); hero.add(body);
+const slot = {}; ['armor','helm','weapon','shield','boots','cape','hands','tome'].forEach(k => slot[k] = new THREE.Group());
+
+// legs and hips
+const legL = new THREE.Group(), legR = new THREE.Group(); legL.position.set(0.19, 0.95, 0); legR.position.set(-0.19, 0.95, 0); body.add(legL, legR);
+const pantsMat = M('#3b3550', { r:0.8 });
+[legL, legR].forEach(l => mesh(cap(0.15, 0.48), pantsMat, 0, -0.42, 0, l));
+body.add(slot.boots);
+
+// torso is built per armor tier inside slot.armor
+body.add(slot.armor);
+
+// neck and head
+mesh(cyl(0.13, 0.15, 0.16), SKIN, 0, 1.78, 0, body);
+const head = new THREE.Group(); head.position.y = 2.22; body.add(head);
+const skull = mesh(sph(0.52, 28, 22), SKIN, 0, 0, 0, head); skull.scale.set(1, 0.97, 0.95);
+mesh(sph(0.11, 12, 10), SKIN, -0.51, -0.02, 0, head); mesh(sph(0.11, 12, 10), SKIN, 0.51, -0.02, 0, head); // ears
+const eyeWhite = M('#ffffff', { r:0.3 }), eyeDark = M('#1d1a2e', { r:0.2 }), shine = glow('#ffffff', 1.4);
+const eyes = new THREE.Group(); head.add(eyes);
+[-0.18, 0.18].forEach(x => {
+  const w = mesh(sph(0.095, 16, 12), eyeWhite, x, -0.02, 0.44, eyes); w.scale.set(1, 1.2, 0.6);
+  const p = mesh(sph(0.06, 14, 10), eyeDark, x + 0.005, -0.03, 0.495, eyes); p.scale.set(1, 1.25, 0.6);
+  mesh(sph(0.018, 8, 6), shine, x + 0.025, 0.01, 0.53, eyes);
+  const brow = mesh(new THREE.BoxGeometry(0.17, 0.035, 0.04), M('#4a2d22'), x, 0.15, 0.47, head); brow.rotation.z = x < 0 ? 0.12 : -0.12;
+});
+mesh(sph(0.05, 10, 8), M('#e9a98a', { r:0.8 }), 0, -0.13, 0.52, head);                 // nose
+const mouth = mesh(new THREE.TorusGeometry(0.07, 0.015, 6, 12, Math.PI), M('#7a3b33'), 0, -0.24, 0.48, head); mouth.rotation.z = Math.PI;
+[-0.3, 0.3].forEach(x => { const b = mesh(sph(0.07, 10, 8), M('#f2a093', { op:0.55, r:0.9 }), x, -0.17, 0.43, head); b.scale.set(1, 0.6, 0.4); b.castShadow = false; });
+const hair = new THREE.Group(); head.add(hair);
+const hairMat = M('#4a2d22', { r:0.7 });
+const cap0 = mesh(new THREE.SphereGeometry(0.55, 28, 16, 0, Math.PI * 2, 0, Math.PI * 0.46), hairMat, 0, 0.04, -0.02, hair);
+[[-0.3, 0.32, 0.36, 0.5], [0, 0.4, 0.4, 0], [0.3, 0.33, 0.36, -0.5], [-0.42, 0.12, 0.22, 0.9], [0.42, 0.12, 0.22, -0.9]].forEach(([x, y, z, r]) => { const s = mesh(new THREE.ConeGeometry(0.12, 0.28, 8), hairMat, x, y, z, hair); s.rotation.set(1.1, 0, r); });
+head.add(slot.helm);
+
+// arms: shoulder pivot, upper arm, forearm, hand
+function arm(side){
+  const a = new THREE.Group(); a.position.set(0.56 * side, 1.62, 0); body.add(a);
+  mesh(cap(0.12, 0.34), SKIN, 0, -0.26, 0, a);
+  const fore = new THREE.Group(); fore.position.y = -0.5; a.add(fore);
+  mesh(cap(0.11, 0.3), SKIN, 0, -0.18, 0, fore);
+  const hand = new THREE.Group(); hand.position.y = -0.42; fore.add(hand);
+  mesh(sph(0.12, 14, 12), SKIN, 0, 0, 0, hand);
+  return { a, fore, hand };
+}
+const R = arm(-1), L = arm(1);
+R.a.rotation.set(0.15, 0, -0.42); R.fore.rotation.x = -0.9;
+L.a.rotation.set(0.05, 0, 0.22); L.fore.rotation.x = -0.35;
+const handsR = new THREE.Group(), handsL = new THREE.Group(); R.fore.add(handsR); L.fore.add(handsL);
+slot.hands.add(handsR, handsL);
+const weaponMount = new THREE.Group(); weaponMount.position.set(0, -0.42, 0.04); weaponMount.rotation.set(1.25, 0, 0.75); R.fore.add(weaponMount); weaponMount.add(slot.weapon);
+const shieldMount = new THREE.Group(); shieldMount.position.set(0.14, -0.2, 0.16); shieldMount.rotation.set(0, 0.5, -0.2); L.fore.add(shieldMount); shieldMount.add(slot.shield);
+const capeMount = new THREE.Group(); capeMount.position.set(0, 1.68, -0.36); body.add(capeMount); capeMount.add(slot.cape);
+const tomeMount = new THREE.Group(); tomeMount.position.set(0.95, 1.75, -0.2); hero.add(tomeMount); tomeMount.add(slot.tome);
+
+/* ---------------- stage ---------------- */
+const stage = new THREE.Group(); scene.add(stage);
+const plinth = mesh(cyl(1.55, 1.7, 0.26, 64), M('#1d2040', { r:0.85, m:0.1 }), 0, -0.13, 0, stage); plinth.castShadow = false;
+mesh(cyl(1.38, 1.38, 0.012, 64), M('#262a52', { r:0.6 }), 0, 0.006, 0, stage).castShadow = false;
+const runeTex = runeTexture();
+const runes = mesh(new THREE.RingGeometry(1.0, 1.32, 96), new THREE.MeshStandardMaterial({ map: runeTex, transparent:true, emissive:'#ffffff', emissiveMap: runeTex, emissiveIntensity: 1.6, color:'#000000', depthWrite:false }), 0, 0.016, 0, stage);
+runes.rotation.x = -Math.PI / 2; runes.castShadow = false;
+const ringMat = glow('#5fd068', 2.6);
+const ring = mesh(new THREE.TorusGeometry(1.56, 0.022, 8, 128), ringMat, 0, 0.0, 0, stage); ring.rotation.x = Math.PI / 2; ring.castShadow = false;
+function runeTexture(){
+  const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d');
+  g.translate(256, 256); g.strokeStyle = 'rgba(255,255,255,0.85)'; g.lineWidth = 3;
+  for (let i = 0; i < 24; i++){ g.save(); g.rotate(i / 24 * Math.PI * 2); g.translate(0, -186);
+    const k = i % 4; g.beginPath();
+    if (k === 0){ g.moveTo(-8, -10); g.lineTo(8, 10); g.moveTo(8, -10); g.lineTo(-8, 10); }
+    else if (k === 1){ g.arc(0, 0, 9, 0, Math.PI * 2); g.moveTo(0, -14); g.lineTo(0, 14); }
+    else if (k === 2){ g.moveTo(-10, 8); g.lineTo(0, -10); g.lineTo(10, 8); g.closePath(); }
+    else { g.moveTo(-9, -9); g.lineTo(9, -9); g.lineTo(-9, 9); g.lineTo(9, 9); }
+    g.stroke(); g.restore(); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+// drifting motes; they appear from Epic and up
+const MOTES = 90, moteGeo = new THREE.BufferGeometry(), motePos = new Float32Array(MOTES * 3), moteSeed = [];
+for (let i = 0; i < MOTES; i++){ const a = Math.random() * Math.PI * 2, r = 0.4 + Math.random() * 1.3; motePos[i*3] = Math.cos(a) * r; motePos[i*3+1] = Math.random() * 3.2; motePos[i*3+2] = Math.sin(a) * r; moteSeed.push(0.2 + Math.random() * 0.5); }
+moteGeo.setAttribute('position', new THREE.BufferAttribute(motePos, 3));
+const moteMat = new THREE.PointsMaterial({ size: 0.05, color:'#ffb547', transparent:true, opacity:0.9, depthWrite:false, blending: THREE.AdditiveBlending });
+const motes = new THREE.Points(moteGeo, moteMat); scene.add(motes);
+// level-up burst ring
+const burst = mesh(new THREE.TorusGeometry(1, 0.05, 8, 96), glow('#ffd27a', 4), 0, 0.05, 0); burst.rotation.x = Math.PI / 2; burst.visible = false; burst.castShadow = false; scene.add(burst);
+
+/* ---------------- gear builders: one function per slot, six tiers each ---------------- */
+const RC = t => RARITY[t - 1].color;
+
+function buildArmor(t){
+  const g = slot.armor; clearGroup(g);
+  const P = [
+    { body:'#5b6b9a', trim:'#3c4566', m:0, r:0.85 },          // cloth tunic
+    { body:'#8a5a36', trim:'#5a3a22', m:0, r:0.7 },           // ranger leathers
+    { body:'#c3cad8', trim:'#7c8496', m:0.75, r:0.35 },       // knight plate
+    { body:'#6d4fa8', trim:'#d9b45a', m:0.6, r:0.35 },        // vanguard mail
+    { body:'#e7c05a', trim:'#fff1c2', m:0.85, r:0.25 },       // sovereign plate
+    { body:'#cdd2ea', trim:'#ff4f7a', m:0.55, r:0.38 }        // celestial aegis
+  ][t - 1];
+  const bm = M(P.body, { m:P.m, r:P.r }), tm = M(P.trim, { m:Math.max(P.m, 0.4), r:0.3 });
+  const torso = mesh(new THREE.LatheGeometry([[0,0],[0.34,0.02],[0.4,0.18],[0.45,0.46],[0.47,0.66],[0.4,0.78],[0.16,0.84],[0,0.84]].map(p => new THREE.Vector2(p[0], p[1])), 28), bm, 0, 0.92, 0, g);
+  torso.scale.z = 0.82;
+  mesh(cyl(0.43, 0.41, 0.12, 28), tm, 0, 0.98, 0, g).scale.z = 0.84;                   // belt
+  mesh(new THREE.BoxGeometry(0.12, 0.1, 0.05), M('#d9b45a', { m:0.8, r:0.3 }), 0, 0.98, 0.36, g);  // buckle
+  if (t >= 2){ [-1, 1].forEach(s => { const strap = mesh(new THREE.BoxGeometry(0.07, 0.62, 0.04), tm, 0.16 * s, 1.36, 0.34, g); strap.rotation.z = 0.32 * s; }); }
+  if (t >= 3){ const plate = mesh(extrude([[-0.3,0.25],[0.3,0.25],[0.24,-0.18],[0,-0.3],[-0.24,-0.18]], 0.05, 0.02), bm, 0, 1.4, 0.34, g); }
+  if (t >= 2){ [-1, 1].forEach(s => { const pad = mesh(new THREE.SphereGeometry(t >= 4 ? 0.26 : 0.22, 18, 12, 0, Math.PI * 2, 0, Math.PI * 0.55), t >= 3 ? bm : tm, 0.55 * s, 1.66, 0, g); pad.scale.set(1.1, 0.9, 1); pad.rotation.z = -0.25 * s;
+    if (t >= 4) mesh(new THREE.TorusGeometry(0.235, 0.02, 6, 24), tm, 0.55 * s, 1.63, 0, g).rotation.x = Math.PI / 2; }); }
+  if (t >= 3){ const gem = mesh(new THREE.OctahedronGeometry(0.075), glow(t >= 6 ? '#ff4f7a' : t >= 5 ? '#ffb547' : t >= 4 ? '#b46bff' : '#4f9dff', 2.4), 0, 1.42, 0.41, g); gem.userData.spin = true; }
+  if (t >= 6){ [-1, 1].forEach(s => { const wing = mesh(extrude([[0,0],[0.5,0.25],[0.75,0.7],[0.3,0.45],[0.05,0.3]], 0.03, 0.01), M('#ffc2d1', { e:'#ff4f7a', ei:0.9, r:0.4 }), 0.25 * s, 1.55, -0.38, g); wing.scale.x = s; wing.rotation.y = -0.4 * s; wing.userData.float = s; }); }
+  // tunic skirt
+  mesh(cyl(0.42, 0.47, 0.22, 28, 1), t >= 3 ? tm : bm, 0, 0.83, 0, g).scale.z = 0.84;
+  ringMat.color.set(RC(t)); ringMat.emissive.set(RC(t));
+}
+
+function buildHelm(t){
+  const g = slot.helm; clearGroup(g); hair.visible = t <= 1;
+  if (t === 1) return;
+  const col = ['','#7a5236','#c3cad8','#6d4fa8','#e7c05a','#f5f2ff'][t - 1];
+  const hm = M(col, { m: t >= 3 ? 0.8 : 0, r: t >= 3 ? 0.3 : 0.8 });
+  if (t === 2){
+    const hood = mesh(new THREE.SphereGeometry(0.6, 26, 18, Math.PI * 0.95, Math.PI * 1.1, 0, Math.PI * 0.68), M(col, { r:0.8, side:THREE.DoubleSide }), 0, 0.02, -0.03, g); hood.scale.set(1.02, 1.02, 1.05);
+    const tip = mesh(new THREE.ConeGeometry(0.2, 0.5, 14), hm, 0, 0.28, -0.52, g); tip.rotation.x = -1.2;
+    return;
+  }
+  mesh(new THREE.SphereGeometry(0.585, 28, 18, 0, Math.PI * 2, 0, Math.PI * 0.47), hm, 0, 0.03, -0.02, g);
+  const band = mesh(new THREE.TorusGeometry(0.575, 0.045, 8, 40), M(t >= 5 ? '#fff1c2' : '#8a92a6', { m:0.85, r:0.25 }), 0, 0.1, 0, g); band.rotation.x = Math.PI / 2;
+  if (t === 3) mesh(new THREE.BoxGeometry(0.07, 0.34, 0.06), hm, 0, -0.03, 0.57, g);  // nose guard
+  if (t === 4){
+    const visor = mesh(new THREE.TorusGeometry(0.5, 0.06, 8, 30, Math.PI * 0.75), hm, 0, -0.02, 0.1, g); visor.rotation.set(0.15, 0, Math.PI * 1.125);
+    const plume = mesh(new THREE.ConeGeometry(0.11, 0.75, 10), glow('#c08bff', 1.4), 0, 0.72, -0.12, g); plume.rotation.x = -0.45;
+  }
+  if (t >= 5){
+    for (let i = 0; i < 7; i++){ const a = (i / 7) * Math.PI * 2; mesh(new THREE.ConeGeometry(0.075, 0.28, 6), M('#e7c05a', { m:0.9, r:0.25 }), Math.sin(a) * 0.48, 0.4, Math.cos(a) * 0.48, g); }
+    mesh(new THREE.OctahedronGeometry(0.1), glow(t >= 6 ? '#ff4f7a' : '#4fe0d0', 2.6), 0, 0.3, 0.56, g);
+  }
+  if (t >= 6){
+    const halo = mesh(new THREE.TorusGeometry(0.42, 0.022, 8, 60), glow('#ffd6e2', 1.6), 0, 0.95, -0.05, g); halo.rotation.x = Math.PI / 2 - 0.2; halo.userData.halo = true; halo.castShadow = false;
+    [-1, 1].forEach(s => { const horn = mesh(new THREE.ConeGeometry(0.07, 0.42, 10), M('#f5f2ff', { m:0.6, r:0.3 }), 0.42 * s, 0.42, 0.05, g); horn.rotation.z = -0.55 * s; });
+  }
+}
+
+function buildWeapon(t){
+  const g = slot.weapon; clearGroup(g);
+  const grip = M('#3a2a20', { r:0.8 });
+  if (t === 1){ mesh(cyl(0.045, 0.06, 1.1, 10), M('#9a6b42', { r:0.85 }), 0, 0.35, 0, g); return; }
+  const len = [0, 1.0, 1.3, 1.4, 1.55, 1.65][t - 1];
+  const bladeMat = t === 6 ? M('#ffe3ec', { m:0.2, r:0.1, e:'#ff4f7a', ei:1.8 }) : t === 5 ? M('#fff3d6', { m:0.9, r:0.15, e:'#ffb547', ei:0.6 }) : t === 4 ? M('#e6dcff', { m:0.95, r:0.15 }) : M('#e3e8f2', { m:0.95, r:0.18 });
+  const w = t >= 5 ? 0.16 : 0.12;
+  let bladeGeo = t === 4
+    ? (() => { const s = new THREE.Shape(); s.moveTo(-w / 2, 0); s.quadraticCurveTo(-w * 0.9, len * 0.6, 0.06, len); s.quadraticCurveTo(w * 0.3, len * 0.55, w / 2, 0); s.closePath(); const e = new THREE.ExtrudeGeometry(s, { depth:0.03, bevelEnabled:true, bevelThickness:0.012, bevelSize:0.012, bevelSegments:2 }); e.translate(0, 0, -0.015); return e; })()
+    : extrude([[-w/2, 0], [w/2, 0], [w/2, len - 0.18], [0, len], [-w/2, len - 0.18]], 0.03, 0.012);
+  mesh(bladeGeo, bladeMat, 0, 0.22, 0, g);
+  if (t >= 3){ const edge = mesh(new THREE.BoxGeometry(0.022, len * 0.82, 0.045), glow(RC(t), t >= 5 ? 3 : 1.8), 0, 0.22 + len * 0.43, 0, g); edge.castShadow = false; }
+  mesh(new THREE.BoxGeometry(t >= 3 ? 0.5 : 0.36, 0.07, 0.11), M(t >= 3 ? '#d9b45a' : '#7c8496', { m:0.85, r:0.3 }), 0, 0.2, 0, g);   // crossguard
+  mesh(cyl(0.042, 0.048, 0.3, 10), grip, 0, 0.02, 0, g);
+  mesh(sph(0.065, 12, 10), t >= 3 ? glow(RC(t), 2) : M('#7c8496', { m:0.8, r:0.3 }), 0, -0.15, 0, g);
+  if (t >= 5){ const lamp = new THREE.PointLight(RC(t), 2.2, 2.6, 2); lamp.position.set(0, 0.22 + len * 0.6, 0.15); g.add(lamp); }
+  if (t === 6){ for (let i = 0; i < 5; i++){ const sp = mesh(new THREE.OctahedronGeometry(0.035), glow('#ffd1dc', 4), 0, 0, 0, g); sp.userData.orbit = { i, len }; sp.castShadow = false; } }
+}
+
+function buildShield(t){
+  const g = slot.shield; clearGroup(g);
+  if (t === 1) return;
+  if (t === 2){
+    const wood = mesh(cyl(0.38, 0.38, 0.07, 24), M('#8a5a36', { r:0.85 }), 0, 0, 0, g); wood.rotation.x = Math.PI / 2;
+    mesh(new THREE.TorusGeometry(0.38, 0.035, 8, 32), M('#8a92a6', { m:0.8, r:0.35 }), 0, 0, 0, g);
+    mesh(sph(0.07, 12, 10), M('#8a92a6', { m:0.8, r:0.35 }), 0, 0, 0.05, g); return;
+  }
+  if (t === 6){
+    const ward = mesh(new THREE.CircleGeometry(0.55, 6), M('#ff9ab4', { e:'#ff4f7a', ei:0.7, op:0.3, side:THREE.DoubleSide, r:0.2 }), 0, 0, 0.08, g); ward.castShadow = false; ward.userData.spinZ = true;
+    const rim2 = mesh(new THREE.TorusGeometry(0.55, 0.025, 6, 6), glow('#ff4f7a', 3), 0, 0, 0.08, g); rim2.userData.spinZ = true;
+    mesh(new THREE.OctahedronGeometry(0.1), glow('#ffd6e2', 3), 0, 0, 0.12, g); return;
+  }
+  const kite = [[0,0.5],[0.36,0.36],[0.33,-0.05],[0,-0.56],[-0.33,-0.05],[-0.36,0.36]];
+  const face = { 3:M('#c3cad8', { m:0.85, r:0.3 }), 4:M('#5a3f8f', { m:0.6, r:0.35 }), 5:M('#e7c05a', { m:0.9, r:0.22 }) }[t];
+  mesh(extrude(kite, 0.06, 0.03), face, 0, 0, 0, g);
+  const em = t === 3 ? M('#d64545', { r:0.6 }) : glow(RC(t), t === 5 ? 2.6 : 1.8);
+  mesh(new THREE.BoxGeometry(0.09, 0.62, 0.03), em, 0, 0.02, 0.06, g);
+  mesh(new THREE.BoxGeometry(0.42, 0.09, 0.03), em, 0, 0.14, 0.06, g);
+  if (t === 5) mesh(sph(0.09, 14, 12), glow('#fff1c2', 3), 0, 0.14, 0.09, g);
+}
+
+function buildBoots(t){
+  const g = slot.boots; clearGroup(g);
+  const col = ['#4a3324','#7a5236','#a9b2c4','#5a3f8f','#e7c05a','#f5f2ff'][t - 1];
+  const bm = M(col, { m: t >= 3 ? 0.8 : 0, r: t >= 3 ? 0.3 : 0.8 });
+  [-0.19, 0.19].forEach(x => {
+    mesh(cap(0.16, 0.18), bm, x, 0.24, 0.02, g);
+    const toe = mesh(sph(0.17, 16, 12), bm, x, 0.1, 0.12, g); toe.scale.set(1, 0.62, 1.35);
+    if (t >= 2) mesh(cyl(0.18, 0.17, 0.07, 18), M(t >= 4 ? '#d9b45a' : '#5a3a22', { m:0.6, r:0.4 }), x, 0.44, 0.02, g);
+    if (t >= 4){ const wing = mesh(extrude([[0,0],[0.22,0.1],[0.3,0.28],[0.1,0.16]], 0.02, 0.008), glow(RC(t), 1.4), x + 0.16 * Math.sign(x), 0.32, -0.02, g); wing.scale.x = Math.sign(x); }
+    if (t >= 5){ const sole = mesh(cyl(0.17, 0.17, 0.025, 18), glow(RC(t), 3), x, 0.015, 0.08, g); sole.scale.z = 1.5; sole.castShadow = false; }
+  });
+}
+
+function buildCape(t){
+  const g = slot.cape; clearGroup(g); capeCloth = null;
+  if (t === 1) return;
+  const len = [0, 1.0, 1.45, 1.55, 1.6, 1.7][t - 1], wdt = 0.95;
+  const geo = new THREE.PlaneGeometry(wdt, len, 12, 14); geo.translate(0, -len / 2, 0);
+  // Drape: edges wrap forward around the body and the hem flares out, so it reads as cloth, not a board.
+  const pa = geo.attributes.position;
+  for (let i = 0; i < pa.count; i++){ const d = -pa.getY(i) / len, x = pa.getX(i) * (1 + d * 0.35); pa.setX(i, x); pa.setZ(i, x * x * 0.9 * (1 - d * 0.4)); }
+  geo.computeVertexNormals();
+  let mat;
+  if (t === 6) mat = new THREE.MeshStandardMaterial({ map: starTexture(), emissiveMap: starTexture(), emissive:'#ffffff', emissiveIntensity: 0.55, side: THREE.DoubleSide, roughness:0.6 });
+  else mat = M(['','#6b5a3e','#b8323e','#5a3f8f','#2a4fa8',''][t - 1], { r:0.85, side:THREE.DoubleSide });
+  capeCloth = mesh(geo, mat, 0, 0, 0, g); capeCloth.userData.base = geo.attributes.position.array.slice(); capeCloth.rotation.x = 0.12;
+  if (t >= 4){ const trim = mesh(new THREE.BoxGeometry(wdt + 0.04, 0.06, 0.03), M('#d9b45a', { m:0.8, r:0.3 }), 0, 0, 0.01, g); }
+  if (t >= 5){ const clasp = mesh(new THREE.OctahedronGeometry(0.08), glow(RC(t), 2.4), 0, 0.02, 0.08, g); }
+}
+let capeCloth = null;
+function starTexture(){
+  const c = document.createElement('canvas'); c.width = 128; c.height = 256; const g = c.getContext('2d');
+  const grad = g.createLinearGradient(0, 0, 0, 256); grad.addColorStop(0, '#4a0d22'); grad.addColorStop(1, '#14061a'); g.fillStyle = grad; g.fillRect(0, 0, 128, 256);
+  for (let i = 0; i < 70; i++){ g.fillStyle = `rgba(255,${180 + Math.random() * 75 | 0},${200 + Math.random() * 55 | 0},${0.5 + Math.random() * 0.5})`; g.beginPath(); g.arc(Math.random() * 128, Math.random() * 256, Math.random() * 1.6 + 0.4, 0, Math.PI * 2); g.fill(); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+
+function buildHands(t){
+  [handsR, handsL].forEach(h => clearGroup(h));
+  if (t === 1) return;
+  const col = ['','#7a5236','#a9b2c4','#5a3f8f','#e7c05a','#2a2f6b'][t - 1];
+  const gm = M(col, { m: t >= 3 ? 0.8 : 0, r: t >= 3 ? 0.3 : 0.8 });
+  [handsR, handsL].forEach(h => {
+    mesh(cyl(0.135, 0.125, 0.26, 18), gm, 0, -0.26, 0, h);
+    mesh(sph(0.135, 14, 12), gm, 0, -0.42, 0, h);
+    if (t >= 3) mesh(new THREE.TorusGeometry(0.135, 0.02, 6, 20), M('#d9b45a', { m:0.85, r:0.3 }), 0, -0.14, 0, h).rotation.x = Math.PI / 2;
+    if (t >= 4) mesh(new THREE.OctahedronGeometry(0.045), glow(RC(t), 2.2), 0, -0.26, 0.13, h);
+    if (t >= 6){ for (let i = 0; i < 3; i++){ const line = mesh(new THREE.TorusGeometry(0.137, 0.008, 4, 24), glow('#7fd8ff', 3), 0, -0.18 - i * 0.07, 0, h); line.rotation.x = Math.PI / 2; line.castShadow = false; } }
+  });
+}
+
+function buildTome(t){
+  const g = slot.tome; clearGroup(g);
+  const col = ['#7a5236','#3f7a4a','#2a4fa8','#4a2f7a','#b8862a','#3a0f24'][t - 1];
+  const cover = M(col, { r:0.6, m: t >= 5 ? 0.4 : 0 }), pages = M('#f3ead6', { r:0.9 });
+  const book = new THREE.Group(); g.add(book);
+  const w = t >= 4 ? 0.34 : 0.28, h = t >= 4 ? 0.44 : 0.36;
+  if (t === 6){
+    [-1, 1].forEach(s => { const half = mesh(new THREE.BoxGeometry(w, h, 0.04), cover, s * w / 2, 0, 0, book); half.rotation.y = -0.35 * s; const pg = mesh(new THREE.BoxGeometry(w * 0.92, h * 0.9, 0.03), pages, s * w / 2, 0, 0.03, book); pg.rotation.y = -0.35 * s; });
+    for (let i = 0; i < 6; i++){ const leaf = mesh(new THREE.PlaneGeometry(0.12, 0.16), M('#fff6e0', { e:'#ff86a4', ei:0.8, side:THREE.DoubleSide }), 0, 0, 0, g); leaf.userData.leaf = i; leaf.castShadow = false; }
+  } else {
+    mesh(new THREE.BoxGeometry(w, h, 0.1), cover, 0, 0, 0, book);
+    mesh(new THREE.BoxGeometry(w * 0.88, h * 0.92, 0.07), pages, 0.025, 0, 0, book);
+    mesh(new THREE.BoxGeometry(0.03, h, 0.1), cover, -w / 2, 0, 0, book);
+    if (t >= 3) [[-1,1],[1,1],[-1,-1],[1,-1]].forEach(([x, y]) => mesh(new THREE.BoxGeometry(0.05, 0.05, 0.11), M('#d9b45a', { m:0.85, r:0.3 }), x * (w / 2 - 0.02), y * (h / 2 - 0.02), 0, book));
+    if (t >= 4) mesh(new THREE.TorusGeometry(0.07, 0.012, 6, 20), glow(RC(t), 2.4), 0, 0, 0.06, book);
+  }
+  if (t >= 5){ for (let i = 0; i < 4; i++){ const rune = mesh(new THREE.OctahedronGeometry(0.03), glow(RC(t), 3), 0, 0, 0, g); rune.userData.rune = i; rune.castShadow = false; } }
+  g.scale.setScalar(t >= 4 ? 1.1 : 1);
+}
+
+const BUILD = { helm:buildHelm, weapon:buildWeapon, shield:buildShield, boots:buildBoots, cape:buildCape, hands:buildHands, tome:buildTome };
+function equipAll(){
+  buildArmor(tierFor(state.level, ARMOR_GATES));
+  Object.keys(BUILD).forEach(k => BUILD[k](state.tiers[k]));
+  const top = Math.max(tierFor(state.level, ARMOR_GATES), ...Object.values(state.tiers));
+  motes.visible = top >= 4; moteMat.color.set(RC(top));
+  bloom.strength = top >= 6 ? 0.42 : top >= 5 ? 0.5 : 0.55;
+  renderUI();
+}
+
+/* ---------------- animation ---------------- */
+let rotY = 0.35, rotT = 0.35, dragging = false, lastX = 0, jumpT = -1;
+const canvas = renderer.domElement;
+canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; canvas.setPointerCapture(e.pointerId); canvas.style.cursor = 'grabbing'; });
+canvas.addEventListener('pointermove', e => { if (dragging){ rotT += (e.clientX - lastX) * 0.012; lastX = e.clientX; } });
+canvas.addEventListener('pointerup', () => { dragging = false; canvas.style.cursor = 'grab'; });
+const clock = new THREE.Clock();
+function frame(){
+  const dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime, still = reduce ? 0 : 1;
+  rotY += (rotT - rotY) * 0.1;
+  let lift = 0, spin = 0;
+  if (jumpT >= 0){
+    jumpT += dt / 1.3; const k = Math.min(jumpT, 1);
+    lift = Math.sin(k * Math.PI) * 1.0; spin = (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2) * Math.PI * 2;
+    burst.visible = true; const b = Math.min(jumpT * 1.4, 1); burst.scale.setScalar(0.6 + b * 2.6); burst.material.opacity = 1 - b; burst.material.transparent = true;
+    if (jumpT >= 1){ jumpT = -1; burst.visible = false; }
+  }
+  hero.rotation.y = rotY + spin; hero.position.y = lift;
+  body.scale.y = 1 + Math.sin(t * 2.2) * 0.008 * still;
+  head.rotation.z = Math.sin(t * 0.9) * 0.03 * still; head.rotation.x = Math.sin(t * 0.7) * 0.025 * still;
+  if (!reduce && Math.sin(t * 0.8) > 0.995) eyes.scale.y = 0.1; else eyes.scale.y = 1;
+  R.a.rotation.z = -0.42 + Math.sin(t * 2.2) * 0.02 * still; L.a.rotation.z = 0.22 - Math.sin(t * 2.2) * 0.02 * still;
+  if (capeCloth){ const pos = capeCloth.geometry.attributes.position, base = capeCloth.userData.base;
+    for (let i = 0; i < pos.count; i++){ const y = base[i*3+1], x = base[i*3]; const d = -y; pos.array[i*3+2] = base[i*3+2] - d * 0.18 - Math.sin(t * 2.4 + d * 3 + x * 2) * 0.05 * d * still; }
+    pos.needsUpdate = true; capeCloth.geometry.computeVertexNormals(); }
+  tomeMount.position.y = 1.75 + Math.sin(t * 1.6) * 0.08 * still; slot.tome.rotation.y = t * 0.6 * still + 0.4;
+  scene.traverse(o => {
+    const u = o.userData; if (!u) return;
+    if (u.spin) o.rotation.y = t * 1.5;
+    if (u.halo) o.rotation.z = t * 0.8;
+    if (u.spinZ) o.rotation.z = t * 0.6;
+    if (u.float) o.position.y = 1.55 + Math.sin(t * 2 + u.float) * 0.04;
+    if (u.orbit){ const a = t * 2 + u.orbit.i / 5 * Math.PI * 2; o.position.set(Math.cos(a) * 0.18, 0.4 + ((t * 0.6 + u.orbit.i / 5) % 1) * u.orbit.len, Math.sin(a) * 0.18); }
+    if (u.rune !== undefined){ const a = t * 1.4 + u.rune / 4 * Math.PI * 2; o.position.set(Math.cos(a) * 0.32, Math.sin(a * 2) * 0.05, Math.sin(a) * 0.32); }
+    if (u.leaf !== undefined){ const k = (t * 0.35 + u.leaf / 6) % 1; o.position.set(Math.sin(u.leaf * 2 + t) * 0.15, k * 0.7, Math.cos(u.leaf) * 0.12); o.rotation.set(t + u.leaf, t * 0.7, 0); o.material.opacity = 1 - k; o.material.transparent = true; }
+  });
+  runes.rotation.z = t * 0.08 * still; ring.material.emissiveIntensity = 2.2 + Math.sin(t * 2) * 0.5 * still;
+  if (motes.visible){ const p = moteGeo.attributes.position; for (let i = 0; i < MOTES; i++){ p.array[i*3+1] += moteSeed[i] * dt * still; if (p.array[i*3+1] > 3.4) p.array[i*3+1] = 0; } p.needsUpdate = true; }
+  composer.render();
+  requestAnimationFrame(frame);
+}
+function resize(){ const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); composer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(host); resize();
+
+/* ---------------- controls ---------------- */
+const $ = id => document.getElementById(id);
+function renderUI(){
+  const at = tierFor(state.level, ARMOR_GATES);
+  $('lv-out').textContent = state.level; $('level').value = state.level;
+  $('hud-title').textContent = 'Level ' + state.level + ' ' + titleFor(state.level);
+  $('hud-armor').textContent = ARMOR_NAMES[at - 1] + ' (' + RARITY[at - 1].name + ' armor)';
+  const nextA = ARMOR_GATES[at]; $('lv-note').textContent = ARMOR_NAMES[at - 1] + (nextA ? '. Next: ' + ARMOR_NAMES[at] + ' at level ' + nextA + '.' : '. Highest armor.');
+  $('stage').setAttribute('aria-label', 'Seamor, level ' + state.level + ', wearing ' + ARMOR_NAMES[at - 1] + ' and ' + SLOTS[0].items[state.tiers.weapon - 1]);
+  const box = $('slots'); box.innerHTML = '';
+  SLOTS.forEach(s => {
+    const t = state.tiers[s.k], row = document.createElement('div'); row.className = 'slot';
+    row.innerHTML = `<div><b>${s.skill}</b><small>${s.k === 'hands' ? 'Gauntlets' : s.k[0].toUpperCase() + s.k.slice(1)}, unlocks at skill level ${SKILL_GATES.join(', ')}</small></div><div class="tiers" role="group" aria-label="${s.skill} rarity"></div><div class="item"><i style="background:${RC(t)}"></i>${s.items[t - 1]} <span style="color:${RC(t)};font-size:12px">${RARITY[t - 1].name}</span></div>`;
+    const tiers = row.querySelector('.tiers');
+    RARITY.forEach((r, i) => { const b = document.createElement('button'); b.type = 'button'; b.style.setProperty('--c', r.color); b.setAttribute('aria-pressed', String(t === i + 1)); b.setAttribute('aria-label', r.name + ': ' + s.items[i]); b.title = r.name + ': ' + s.items[i]; b.innerHTML = '<span></span>'; b.onclick = () => { state.tiers[s.k] = i + 1; markPreset(null); equipAll(); }; tiers.appendChild(b); });
+    box.appendChild(row);
+  });
+  $('titles').innerHTML = TITLES.map(([lv, n], i) => `<li class="${titleFor(state.level) === n ? 'on' : ''}"><span>${n}</span><span>level ${lv}</span></li>`).join('');
+}
+$('ladder').innerHTML = RARITY.map((r, i) => `<tr><td><i style="background:${r.color}"></i>${r.name}</td><td>${SKILL_GATES[i]}</td><td>${ARMOR_GATES[i]}</td></tr>`).join('');
+$('presets').innerHTML = PRESETS.map(p => `<button type="button" data-p="${p.id}" aria-pressed="${p.id === 'now'}">${p.label}</button>`).join('');
+function markPreset(id){ document.querySelectorAll('#presets button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.p === id))); }
+$('presets').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const p = PRESETS.find(x => x.id === b.dataset.p); state.level = p.level; state.tiers = { ...p.tiers }; markPreset(p.id); equipAll(); });
+$('level').addEventListener('input', e => { state.level = +e.target.value; markPreset(null); equipAll(); });
+$('play').addEventListener('click', () => {
+  const lu = $('levelup'); lu.textContent = 'Level ' + state.level; lu.classList.add('show'); setTimeout(() => lu.classList.remove('show'), 1600);
+  if (!reduce) jumpT = 0;
+});
+
+equipAll();
+frame();
+</script>
+</body>
+</html>

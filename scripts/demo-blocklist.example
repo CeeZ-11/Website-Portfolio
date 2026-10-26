@@ -1,0 +1,6 @@
+# Copy to scripts/demo-blocklist.local (git ignores it) and list, one per line,
+# every word that must never appear in a public demo: company and product
+# names, client names and domains, client-group names, and people's names.
+# Matching ignores upper/lower case. Lines starting with # are ignored.
+example-company
+example-client.com

@@ -20,6 +20,13 @@ import etchASketchScreenshot from "../assets/etch-a-sketch.webp";
 import landingPageScreenshot from "../assets/landing-page.webp";
 import weddingRsvp from "../assets/weddingRsvp.png";
 import shoppingCartScreenshot from "../assets/shopping-cart.webp";
+import wedSnapScreenshot from "../assets/wedsnap.webp";
+import schoolManagerScreenshot from "../assets/school-manager.webp";
+import speedEngineDemoScreenshot from "../assets/speed-engine-demo.webp";
+import visibilityDemoScreenshot from "../assets/visibility-demo.webp";
+import analyticsHealthDemoScreenshot from "../assets/analytics-health-demo.webp";
+import siteQaDemoScreenshot from "../assets/site-qa-demo.webp";
+import commandCenterDemoScreenshot from "../assets/command-center-demo.webp";
 
 
 export default function Portfolio() {
@@ -27,6 +34,7 @@ export default function Portfolio() {
 
   const navButtons = [
     { id: "all-projects", name: "All Projects" },
+    { id: "work-projects", name: "Work Projects" },
     { id: "odin-projects", name: "Odin Projects" },
     { id: "mini-projects", name: "Mini Projects" },
     { id: "personal-projects", name: "Personal Projects" },
@@ -34,6 +42,41 @@ export default function Portfolio() {
   ];
 
   const projectList = [
+    {
+      id: 20,
+      name: "Speed Engine (demo)",
+      image: speedEngineDemoScreenshot,
+      category: "work-projects",
+      url: "/demos/speed-engine/index.html",
+    },
+    {
+      id: 21,
+      name: "Visibility Scanner (demo)",
+      image: visibilityDemoScreenshot,
+      category: "work-projects",
+      url: "/demos/visibility/index.html",
+    },
+    {
+      id: 22,
+      name: "Analytics Health (demo)",
+      image: analyticsHealthDemoScreenshot,
+      category: "work-projects",
+      url: "/demos/analytics-health/index.html",
+    },
+    {
+      id: 23,
+      name: "Site QA (demo)",
+      image: siteQaDemoScreenshot,
+      category: "work-projects",
+      url: "/demos/site-qa/index.html",
+    },
+    {
+      id: 24,
+      name: "Command Center (demo)",
+      image: commandCenterDemoScreenshot,
+      category: "work-projects",
+      url: "/demos/command-center/index.html",
+    },
     {
       id: 1,
       name: "Shopping Cart",
@@ -153,6 +196,21 @@ export default function Portfolio() {
       category: "personal-projects",
       url: "https://wedding-rsvp-bay-iota.vercel.app/",
     },
+    {
+      id: 18,
+      name: "WedSnap",
+      image: wedSnapScreenshot,
+      category: "personal-projects",
+      url: "https://wed-snap-nine.vercel.app/",
+    },
+    {
+      id: 19,
+      name: "School Manager",
+      image: schoolManagerScreenshot,
+      category: "personal-projects",
+      // The live build is only a login screen without its backend, so link the code.
+      url: "https://github.com/CeeZ-11/School-Manager",
+    },
   ];
 
   return (
@@ -171,6 +229,13 @@ export default function Portfolio() {
         <div className={`project-content`}>
           {activeTab === "all-projects" && (
             <Projects projectList={projectList} />
+          )}
+          {activeTab === "work-projects" && (
+            <Projects
+              projectList={projectList.filter(
+                (project) => project.category === "work-projects"
+              )}
+            />
           )}
           {activeTab === "odin-projects" && (
             <Projects

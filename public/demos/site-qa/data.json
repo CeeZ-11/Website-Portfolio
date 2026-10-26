@@ -1,0 +1,304 @@
+{
+ "sites": [
+  {
+   "site": "https://ceez-11.github.io/slow-demo-site",
+   "auditedAt": "2026-10-26T09:51:53.644Z",
+   "pagesAudited": 1,
+   "accessibility": [
+    {
+     "page": "/",
+     "rule": "color-contrast",
+     "impact": "serious",
+     "help": "Elements must meet minimum color contrast ratio thresholds",
+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+     "elements": 1,
+     "example": ".low-contrast"
+    },
+    {
+     "page": "/",
+     "rule": "image-alt",
+     "impact": "critical",
+     "help": "Images must have alternative text",
+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=playwright",
+     "elements": 1,
+     "example": "img[src$=\"listing-2.png\"]"
+    }
+   ],
+   "brokenLinks": [],
+   "ambiguousLinks": [],
+   "oversizedImages": [
+    {
+     "page": "/",
+     "src": "/img/hero.png",
+     "width": 2000,
+     "height": 1200
+    }
+   ],
+   "h1Issues": 0,
+   "duplicateMeta": 0,
+   "wrapping": []
+  },
+  {
+   "site": "https://website-portfolio-nine-beige.vercel.app",
+   "auditedAt": "2026-10-26T09:50:53.150Z",
+   "pagesAudited": 1,
+   "accessibility": [
+    {
+     "page": "/",
+     "rule": "list",
+     "impact": "serious",
+     "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/list?application=playwright",
+     "elements": 1,
+     "example": ".projects > ul"
+    },
+    {
+     "page": "/",
+     "rule": "scrollable-region-focusable",
+     "impact": "serious",
+     "help": "Scrollable region must have keyboard access",
+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/scrollable-region-focusable?application=playwright",
+     "elements": 1,
+     "example": ".main-scroll"
+    }
+   ],
+   "brokenLinks": [
+    {
+     "page": "/",
+     "href": "https://www.linkedin.com/in/seamor-estrabon-771247172",
+     "status": 999,
+     "text": "",
+     "likelyBotBlock": true
+    },
+    {
+     "page": "/",
+     "href": "https://www.facebook.com/seaznoquera2",
+     "status": 400,
+     "text": "",
+     "likelyBotBlock": true
+    }
+   ],
+   "ambiguousLinks": [
+    {
+     "page": "/",
+     "href": "https://www.linkedin.com/in/seamor-estrabon-771247172",
+     "text": "",
+     "reason": "empty text"
+    },
+    {
+     "page": "/",
+     "href": "https://github.com/CeeZ-11",
+     "text": "",
+     "reason": "empty text"
+    },
+    {
+     "page": "/",
+     "href": "https://www.facebook.com/seaznoquera2",
+     "text": "",
+     "reason": "empty text"
+    }
+   ],
+   "oversizedImages": [
+    {
+     "page": "/",
+     "src": "/assets/profile-large-DMJzpN2g.webp",
+     "width": 5385,
+     "height": 6729
+    }
+   ],
+   "h1Issues": 0,
+   "duplicateMeta": 0,
+   "wrapping": [
+    {
+     "page": "/",
+     "element": "<ul class=\"tech-stack-list…\">",
+     "viewports": [
+      "desktop",
+      "tablet",
+      "mobile"
+     ]
+    }
+   ]
+  },
+  {
+   "site": "https://wed-snap-nine.vercel.app",
+   "auditedAt": "2026-10-26T09:51:02.897Z",
+   "pagesAudited": 3,
+   "accessibility": [
+    {
+     "page": "/",
+     "rule": "color-contrast",
+     "impact": "serious",
+     "help": "Elements must meet minimum color contrast ratio thresholds",
+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+     "elements": 2,
+     "example": ".space-x-8 > .active[aria-current=\"page\"][href=\"/\"] > span"
+    }
+   ],
+   "brokenLinks": [
+    {
+     "page": "/",
+     "href": "/gallery",
+     "status": 404,
+     "text": "Gallery",
+     "likelyBotBlock": false
+    },
+    {
+     "page": "/",
+     "href": "/slideshow",
+     "status": 404,
+     "text": "Slideshow",
+     "likelyBotBlock": false
+    }
+   ],
+   "ambiguousLinks": [],
+   "oversizedImages": [],
+   "h1Issues": 0,
+   "duplicateMeta": 0,
+   "wrapping": []
+  },
+  {
+   "site": "https://wedding-rsvp-bay-iota.vercel.app",
+   "auditedAt": "2026-10-26T09:51:46.615Z",
+   "pagesAudited": 2,
+   "accessibility": [
+    {
+     "page": "/guide",
+     "rule": "aria-prohibited-attr",
+     "impact": "serious",
+     "help": "Elements must only use permitted ARIA attributes",
+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/aria-prohibited-attr?application=playwright",
+     "elements": 6,
+     "example": "div[aria-label=\"Suggested bridesmaid colors\"]"
+    }
+   ],
+   "brokenLinks": [],
+   "ambiguousLinks": [],
+   "oversizedImages": [
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0323.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0237.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0402.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0104.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0155.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-1012.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-1010.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0353.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0425.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0533.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-1011.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0586.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-0617.jpg",
+     "width": 2048,
+     "height": 1365
+    },
+    {
+     "page": "/",
+     "src": "/images/prenup/prenup-1113.jpg",
+     "width": 2048,
+     "height": 1365
+    }
+   ],
+   "h1Issues": 0,
+   "duplicateMeta": 0,
+   "wrapping": [
+    {
+     "page": "/",
+     "element": "<section class=\"mx-auto grid max-w-7xl grid-cols-1 items…\">",
+     "viewports": [
+      "desktop",
+      "tablet"
+     ]
+    },
+    {
+     "page": "/",
+     "element": "<div class=\"mx-auto grid max-w-3xl grid-cols-[1.45fr…\">",
+     "viewports": [
+      "desktop",
+      "tablet",
+      "mobile"
+     ]
+    },
+    {
+     "page": "/",
+     "element": "<div class=\"grid grid-cols-1 items-start gap-x-8 gap…\">",
+     "viewports": [
+      "desktop",
+      "tablet",
+      "mobile"
+     ]
+    },
+    {
+     "page": "/",
+     "element": "<a class=\"group grid min-h-[4.75rem] grid-cols-[2.…\">",
+     "viewports": [
+      "desktop",
+      "tablet",
+      "mobile"
+     ]
+    }
+   ]
+  }
+ ]
+}
