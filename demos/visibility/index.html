@@ -22,6 +22,17 @@
       .tag.high { background: rgba(255, 90, 90, 0.15); color: var(--poor); }
       .tag.med { background: rgba(252, 195, 97, 0.15); color: var(--warn); }
       .tag.ok { background: rgba(60, 207, 122, 0.15); color: var(--good); }
+      .story { margin-top: 16px; border-left: 3px solid var(--good); }
+      .story h2 { margin: 0 0 4px; }
+      .compare { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 0; margin: 12px 0; font-size: 14px; }
+      .compare > div { padding: 8px 10px; border-bottom: 1px solid var(--line); }
+      .compare .head { color: var(--muted); font-size: 12px; font-weight: 600; }
+      .compare .was { color: var(--poor); }
+      .compare .now { color: var(--good); font-weight: 600; }
+      .resolved { list-style: none; padding: 0; margin: 0; }
+      .resolved li { padding: 6px 0; font-size: 14px; }
+      .resolved li::before { content: "✓"; color: var(--good); font-weight: 600; margin-right: 8px; }
+      .resolved small { color: var(--muted); margin-left: 6px; }
     </style>
   </head>
   <body>
@@ -47,6 +58,8 @@
       <section class="card">
         <div class="stats" id="stats"></div>
       </section>
+
+      <section id="story"></section>
 
       <h2>Top actions</h2>
       <div class="top3" id="top3"></div>
@@ -96,6 +109,8 @@
           .map(([v, n]) => `<div class="stat"><div class="value">${esc(v)}</div><div class="name">${esc(n)}</div></div>`)
           .join('');
 
+        renderStory(site, open);
+
         document.getElementById('top3').innerHTML = open.slice(0, 3).map((i) => `<div class="card">
             <span class="tag ${esc(i.severity)}">${esc(SEVERITY[i.severity])}</span>
             <p><strong>${esc(i.title)}</strong></p>
@@ -117,6 +132,38 @@
               <p class="kind">Evidence: ${esc(i.evidence)}</p>
             </div>
           </details>`).join('');
+      }
+
+      // Before/after for a site that was scanned, fixed and scanned again.
+      function renderStory(site, openNow) {
+        const story = document.getElementById('story');
+        const b = site.before;
+        if (!b) {
+          story.innerHTML = '';
+          return;
+        }
+        const openBefore = b.insights.filter((i) => i.severity !== 'ok');
+        const nowTitles = new Set(site.insights.map((i) => i.title));
+        const resolved = openBefore
+          .filter((i) => !nowTitles.has(i.title))
+          .sort((x, y) => ORDER[x.severity] - ORDER[y.severity]);
+        const day = (iso) => new Date(iso).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+        const rows = [
+          ['Urgent fixes', openBefore.filter((i) => i.severity === 'high').length, openNow.filter((i) => i.severity === 'high').length],
+          ['Open problems', openBefore.length, openNow.length],
+          ['Sitemap pages', b.sitemap.urls, site.sitemap.urls],
+          ['robots.txt', b.robotsFound ? 'Found' : 'Missing', site.robotsFound ? 'Found' : 'Missing'],
+        ];
+        story.innerHTML = `<div class="card story">
+            <h2>Fix story: I ran this on my own portfolio</h2>
+            <p class="meta">Scanned, fixed what it found, then scanned again.${b.fixUrl ? ` <a href="${esc(b.fixUrl)}" target="_blank" rel="noopener">See the fix on GitHub</a>.` : ''}</p>
+            <div class="compare">
+              <div class="head"></div><div class="head">Before (${esc(day(b.scannedAt))})</div><div class="head">After (${esc(day(site.scannedAt))})</div>
+              ${rows.map(([name, was, now]) => `<div>${esc(name)}</div><div class="${was !== now ? 'was' : ''}">${esc(was)}</div><div class="${was !== now ? 'now' : ''}">${esc(now)}</div>`).join('')}
+            </div>
+            <h3 style="font-size:15px;margin:8px 0 4px">Resolved</h3>
+            <ul class="resolved">${resolved.map((i) => `<li>${esc(i.title)}<small>${esc(SEVERITY[i.severity])}</small></li>`).join('')}</ul>
+          </div>`;
       }
 
       fetch('data.json')
