@@ -14,20 +14,20 @@ export default function Resume() {
     {
       id: 1,
       job: "Web Developer / Digital Marketing Analyst, PMW",
-      date: "MARCH 2025 - PRESENT",
+      date: "MAR 2025 - PRESENT",
       desc: "Develops and maintains high-performance websites using HTML, CSS, JavaScript, and Liquid. Integrates technical SEO best practices, including JSON-LD structured data and AI/LLM-facing signals (llms.txt), to maximize search visibility and rich result eligibility. Optimizes Core Web Vitals and ADA compliance to ensure superior user experience and accessibility.",
     },
     {
       id: 2,
-      job: "On-Page SEO Specialist (Freelance)",
-      date: "JAN 2026 - FEB 2026",
-      desc: "Provides end-to-end SEO services including technical audits, on-page optimization, and performance monitoring. Implements full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.",
+      job: "Web Consultant (Freelance)",
+      date: "OCT 2024 - MAR 2026",
+      desc: "Provided end-to-end web services for small business clients, including WordPress development, performance optimization, and domain/DNS management, and handled the SEO setup of their sites.",
     },
     {
       id: 3,
-      job: "Web Consultant (Freelance)",
-      date: "OCT 2024 - MAR 2026",
-      desc: "Provides end-to-end web services including WordPress development, performance optimization, and domain/DNS management. Implements full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.",
+      job: "On-Page SEO Specialist (Freelance)",
+      date: "JAN 2026 - FEB 2026",
+      desc: "Provided end-to-end SEO services including technical audits, on-page optimization, and performance monitoring. Implemented full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.",
     },
     {
       id: 4,
@@ -38,13 +38,13 @@ export default function Resume() {
     {
       id: 5,
       job: "Logistics Coordinator & Data Analyst, Rulewave",
-      date: "SEPTEMBER 2021 - JUNE 2023",
+      date: "SEP 2021 - JUN 2023",
       desc: "Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors. Generated weekly performance reports and optimized supply chain documentation processes.",
     },
     {
       id: 6,
       job: "IT Teacher / ICT Instructor, University of St. La Salle",
-      date: "JULY 2017 - APRIL 2021",
+      date: "JUL 2017 - APR 2021",
       desc: "Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy. Mentored students on technical documentation and research methodologies for complex IT thesis projects.",
     },
   ];
@@ -58,7 +58,7 @@ export default function Resume() {
     },
     {
       id: 2,
-      school: "University of St. La Salle ",
+      school: "University of St. La Salle",
       year: "Jun 2013 - Mar 2017",
       desc: "Major in Web and Mobile Development, with a thesis on Information Management System for Sacred Heart Shrine Lupit Church.",
     },

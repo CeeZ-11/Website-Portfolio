@@ -18,8 +18,8 @@ export default function About() {
     { icon: Html5Icon, name: "HTML5" },
     { icon: Css3Icon, name: "CSS3" },
     { icon: GitIcon, name: "Git" },
-    { icon: GithubIcon, name: "Github" },
-    { icon: NodejsIcon, name: "NodeJS" },
+    { icon: GithubIcon, name: "GitHub" },
+    { icon: NodejsIcon, name: "Node.js" },
     { icon: WebpackIcon, name: "Webpack" },
     { icon: NpmIcon, name: "NPM" },
   ];
@@ -33,7 +33,7 @@ export default function About() {
         </h2>
 
         <p>
-          A <strong>Front-End Developer & Technical SEO Specialist</strong>  with a background in IT education and digital marketing operations. I hold a{" "}
+          A <strong>Front-End Developer & Technical SEO Specialist</strong> with a background in IT education and digital marketing operations. I hold a{" "}
           <strong>Bachelor’s in Information Technology</strong> from the
           University of St. La Salle, where I specialized in Web and Mobile Development.
         </p>

@@ -213,6 +213,13 @@ export default function Portfolio() {
     },
   ];
 
+  // Hide a category tab until it has at least one project.
+  const visibleTabs = navButtons.filter(
+    (tab) =>
+      tab.id === "all-projects" ||
+      projectList.some((project) => project.category === tab.id)
+  );
+
   return (
     <>
       <PageTitle name="Portfolio" />
@@ -220,7 +227,7 @@ export default function Portfolio() {
         <nav className={`info-nav`}>
           <ul>
             <NavButton
-              navButtons={navButtons}
+              navButtons={visibleTabs}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
             />
