@@ -16,7 +16,6 @@ import SocialLinks from "../components/SocialLinks.jsx";
 const About = React.lazy(() => import("../pages/About.jsx"));
 const Resume = React.lazy(() => import("../pages/Resume.jsx"));
 const Portfolio = React.lazy(() => import("../pages/Portfolio.jsx"));
-const Contact = React.lazy(() => import("../pages/Contact.jsx"));
 
 export default function MainLayout() {
   const socialLinks = [
@@ -95,14 +94,6 @@ export default function MainLayout() {
                 Portfolio
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                Contact
-              </NavLink>
-            </li>
           </ul>
         </nav>
         <div className="main-scroll">
@@ -112,8 +103,9 @@ export default function MainLayout() {
                 <Route path="/about" element={<About />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="/" element={<About />} />
+                {/* Unknown addresses, including the removed #/contact, show About. */}
+                <Route path="*" element={<About />} />
               </Routes>
             </Suspense>
           </div>

@@ -1,20 +1,18 @@
 # Seamor Estrabon – Portfolio
 
-My personal portfolio: about me, resume, projects, live demos of the tools I build at work, and a
-contact form.
+My personal portfolio: about me, resume, projects and live demos of the tools I build at work.
 
 **Live:** https://website-portfolio-nine-beige.vercel.app/
 
 ## What's inside
 
-- **About, Resume, Portfolio and Contact** pages (React with hash routes, e.g. `#/portfolio`).
+- **About, Resume and Portfolio** pages (React with hash routes, e.g. `#/portfolio`).
 - **Portfolio** cards for personal, Odin Project and work projects.
 - **Work demos** in `public/demos/`, plain HTML pages served as-is:
   Speed Engine, Visibility Scanner, Analytics Health, Site QA and Command Center. Each one uses
   public sites I own or fictional sample data, never client data.
-- **Contact** form (EmailJS + reCAPTCHA) and a map.
 
-Built with React 19, Vite, React Router, MUI and Vitest. Hosted on Vercel.
+Built with React 19, Vite, React Router and Vitest. Hosted on Vercel.
 
 ## Run it locally
 
@@ -28,19 +26,7 @@ npm run lint
 npx vitest run    # tests
 ```
 
-The contact form and map need keys. Put them in a `.env` file (never commit it):
-
-```
-VITE_GOOGLE_MAPS_API_KEY=
-VITE_IP_GEO_API_KEY=
-VITE_EMAILJS_SERVICE_ID=
-VITE_EMAILJS_TEMPLATE_ID=
-VITE_EMAILJS_PUBLIC_KEY=
-VITE_RECAPTCHA_SITE_KEY=
-```
-
-`.env.example` lists the same names. On Vercel, set them under
-**Settings → Environment Variables** for Production.
+No API keys are needed to run the site.
 
 ## Rebuilding the demo data
 

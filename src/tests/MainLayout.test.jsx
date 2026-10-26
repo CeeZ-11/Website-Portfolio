@@ -32,7 +32,7 @@ describe("MainLayout", () => {
       </MemoryRouter>
     );
 
-    const links = ["About", "Resume", "Portfolio", "Contact"];
+    const links = ["About", "Resume", "Portfolio"];
     links.forEach((link) => {
       expect(screen.getByText(new RegExp(link, "i"))).toBeInTheDocument();
     });
@@ -49,7 +49,6 @@ describe("MainLayout", () => {
       { name: /About/i, expectedText: /About Me/i },
       { name: /Resume/i, expectedText: /Resume/i },
       { name: /Portfolio/i, expectedText: /Portfolio/i },
-      { name: /Contact/i, expectedText: /Contact/i },
     ];
 
     for (const { name, expectedText } of navLinks) {
