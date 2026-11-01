@@ -15,7 +15,14 @@ export default function Resume() {
       id: 1,
       job: "Web Developer / Digital Marketing Analyst, PMW",
       date: "MAR 2025 - PRESENT",
-      desc: "Develops and maintains high-performance websites using HTML, CSS, JavaScript, and Liquid. Integrates technical SEO best practices, including JSON-LD structured data and AI/LLM-facing signals (llms.txt), to maximize search visibility and rich result eligibility. Optimizes Core Web Vitals and ADA compliance to ensure superior user experience and accessibility.",
+      desc: [
+        "Builds and maintains property management websites in HTML, CSS, JavaScript and Liquid, including page templates, resource pages and FAQ sections with JSON-LD structured data.",
+        "Handles technical SEO, Core Web Vitals and ADA accessibility fixes, plus AI-search readiness (llms.txt, structured data).",
+        "Built the Speed Engine, a TypeScript desktop app (Electron, Playwright, Lighthouse) that explains why pages are slow and what to fix first; teammates request deep audits from Slack, run in GitHub Actions.",
+        "Built Analytics Health, a daily GA4 and Google Tag Manager check across hundreds of client sites with Slack alerts, a dashboard and monthly page-view reports.",
+        "Built an SEO and AI-visibility scanner, and n8n automations for Microsoft Clarity rage-click alerts and a daily industry news digest.",
+        "Maintains the team's shared Playwright + axe-core QA tool, is planning a QA automation platform, and shipped updates to the team's ION CMS extension for Cursor.",
+      ],
     },
     {
       id: 2,

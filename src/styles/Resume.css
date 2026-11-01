@@ -27,6 +27,17 @@
   padding: 0;
 }
 
+.exp-info-container .exp-details ul li .resume-ul-desc.resume-points {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-info-container .exp-details ul li .resume-points .resume-desc {
+  list-style-type: disc;
+}
+
 .exp-info-container .exp-details > ul,
 .edu-info-container .edu-details > ul {
   list-style: none;

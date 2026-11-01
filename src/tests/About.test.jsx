@@ -15,14 +15,12 @@ describe("About Page", () => {
   it("renders 'My Journey' section", () => {
     render(<About />);
     expect(screen.getByText(/My Journey/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(/I started as an IT professor teaching /i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/I started as an/i)).toBeInTheDocument();
   });
 
   it("renders the Tech Stack section", () => {
     render(<About />);
-    expect(screen.getByText("Tech Stack")).toBeInTheDocument();
+    expect(screen.getByText(/Tech Stack/)).toBeInTheDocument();
   });
 
   it("renders a list of technologies in the Tech Stack", () => {
@@ -34,18 +32,15 @@ describe("About Page", () => {
     });
   });
 
-  const learningItems = [
-    "Advanced React (State Management, Context API)",
-    "Full-stack Development with Node.js & Express",
-    "Mobile App Development (Future Goal)",
-  ];
-
-  it("renders the Current Learning section and list", () => {
+  it("renders the work, skills and learning sections", () => {
     render(<About />);
-    expect(screen.getByText(/Currently Learning/i)).toBeInTheDocument();
-    learningItems.forEach((item) => {
-      expect(screen.getByText(item)).toBeInTheDocument();
+    expect(screen.getByText(/What I’m Working On/)).toBeInTheDocument();
+    expect(screen.getByText(/Speed Engine:/)).toBeInTheDocument();
+    expect(screen.getByText(/Skills & Tools/)).toBeInTheDocument();
+    ["TypeScript", "Playwright", "n8n", "Google Tag Manager"].forEach((skill) => {
+      expect(screen.getByText(skill)).toBeInTheDocument();
     });
+    expect(screen.getByText(/Still Learning/)).toBeInTheDocument();
   });
 });
 

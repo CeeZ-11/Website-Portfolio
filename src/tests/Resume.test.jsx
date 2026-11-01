@@ -5,7 +5,7 @@ import Resume from "../pages/Resume";
 import NavButton from "../components/NavButton";
 
 describe("Resume Page", () => {
-  it("renders the Contact page correctly", () => {
+  it("matches the saved Resume snapshot", () => {
     const { asFragment } = render(<Resume />);
     expect(asFragment()).toMatchSnapshot();
   });
@@ -13,13 +13,11 @@ describe("Resume Page", () => {
   it("renders 'Experience' section", () => {
     render(<Resume />);
     expect(screen.getByText("Experience")).toBeInTheDocument();
+    expect(screen.getByText("Web Developer / Digital Marketing Analyst, PMW")).toBeInTheDocument();
+    expect(screen.getByText("MAR 2025 - PRESENT")).toBeInTheDocument();
+    expect(screen.getByText(/^Built the Speed Engine/)).toBeInTheDocument();
     expect(screen.getByText("Web Consultant (Freelance)")).toBeInTheDocument();
-    expect(screen.getByText("OCT 2024 - PRESENT")).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "Managed and maintained WordPress websites on GoDaddy, handling updates, design adjustments, performance optimization, and client collaboration."
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByText("OCT 2024 - MAR 2026")).toBeInTheDocument();
   });
 
   it("renders 'Education' section", () => {
@@ -27,11 +25,7 @@ describe("Resume Page", () => {
     expect(screen.getByText("Education")).toBeInTheDocument();
     expect(screen.getByText("The Odin Project")).toBeInTheDocument();
     expect(screen.getByText("Nov 2023 - Present")).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "Completed full-stack web development coursework, gaining hands-on experience with modern technologies and best practices."
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByText(/^Currently studying full-stack web development/)).toBeInTheDocument();
   });
 
   it("renders 'Certifications' after button click", async () => {

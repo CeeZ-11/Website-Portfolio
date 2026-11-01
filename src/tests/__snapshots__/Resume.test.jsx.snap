@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Resume Page > renders the Contact page correctly 1`] = `
+exports[`Resume Page > matches the saved Resume snapshot 1`] = `
 <DocumentFragment>
   <div
     class="about-title"
@@ -67,7 +67,57 @@ exports[`Resume Page > renders the Contact page correctly 1`] = `
           class="exp-details"
         >
           <ul>
-            <li>
+            <li
+              class="exp-info-container"
+            >
+              <div
+                class="exp-details-head"
+              >
+                <h4>
+                  Web Developer / Digital Marketing Analyst, PMW
+                </h4>
+                <h5>
+                  MAR 2025 - PRESENT
+                </h5>
+              </div>
+              <ul
+                class="resume-ul-desc resume-points"
+              >
+                <li
+                  class="resume-desc"
+                >
+                  Builds and maintains property management websites in HTML, CSS, JavaScript and Liquid, including page templates, resource pages and FAQ sections with JSON-LD structured data.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Handles technical SEO, Core Web Vitals and ADA accessibility fixes, plus AI-search readiness (llms.txt, structured data).
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Built the Speed Engine, a TypeScript desktop app (Electron, Playwright, Lighthouse) that explains why pages are slow and what to fix first; teammates request deep audits from Slack, run in GitHub Actions.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Built Analytics Health, a daily GA4 and Google Tag Manager check across hundreds of client sites with Slack alerts, a dashboard and monthly page-view reports.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Built an SEO and AI-visibility scanner, and n8n automations for Microsoft Clarity rage-click alerts and a daily industry news digest.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Maintains the team's shared Playwright + axe-core QA tool, is planning a QA automation platform, and shipped updates to the team's ION CMS extension for Cursor.
+                </li>
+              </ul>
+            </li>
+            <li
+              class="exp-info-container"
+            >
               <div
                 class="exp-details-head"
               >
@@ -75,20 +125,45 @@ exports[`Resume Page > renders the Contact page correctly 1`] = `
                   Web Consultant (Freelance)
                 </h4>
                 <h5>
-                  OCT 2024 - PRESENT
+                  OCT 2024 - MAR 2026
                 </h5>
               </div>
               <ul
-                class="resume-ul-desc"
+                class="resume-ul-desc "
               >
                 <li
                   class="resume-desc"
                 >
-                  Managed and maintained WordPress websites on GoDaddy, handling updates, design adjustments, performance optimization, and client collaboration.
+                  Provided end-to-end web services for small business clients, including WordPress development, performance optimization, and domain/DNS management, and handled the SEO setup of their sites.
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              class="exp-info-container"
+            >
+              <div
+                class="exp-details-head"
+              >
+                <h4>
+                  On-Page SEO Specialist (Freelance)
+                </h4>
+                <h5>
+                  JAN 2026 - FEB 2026
+                </h5>
+              </div>
+              <ul
+                class="resume-ul-desc "
+              >
+                <li
+                  class="resume-desc"
+                >
+                  Provided end-to-end SEO services including technical audits, on-page optimization, and performance monitoring. Implemented full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.
+                </li>
+              </ul>
+            </li>
+            <li
+              class="exp-info-container"
+            >
               <div
                 class="exp-details-head"
               >
@@ -100,54 +175,58 @@ exports[`Resume Page > renders the Contact page correctly 1`] = `
                 </h5>
               </div>
               <ul
-                class="resume-ul-desc"
+                class="resume-ul-desc "
               >
                 <li
                   class="resume-desc"
                 >
-                  Monitored 45+ Google Meet sessions, tracked attendance, enforced rules, provided technical support, evaluated performance, and optimized workflows.
+                  Managed digital security and auditing through daily log monitoring to ensure data policy compliance. Provided technical support for remote operations and built tracking systems to report on system performance metrics.
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              class="exp-info-container"
+            >
               <div
                 class="exp-details-head"
               >
                 <h4>
-                  Logistics Coordinator, Rulewave
+                  Logistics Coordinator & Data Analyst, Rulewave
                 </h4>
                 <h5>
-                  September 2021 - June 2023
+                  SEP 2021 - JUN 2023
                 </h5>
               </div>
               <ul
-                class="resume-ul-desc"
+                class="resume-ul-desc "
               >
                 <li
                   class="resume-desc"
                 >
-                  Optimized supply chain operations, managed customer inquiries, analyzed reports, tracked shipments, and improved logistics processes for efficiency.
+                  Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors. Generated weekly performance reports and optimized supply chain documentation processes.
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              class="exp-info-container"
+            >
               <div
                 class="exp-details-head"
               >
                 <h4>
-                  Professor, University of St. La Salle
+                  IT Teacher / ICT Instructor, University of St. La Salle
                 </h4>
                 <h5>
-                  July 2017 - April 2021
+                  JUL 2017 - APR 2021
                 </h5>
               </div>
               <ul
-                class="resume-ul-desc"
+                class="resume-ul-desc "
               >
                 <li
                   class="resume-desc"
                 >
-                  Taught HTML, CSS, PHP, and JavaScript, while also facilitating research methodology sessions to enhance students' programming and research skills.
+                  Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy. Mentored students on technical documentation and research methodologies for complex IT thesis projects.
                 </li>
               </ul>
             </li>
@@ -254,7 +333,9 @@ exports[`Resume Page > renders the Contact page correctly 1`] = `
           class="edu-details"
         >
           <ul>
-            <li>
+            <li
+              class="exp-info-container"
+            >
               <h4>
                 The Odin Project
               </h4>
@@ -267,13 +348,15 @@ exports[`Resume Page > renders the Contact page correctly 1`] = `
                 <li
                   class="edu-desc"
                 >
-                  Completed full-stack web development coursework, gaining hands-on experience with modern technologies and best practices.
+                  Currently studying full-stack web development. Completed the front-end portion and now focusing on backend development, gaining hands-on experience with modern technologies and best practices.
                 </li>
               </ul>
             </li>
-            <li>
+            <li
+              class="exp-info-container"
+            >
               <h4>
-                University of St. La Salle 
+                University of St. La Salle
               </h4>
               <h5>
                 Jun 2013 - Mar 2017
@@ -297,14 +380,14 @@ exports[`Resume Page > renders the Contact page correctly 1`] = `
     class="additional-info"
   >
     <div
-      class="info-title"
+      class=" info-title"
     >
       <h2>
         Additional Information
       </h2>
     </div>
     <div
-      class="info-container"
+      class=" info-container nav-container"
     >
       <nav
         class="info-nav"

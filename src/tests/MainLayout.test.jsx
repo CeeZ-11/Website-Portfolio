@@ -13,7 +13,7 @@ describe("MainLayout", () => {
 
     expect(screen.getByAltText(/profile/i)).toBeInTheDocument();
     expect(screen.getByText(/Seamor Estrabon/)).toBeInTheDocument();
-    expect(screen.getByText(/Front-End Developer/)).toBeInTheDocument();
+    expect(screen.getByText(/Web Developer & Digital Marketing Analyst/)).toBeInTheDocument();
 
     expect(screen.getByText(/Email/i)).toBeInTheDocument();
     expect(screen.getByText(/seamorestrabon@gmail.com/i)).toBeInTheDocument();
@@ -45,17 +45,19 @@ describe("MainLayout", () => {
       </MemoryRouter>
     );
 
+    // Click the menu links by their exact names (page text can also mention "Portfolio"),
+    // then check each page's main heading.
     const navLinks = [
-      { name: /About/i, expectedText: /About Me/i },
-      { name: /Resume/i, expectedText: /Resume/i },
-      { name: /Portfolio/i, expectedText: /Portfolio/i },
+      { name: /^About$/, heading: /About Me/ },
+      { name: /^Resume$/, heading: /Resume/ },
+      { name: /^Portfolio$/, heading: /Portfolio/ },
     ];
 
-    for (const { name, expectedText } of navLinks) {
-      fireEvent.click(screen.getByText(name));
+    for (const { name, heading } of navLinks) {
+      fireEvent.click(screen.getByRole("link", { name }));
 
       await waitFor(() => {
-        expect(screen.getByText(expectedText)).toBeInTheDocument();
+        expect(screen.getByRole("heading", { level: 1, name: heading })).toBeInTheDocument();
       });
     }
   });

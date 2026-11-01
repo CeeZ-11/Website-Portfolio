@@ -44,6 +44,40 @@
   height: 50px;
 }
 
+.aboutC a {
+  color: #ff7300;
+}
+
+.current-work {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.skill-group h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #ff7300;
+}
+
+.skill-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chips li {
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.85rem;
+}
+
 .aboutC ul ul {
   padding: 0;
   margin: 0;

@@ -6,22 +6,91 @@ import Css3Icon from "../components/Icons/Css3";
 import GitIcon from "../components/Icons/GitIcon";
 import GithubIcon from "../components/Icons/GithubIcon";
 import NodejsIcon from "../components/Icons/NodejsIcon";
-import WebpackIcon from "../components/Icons/WebpackIcon";
 import NpmIcon from "../components/Icons/NpmIcon";
 import TechStack from "../components/TechStack.jsx";
 import PageTitle from "../components/PageTitle.jsx";
 
 export default function About() {
   const techStackSkills = [
-    { icon: JavaScriptIcon, name: "JavaScript (ES6+)" },
-    { icon: ReactIcon, name: "React" },
     { icon: Html5Icon, name: "HTML5" },
     { icon: Css3Icon, name: "CSS3" },
+    { icon: JavaScriptIcon, name: "JavaScript (ES6+)" },
+    { icon: ReactIcon, name: "React" },
+    { icon: NodejsIcon, name: "Node.js" },
     { icon: GitIcon, name: "Git" },
     { icon: GithubIcon, name: "GitHub" },
-    { icon: NodejsIcon, name: "Node.js" },
-    { icon: WebpackIcon, name: "Webpack" },
     { icon: NpmIcon, name: "NPM" },
+  ];
+
+  const skillGroups = [
+    {
+      name: "Front-end",
+      skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Vite", "Tailwind CSS", "Liquid", "three.js"],
+    },
+    {
+      name: "Back-end & hosting",
+      skills: ["Node.js", "Electron", "SQLite", "Cloudflare Workers & D1", "Firebase", "Google Apps Script", "Vercel", "GitHub Pages"],
+    },
+    {
+      name: "Technical SEO & performance",
+      skills: [
+        "Core Web Vitals",
+        "Lighthouse",
+        "PageSpeed Insights & CrUX",
+        "JSON-LD structured data",
+        "AI search readiness (llms.txt)",
+        "Google Search Console",
+        "Semrush",
+        "Ahrefs",
+      ],
+    },
+    {
+      name: "Analytics",
+      skills: ["Google Analytics 4", "Google Tag Manager", "GA4 Data API", "Microsoft Clarity"],
+    },
+    {
+      name: "Testing & quality",
+      skills: ["Playwright", "axe-core (accessibility / ADA)", "Chrome DevTools Protocol", "Vitest", "ESLint", "Prettier"],
+    },
+    {
+      name: "Automation & AI",
+      skills: ["n8n", "GitHub Actions", "Slack apps & webhooks", "Claude Code", "Cursor", "Gemini & OpenAI APIs", "Magic Patterns"],
+    },
+    {
+      name: "Mobile",
+      skills: ["React Native", "Expo"],
+    },
+    {
+      name: "Tools",
+      skills: ["Git & GitHub", "npm", "monday.com", "WordPress", "DNS & domain setup"],
+    },
+  ];
+
+  const currentWork = [
+    {
+      name: "Speed Engine",
+      text: "a desktop app that finds why a page is slow and what to fix first, built with TypeScript, Playwright, Lighthouse and Electron. Teammates can also request deep audits from Slack.",
+    },
+    {
+      name: "Analytics Health",
+      text: "a daily check that Google Analytics and Tag Manager still work on hundreds of client sites, with alerts in Slack and a team dashboard.",
+    },
+    {
+      name: "Visibility Scanner",
+      text: "free SEO and AI-search checks turned into a weekly report: crawler access, sitemaps, key pages and structured data.",
+    },
+    {
+      name: "Site QA",
+      text: "automated pre-launch checks with Playwright and axe-core, and a plan for a team-wide QA automation platform.",
+    },
+    {
+      name: "n8n automations",
+      text: "rage-click alerts from Microsoft Clarity and a daily industry news digest, both posted to Slack.",
+    },
+    {
+      name: "Command Center",
+      text: "my own work dashboard on Cloudflare Workers, with an AI morning briefing and a 3D character that levels up with finished work.",
+    },
   ];
 
   return (
@@ -33,34 +102,49 @@ export default function About() {
         </h2>
 
         <p>
-          A <strong>Front-End Developer & Technical SEO Specialist</strong> with a background in IT education and digital marketing operations. I hold a{" "}
-          <strong>Bachelor’s in Information Technology</strong> from the
-          University of St. La Salle, where I specialized in Web and Mobile Development.
+          I’m a <strong>Web Developer & Digital Marketing Analyst at PMW</strong>, where I build and look after
+          property management websites. My work sits where code meets search: fast pages, clean markup,{" "}
+          <strong>technical SEO, Core Web Vitals, accessibility (ADA) and AI-search readiness</strong>.
         </p>
 
         <p>
-          Currently, I am a{" "}
-          <strong>Web Developer & Digital Marketing Analyst at PMW</strong>,
-          where I bridge the gap between clean code and search visibility. My work focuses on building high-performance websites using <strong>HTML, CSS, JavaScript, and Liquid</strong>, while implementing advanced optimizations for <strong>Core Web Vitals, accessibility (ADA), and AI/LLM search readiness</strong>.
+          I also build the tools and automations my team uses, mostly in <strong>TypeScript, Node.js, Playwright and n8n</strong>,
+          and I work with AI coding tools like <strong>Claude Code and Cursor</strong> every day. I hold a{" "}
+          <strong>Bachelor’s in Information Technology</strong> from the University of St. La Salle, majoring in Web and
+          Mobile Development.
         </p>
+      </div>
+
+      <div className={`aboutC projects`}>
+        <h2>What I’m Working On 🏗️</h2>
+        <p>
+          Tools I’ve built at work in 2026. Each one has a live demo, using my own sites or sample data, under{" "}
+          <a href="#/portfolio">Portfolio → Work Projects</a>.
+        </p>
+        <ul className="current-work">
+          {currentWork.map((item) => (
+            <li key={item.name}>
+              <strong>{item.name}:</strong> {item.text}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className={`aboutC journey`}>
         <h2>My Journey 🚀</h2>
 
         <p>
-          My foundation began as an <strong>IT Instructor</strong>, where I taught web development and mentored students on technical research. This passion for technical clarity led me into <strong>freelance web consulting</strong>, where I managed end-to-end WordPress solutions, domain configurations, and SEO strategies for small businesses.
+          I started as an <strong>IT Instructor</strong>, teaching senior high students web development and guiding
+          their IT research. I then spent a few years in <strong>data and operations roles</strong>, auditing databases,
+          automating workflows and monitoring systems.
         </p>
 
         <p>
-          Today, I specialize in <strong>Technical SEO Engineering</strong>—ensuring that modern web applications are not only responsive but also fully discoverable through <strong>structured data (JSON-LD) and semantic SEO</strong>. 
-        </p>
-        
-        <p>
-          I am currently deepening my expertise in the <strong>MERN stack</strong> through The Odin Project, with a long-term focus on building scalable, full-stack applications and exploring <strong>mobile development</strong>.
+          That led me into <strong>freelance web consulting</strong>: WordPress builds, performance work, domains and
+          DNS, and SEO for small businesses. Since 2025 I’ve been at PMW, building websites and, more and more, the
+          automation and testing tools behind them.
         </p>
       </div>
-
 
       <div className={`aboutC tech-stack-container`}>
         <h2>Tech Stack 🛠️</h2>
@@ -71,35 +155,30 @@ export default function About() {
         </ul>
       </div>
 
-      <div className={`aboutC cur-learning`}>
-        <h2>Expanding My Tech Stack 📚</h2>
-        <ul>
-          <li>
-            <strong>Full-stack Development:</strong> Completed JavaScript
-            front-end curriculum in The Odin Project; now learning{" "}
-            <strong>Node.js, Express, Authentication, ORMs, and APIs</strong>.
-          </li>
-          <li>
-            <strong>Mobile App Development (Future Goal):</strong> Planning to
-            learn{" "}
-            <strong>React Native, Flutter, Swift, Kotlin, and Firebase</strong>{" "}
-            for cross-platform and native app development.
-          </li>
-        </ul>
+      <div className={`aboutC skills`}>
+        <h2>Skills & Tools 🧰</h2>
+        {skillGroups.map((group) => (
+          <div key={group.name} className="skill-group">
+            <h3>{group.name}</h3>
+            <ul className="skill-chips">
+              {group.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
 
-      <div className={`aboutC projects`}>
-        <h2>Major Projects in Development 🏗️</h2>
+      <div className={`aboutC cur-learning`}>
+        <h2>Still Learning 📚</h2>
         <ul>
           <li>
-            <strong>School Management System (MERN stack)</strong>
+            <strong>Full-stack development:</strong> continuing The Odin Project’s back-end path (Express,
+            authentication, databases and APIs).
           </li>
-          <ul>
-            <li>✅ Student Enrollment</li>
-            <li>✅ Scheduling & Attendance Tracking</li>
-            <li>✅ Grade Management</li>
-            <li>✅ Role-based Authentication & Real-time Notifications</li>
-          </ul>
+          <li>
+            <strong>Mobile development:</strong> React Native and Expo, starting with a school app prototype.
+          </li>
         </ul>
       </div>
     </>
