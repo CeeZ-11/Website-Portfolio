@@ -5,8 +5,8 @@ export default function ExperienceList({ expList }) {
     return (
       <li key={exp.id} className={`exp-info-container`}>
         <div className="exp-details-head">
-          <h4>{exp.job}</h4>
-          <h5>{exp.date}</h5>
+          <h3>{exp.job}</h3>
+          <p className="resume-date">{exp.date}</p>
         </div>
         <ul className={`resume-ul-desc ${points.length > 1 ? "resume-points" : ""}`}>
           {points.map((point) => (

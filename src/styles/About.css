@@ -118,3 +118,20 @@ strong {
   animation: wave 2.5s ease-in-out forwards; /* Plays once and stops */
   transform-origin: 70% 70%;
 }
+
+@media (max-width: 600px) {
+  .tech-stack-list {
+    padding: 1rem;
+    gap: 16px;
+  }
+
+  .tech-stack {
+    width: 72px;
+    font-size: 0.8rem;
+  }
+
+  .tech-icons {
+    width: 40px;
+    height: 40px;
+  }
+}

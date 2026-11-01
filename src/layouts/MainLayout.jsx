@@ -68,7 +68,7 @@ export default function MainLayout() {
         <SocialLinks links={socialLinks} />
       </aside>
       <main>
-        <nav>
+        <nav aria-label="Main">
           <ul>
             <li>
               <NavLink

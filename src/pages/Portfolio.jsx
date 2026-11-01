@@ -224,7 +224,7 @@ export default function Portfolio() {
     <>
       <PageTitle name="Portfolio" />
       <div className="project-container nav-container">
-        <nav className={`info-nav`}>
+        <nav className={`info-nav`} aria-label="Project categories">
           <ul>
             <NavButton
               navButtons={visibleTabs}

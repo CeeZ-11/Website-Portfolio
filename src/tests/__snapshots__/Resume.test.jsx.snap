@@ -73,12 +73,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
               <div
                 class="exp-details-head"
               >
-                <h4>
+                <h3>
                   Web Developer / Digital Marketing Analyst, PMW
-                </h4>
-                <h5>
+                </h3>
+                <p
+                  class="resume-date"
+                >
                   MAR 2025 - PRESENT
-                </h5>
+                </p>
               </div>
               <ul
                 class="resume-ul-desc resume-points"
@@ -121,12 +123,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
               <div
                 class="exp-details-head"
               >
-                <h4>
+                <h3>
                   Web Consultant (Freelance)
-                </h4>
-                <h5>
+                </h3>
+                <p
+                  class="resume-date"
+                >
                   OCT 2024 - MAR 2026
-                </h5>
+                </p>
               </div>
               <ul
                 class="resume-ul-desc "
@@ -144,12 +148,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
               <div
                 class="exp-details-head"
               >
-                <h4>
+                <h3>
                   On-Page SEO Specialist (Freelance)
-                </h4>
-                <h5>
+                </h3>
+                <p
+                  class="resume-date"
+                >
                   JAN 2026 - FEB 2026
-                </h5>
+                </p>
               </div>
               <ul
                 class="resume-ul-desc "
@@ -167,12 +173,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
               <div
                 class="exp-details-head"
               >
-                <h4>
+                <h3>
                   Monitor Engineer, MID Construction Group
-                </h4>
-                <h5>
+                </h3>
+                <p
+                  class="resume-date"
+                >
                   MAY 2024 - OCT 2024
-                </h5>
+                </p>
               </div>
               <ul
                 class="resume-ul-desc "
@@ -190,12 +198,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
               <div
                 class="exp-details-head"
               >
-                <h4>
+                <h3>
                   Logistics Coordinator & Data Analyst, Rulewave
-                </h4>
-                <h5>
+                </h3>
+                <p
+                  class="resume-date"
+                >
                   SEP 2021 - JUN 2023
-                </h5>
+                </p>
               </div>
               <ul
                 class="resume-ul-desc "
@@ -213,12 +223,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
               <div
                 class="exp-details-head"
               >
-                <h4>
+                <h3>
                   IT Teacher / ICT Instructor, University of St. La Salle
-                </h4>
-                <h5>
+                </h3>
+                <p
+                  class="resume-date"
+                >
                   JUL 2017 - APR 2021
-                </h5>
+                </p>
               </div>
               <ul
                 class="resume-ul-desc "
@@ -336,12 +348,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
             <li
               class="exp-info-container"
             >
-              <h4>
+              <h3>
                 The Odin Project
-              </h4>
-              <h5>
+              </h3>
+              <p
+                class="resume-date"
+              >
                 Nov 2023 - Present
-              </h5>
+              </p>
               <ul
                 class="edu-ul-desc"
               >
@@ -355,12 +369,14 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
             <li
               class="exp-info-container"
             >
-              <h4>
+              <h3>
                 University of St. La Salle
-              </h4>
-              <h5>
+              </h3>
+              <p
+                class="resume-date"
+              >
                 Jun 2013 - Mar 2017
-              </h5>
+              </p>
               <ul
                 class="edu-ul-desc"
               >
@@ -390,6 +406,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
       class=" info-container nav-container"
     >
       <nav
+        aria-label="Additional information"
         class="info-nav"
       >
         <ul>
@@ -419,9 +436,9 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
       <div
         class="info-content"
       >
-        <h4>
-           Languages 
-        </h4>
+        <h3>
+          Languages
+        </h3>
         <ul>
           <li>
              English - B2(Upper Intermediate)

@@ -1,6 +1,15 @@
 import useOnScreen from "../hooks/useOnScreen";
 import OpenLinkIcon from "../components/Icons/OpenLinkIcon";
 
+// Readable names for the category ids used in Portfolio.jsx.
+const CATEGORY_LABELS = {
+  "work-projects": "Work demo",
+  "odin-projects": "The Odin Project",
+  "mini-projects": "Mini project",
+  "personal-projects": "Personal project",
+  collaborations: "Collaboration",
+};
+
 const ProjectItem = ({ project }) => {
   const [ref, isVisible] = useOnScreen();
 
@@ -13,15 +22,17 @@ const ProjectItem = ({ project }) => {
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <div className="project-image">
-          <img src={project.image} srcSet={project.image} alt={project.name} />
+          <img src={project.image} alt={project.name} loading="lazy" />
           <div className="visit-site-icon">
             <OpenLinkIcon />
           </div>
         </div>
       </a>
       <div className="project-details">
-        <h3>{project.name}</h3>
-        <h5>#{project.category}</h5>
+        <h2>{project.name}</h2>
+        <p className="project-category">
+          {CATEGORY_LABELS[project.category] ?? project.category}
+        </p>
       </div>
     </li>
   );

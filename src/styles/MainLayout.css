@@ -9,12 +9,12 @@
 }
 
 p {
-  font-size: clamp(0.5rem, 1vw, 0.6rem);
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
 }
 
 main p,
 main li {
-  font-size: clamp(0.7rem, 1vw, 1rem);
+  font-size: clamp(0.875rem, 1vw, 1rem);
 }
 
 main h1 {
@@ -72,7 +72,7 @@ aside .profile-card img {
   font-weight: bold;
 }
 
-.profile-card h4 {
+.profile-card .profile-title {
   font-size: clamp(0.7rem, 1.1vw, 1.6rem);
   font-style: italic;
   font-weight: lighter;
@@ -102,9 +102,14 @@ aside .profile-card img {
   margin: 20px auto;
 }
 
-.profile-details h5 {
-  font-size: clamp(0.6rem, 1vw, 1.5rem);
-  font-weight: normal;
+.profile-details .detail-label {
+  display: block;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  color: rgba(245, 245, 245, 0.65);
+}
+
+.profile-details p {
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
 }
 
 .profile-details img {
@@ -119,9 +124,8 @@ aside .profile-card img {
   display: flex;
   gap: 10px;
   width: 100%;
-  max-width: 200px;
+  max-width: 220px;
   height: auto;
-  word-break: break-all;
   align-items: center;
 }
 
@@ -200,7 +204,7 @@ main nav ul li a.active {
 }
 
 .main-scroll::-webkit-scrollbar {
-  width: 1.5px;
+  width: 6px;
 }
 
 .main-scroll::-webkit-scrollbar-track {
@@ -248,8 +252,63 @@ main nav ul li a.active {
 }
 
 @media (max-width: 900px) {
+  /* Stack the sidebar above the content and let the whole page scroll,
+     instead of fixed-height boxes that scroll inside each other. */
+  .App {
+    height: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+
   .Main {
     flex-direction: column;
+    height: auto;
+    width: calc(100vw - 32px);
+  }
+
+  .main-scroll {
+    height: auto;
+    overflow: visible;
+  }
+
+  .page-container {
+    overflow: visible;
+  }
+
+  aside {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-card {
+    gap: 12px;
+  }
+
+  .profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+    padding-left: 0;
+    margin: 8px 0;
+  }
+
+  .profile-details .email,
+  .profile-details .phone,
+  .profile-details .address,
+  .profile-details .birthdate {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-details {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -279,7 +338,7 @@ main nav ul li a.active {
 
 @media (max-width: 340px) {
   main nav ul li a {
-    padding: 5px;
-    font-size: 8px;
+    padding: 8px;
+    font-size: 0.8rem;
   }
 }

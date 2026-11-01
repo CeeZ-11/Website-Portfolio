@@ -166,7 +166,7 @@ export default function Resume() {
         </div>
 
         <div className={` info-container nav-container`}>
-          <nav className="info-nav">
+          <nav className="info-nav" aria-label="Additional information">
             <ul>
               <NavButton
                 navButtons={navButtons}
@@ -178,7 +178,7 @@ export default function Resume() {
           <div className="info-content">
             {activeTab === "languages" && (
               <>
-                <h4> Languages </h4>
+                <h3>Languages</h3>
                 <ul>
                   <li> English - B2(Upper Intermediate)</li>
                   <li>Tagalog - Native or Bilingual</li>
@@ -187,7 +187,7 @@ export default function Resume() {
             )}
             {activeTab === "certifications" && (
               <>
-                <h4> Certifications </h4>
+                <h3>Certifications</h3>
                 <ul>
                   <li>SEO Essentials - Semrush (2025)</li>
                   <li>SEO Fundamentals - Semrush (2025)</li>
@@ -199,10 +199,10 @@ export default function Resume() {
             )}
             {activeTab === "trainings" && (
               <>
-                <h4> PMW Team Trainings </h4>
+                <h3>PMW Team Trainings</h3>
                 {teamTrainings.map(({ group, items }) => (
                   <div key={group} className="training-group">
-                    <h5>{group}</h5>
+                    <h4>{group}</h4>
                     <ul>
                       {items.map((t) => (
                         <li key={t.title}>
@@ -213,7 +213,7 @@ export default function Resume() {
                     </ul>
                   </div>
                 ))}
-                <h4> Other Trainings & Seminars </h4>
+                <h3>Other Trainings & Seminars</h3>
                 <ul>
                   <li>JobStreet.com – Jumpstart Session (2016)</li>
                   <li>Google I/O Seminar (2016)</li>

@@ -93,7 +93,8 @@
   gap: 15px;
 }
 
-.training-group h5 {
+.training-group h4 {
+  font-size: 0.95rem;
   margin: 0 0 6px;
   color: #ff7300;
 }
@@ -145,22 +146,33 @@
 }
 
 @media (max-width: 500px) {
-  .info-nav ul li button {
-    padding: 10px;
-    font-size: 10px;
+  /* Let the tabs wrap as whole words instead of shrinking the text. */
+  .nav-container .info-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 12px;
+  }
+
+  .nav-container .info-nav ul li button {
+    padding: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 }
 
-@media (max-width: 340px) {
-  .info-nav ul li button {
-    padding: 5px;
-    font-size: 8px;
-  }
+/* Job, school and section headings keep their old visual size after moving to the right heading levels. */
+.exp-details-head h3,
+.edu-details h3 {
+  font-size: 1rem;
 }
 
-@media (max-width: 300px) {
-  .info-nav ul li button {
-    padding: 3px;
-    font-size: 6px;
-  }
+.info-content h3 {
+  font-size: 1.05rem;
+}
+
+.resume-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(245, 245, 245, 0.7);
 }

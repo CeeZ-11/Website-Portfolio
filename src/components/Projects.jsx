@@ -10,9 +10,7 @@ export default function Projects({ projectList }) {
 
   if (projectList.length === 0) {
     return (
-      <ul>
-        <h2>Coming Soon..</h2>
-      </ul>
+      <p className="coming-soon">Coming soon.</p>
     );
   }
 
