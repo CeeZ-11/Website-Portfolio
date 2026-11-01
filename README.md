@@ -22,8 +22,7 @@ Needs Node 22 or newer.
 npm install
 npm run dev       # http://localhost:5173
 npm run build     # production build in dist/
-npm run lint
-npx vitest run    # tests
+npm run check     # lint + tests; run before committing
 ```
 
 No API keys are needed to run the site.
