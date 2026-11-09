@@ -52,7 +52,7 @@ export default function MainLayout() {
           // Matches the CSS width clamp(100px, 15vw, 200px) in MainLayout.css.
           imageSizes="(max-width: 666px) 100px, (max-width: 1333px) 15vw, 200px"
           name="Seamor Estrabon"
-          title="Web Developer & Digital Marketing Analyst"
+          title="Web Developer | Digital Marketing Analyst | Automation & Website Performance"
         />
         <div className="profile-details">
           {profileDetails.map((detail) => (

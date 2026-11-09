@@ -25,7 +25,7 @@ export default function About() {
   const skillGroups = [
     {
       name: "Front-end",
-      skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Vite", "Tailwind CSS", "Liquid", "three.js"],
+      skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Vite", "Bootstrap", "Tailwind CSS", "Liquid", "three.js"],
     },
     {
       name: "Back-end & hosting",
@@ -62,7 +62,7 @@ export default function About() {
     },
     {
       name: "Tools",
-      skills: ["Git & GitHub", "npm", "monday.com", "WordPress", "DNS & domain setup"],
+      skills: ["Git & GitHub", "npm", "monday.com", "WordPress", "Grade.us", "Loom", "DNS & domain setup"],
     },
   ];
 
@@ -102,16 +102,24 @@ export default function About() {
         </h2>
 
         <p>
-          I’m a <strong>Web Developer & Digital Marketing Analyst at PMW</strong>, where I build and look after
-          property management websites. My work sits where code meets search: fast pages, clean markup,{" "}
-          <strong>technical SEO, Core Web Vitals, accessibility (ADA) and AI-search readiness</strong>.
+          I’m a <strong>Web Developer and Digital Marketing Analyst</strong> focused on building better websites,
+          improving search performance, and <strong>using automation to make technical workflows more efficient</strong>.
+          My work combines front-end development, technical SEO, analytics and website performance optimization.
         </p>
 
         <p>
-          I also build the tools and automations my team uses, mostly in <strong>TypeScript, Node.js, Playwright and n8n</strong>,
-          and I work with AI coding tools like <strong>Claude Code and Cursor</strong> every day. I hold a{" "}
-          <strong>Bachelor’s in Information Technology</strong> from the University of St. La Salle, majoring in Web and
-          Mobile Development.
+          I work with <strong>HTML, CSS, JavaScript, Liquid, Bootstrap</strong> and custom CMS platforms. My
+          experience includes <strong>technical SEO audits, structured data, Core Web Vitals, internal linking,
+          accessibility and AI search readiness</strong>, and I use Google Tag Manager, Google Analytics 4, Google
+          Search Console and Microsoft Clarity to improve tracking and measurement.
+        </p>
+
+        <p>
+          Beyond development and SEO, I build <strong>automation workflows and internal tools</strong> with{" "}
+          <strong>n8n, GitHub Actions, Slack integrations</strong> and AI-assisted development tools like{" "}
+          <strong>Claude Code and Cursor</strong>. They streamline PageSpeed monitoring, technical audits, reporting and
+          repetitive tasks. I hold a <strong>Bachelor’s in Information Technology</strong> from the University of St. La
+          Salle, majoring in Web and Mobile Development.
         </p>
       </div>
 
@@ -141,8 +149,8 @@ export default function About() {
 
         <p>
           That led me into <strong>freelance web consulting</strong>: WordPress builds, performance work, domains and
-          DNS, and SEO for small businesses. Since 2025 I’ve been at PMW, building websites and, more and more, the
-          automation and testing tools behind them.
+          DNS, and SEO for small businesses. Since 2025 I’ve been working on PMW websites, building them and, more and
+          more, the automation and testing tools behind them.
         </p>
       </div>
 

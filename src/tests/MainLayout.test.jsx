@@ -13,7 +13,14 @@ describe("MainLayout", () => {
 
     expect(screen.getByAltText(/profile/i)).toBeInTheDocument();
     expect(screen.getByText(/Seamor Estrabon/)).toBeInTheDocument();
-    expect(screen.getByText(/Web Developer & Digital Marketing Analyst/)).toBeInTheDocument();
+    // The headline is split into one line per part, so match the whole title element.
+    expect(
+      screen.getByText(
+        (_, el) =>
+          el?.classList.contains("profile-title") &&
+          el.textContent === "Web Developer | Digital Marketing Analyst | Automation & Website Performance"
+      )
+    ).toBeInTheDocument();
 
     expect(screen.getByText(/Email/i)).toBeInTheDocument();
     expect(screen.getByText(/seamorestrabon@gmail.com/i)).toBeInTheDocument();

@@ -13,11 +13,12 @@ describe("Resume Page", () => {
   it("renders 'Experience' section", () => {
     render(<Resume />);
     expect(screen.getByText("Experience")).toBeInTheDocument();
-    expect(screen.getByText("Web Developer / Digital Marketing Analyst, PMW")).toBeInTheDocument();
-    expect(screen.getByText("MAR 2025 - PRESENT")).toBeInTheDocument();
+    expect(screen.getByText("Digital Marketing Analyst, PMW")).toBeInTheDocument();
+    expect(screen.getByText("MAY 2026 - PRESENT")).toBeInTheDocument();
     expect(screen.getByText(/^Built the Speed Engine/)).toBeInTheDocument();
-    expect(screen.getByText("Web Consultant (Freelance)")).toBeInTheDocument();
-    expect(screen.getByText("OCT 2024 - MAR 2026")).toBeInTheDocument();
+    expect(screen.getByText("Web Developer | Digital Marketing Analyst, yesVIRTUAL")).toBeInTheDocument();
+    expect(screen.getByText("MAR 2025 - APR 2026")).toBeInTheDocument();
+    expect(screen.getByText("Web Consultant, Experimentalist & Open Future Institute")).toBeInTheDocument();
   });
 
   it("renders 'Education' section", () => {

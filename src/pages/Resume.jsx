@@ -10,14 +10,15 @@ import NavButton from "../components/NavButton.jsx";
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("languages");
 
+ // Matches the Experience section of the LinkedIn profile (titles, companies and dates).
  const expList = [
     {
       id: 1,
-      job: "Web Developer / Digital Marketing Analyst, PMW",
-      date: "MAR 2025 - PRESENT",
+      job: "Digital Marketing Analyst, PMW",
+      date: "MAY 2026 - PRESENT",
       desc: [
-        "Builds and maintains property management websites in HTML, CSS, JavaScript and Liquid, including page templates, resource pages and FAQ sections with JSON-LD structured data.",
-        "Handles technical SEO, Core Web Vitals and ADA accessibility fixes, plus AI-search readiness (llms.txt, structured data).",
+        "Builds, maintains and optimizes websites in HTML, CSS, JavaScript, Liquid and Bootstrap, with a focus on technical SEO, performance, accessibility and scalability.",
+        "Runs technical SEO audits, structured data and schema, on-page SEO, internal linking, Core Web Vitals and AI search readiness, plus GTM, GA4 and Microsoft Clarity tracking work.",
         "Built the Speed Engine, a TypeScript desktop app (Electron, Playwright, Lighthouse) that explains why pages are slow and what to fix first; teammates request deep audits from Slack, run in GitHub Actions.",
         "Built Analytics Health, a daily GA4 and Google Tag Manager check across hundreds of client sites with Slack alerts, a dashboard and monthly page-view reports.",
         "Built an SEO and AI-visibility scanner, and n8n automations for Microsoft Clarity rage-click alerts and a daily industry news digest.",
@@ -26,33 +27,38 @@ export default function Resume() {
     },
     {
       id: 2,
-      job: "Web Consultant (Freelance)",
-      date: "OCT 2024 - MAR 2026",
-      desc: "Provided end-to-end web services for small business clients, including WordPress development, performance optimization, and domain/DNS management, and handled the SEO setup of their sites.",
+      job: "Web Developer | Digital Marketing Analyst, yesVIRTUAL",
+      date: "MAR 2025 - APR 2026",
+      desc: [
+        "Built, maintained and optimized websites in HTML, CSS, JavaScript, Liquid and Bootstrap for client projects under PMW, working with the development and marketing teams.",
+        "Led technical SEO: site audits, structured data, Core Web Vitals, on-page SEO, internal linking and schema validation for better search visibility and rich results.",
+        "Managed AI/LLM search readiness through llms.txt and semantic summaries, and monitored sites with Google Search Console, Google Analytics and Grade.us.",
+        "Used Cursor AI and Loom to streamline workflows and troubleshoot issues, and worked on internal initiatives to improve site performance and SEO processes.",
+      ],
     },
     {
       id: 3,
-      job: "On-Page SEO Specialist (Freelance)",
-      date: "JAN 2026 - FEB 2026",
-      desc: "Provided end-to-end SEO services including technical audits, on-page optimization, and performance monitoring. Implemented full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.",
+      job: "Web Consultant, Experimentalist & Open Future Institute",
+      date: "OCT 2024 - APR 2026",
+      desc: "Managed and maintained WordPress and client websites: updates, design adjustments, performance optimization, structured data and technical SEO support. Worked with clients to improve functionality, crawlability and user experience.",
     },
     {
       id: 4,
       job: "Monitor Engineer, MID Construction Group",
       date: "MAY 2024 - OCT 2024",
-      desc: "Managed digital security and auditing through daily log monitoring to ensure data policy compliance. Provided technical support for remote operations and built tracking systems to report on system performance metrics.",
+      desc: "Monitored 45+ virtual sessions, tracked attendance, enforced rules, provided technical support and evaluated performance. Built tracking and reporting systems to optimize workflows and improve operational efficiency.",
     },
     {
       id: 5,
-      job: "Logistics Coordinator & Data Analyst, Rulewave",
+      job: "Logistics Coordinator, Rulewave",
       date: "SEP 2021 - JUN 2023",
-      desc: "Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors. Generated weekly performance reports and optimized supply chain documentation processes.",
+      desc: "Optimized supply chain operations, managed customer inquiries, analyzed reports, tracked shipments and implemented process improvements. Developed data-driven insights to improve operational accuracy and logistics performance.",
     },
     {
       id: 6,
-      job: "IT Teacher / ICT Instructor, University of St. La Salle",
+      job: "Information Technology Teacher, University of St. La Salle",
       date: "JUL 2017 - APR 2021",
-      desc: "Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy. Mentored students on technical documentation and research methodologies for complex IT thesis projects.",
+      desc: "Taught web development fundamentals (HTML, CSS, JavaScript, PHP) and facilitated research methodology sessions. Developed lesson plans and projects to improve student engagement and practical learning.",
     },
   ];
 
@@ -67,7 +73,7 @@ export default function Resume() {
       id: 2,
       school: "University of St. La Salle",
       year: "Jun 2013 - Mar 2017",
-      desc: "Major in Web and Mobile Development, with a thesis on Information Management System for Sacred Heart Shrine Lupit Church.",
+      desc: "Bachelor of Science in Information Technology, major in Web and Mobile Development, with a thesis on an Information Management System for Sacred Heart Shrine Lupit Church.",
     },
   ];
 

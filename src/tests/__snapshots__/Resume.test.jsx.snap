@@ -74,12 +74,12 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 class="exp-details-head"
               >
                 <h3>
-                  Web Developer / Digital Marketing Analyst, PMW
+                  Digital Marketing Analyst, PMW
                 </h3>
                 <p
                   class="resume-date"
                 >
-                  MAR 2025 - PRESENT
+                  MAY 2026 - PRESENT
                 </p>
               </div>
               <ul
@@ -88,12 +88,12 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 <li
                   class="resume-desc"
                 >
-                  Builds and maintains property management websites in HTML, CSS, JavaScript and Liquid, including page templates, resource pages and FAQ sections with JSON-LD structured data.
+                  Builds, maintains and optimizes websites in HTML, CSS, JavaScript, Liquid and Bootstrap, with a focus on technical SEO, performance, accessibility and scalability.
                 </li>
                 <li
                   class="resume-desc"
                 >
-                  Handles technical SEO, Core Web Vitals and ADA accessibility fixes, plus AI-search readiness (llms.txt, structured data).
+                  Runs technical SEO audits, structured data and schema, on-page SEO, internal linking, Core Web Vitals and AI search readiness, plus GTM, GA4 and Microsoft Clarity tracking work.
                 </li>
                 <li
                   class="resume-desc"
@@ -124,21 +124,36 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 class="exp-details-head"
               >
                 <h3>
-                  Web Consultant (Freelance)
+                  Web Developer | Digital Marketing Analyst, yesVIRTUAL
                 </h3>
                 <p
                   class="resume-date"
                 >
-                  OCT 2024 - MAR 2026
+                  MAR 2025 - APR 2026
                 </p>
               </div>
               <ul
-                class="resume-ul-desc "
+                class="resume-ul-desc resume-points"
               >
                 <li
                   class="resume-desc"
                 >
-                  Provided end-to-end web services for small business clients, including WordPress development, performance optimization, and domain/DNS management, and handled the SEO setup of their sites.
+                  Built, maintained and optimized websites in HTML, CSS, JavaScript, Liquid and Bootstrap for client projects under PMW, working with the development and marketing teams.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Led technical SEO: site audits, structured data, Core Web Vitals, on-page SEO, internal linking and schema validation for better search visibility and rich results.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Managed AI/LLM search readiness through llms.txt and semantic summaries, and monitored sites with Google Search Console, Google Analytics and Grade.us.
+                </li>
+                <li
+                  class="resume-desc"
+                >
+                  Used Cursor AI and Loom to streamline workflows and troubleshoot issues, and worked on internal initiatives to improve site performance and SEO processes.
                 </li>
               </ul>
             </li>
@@ -149,12 +164,12 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 class="exp-details-head"
               >
                 <h3>
-                  On-Page SEO Specialist (Freelance)
+                  Web Consultant, Experimentalist & Open Future Institute
                 </h3>
                 <p
                   class="resume-date"
                 >
-                  JAN 2026 - FEB 2026
+                  OCT 2024 - APR 2026
                 </p>
               </div>
               <ul
@@ -163,7 +178,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 <li
                   class="resume-desc"
                 >
-                  Provided end-to-end SEO services including technical audits, on-page optimization, and performance monitoring. Implemented full-spectrum SEO strategies covering crawlability, indexation, and on-page optimization for small business clients.
+                  Managed and maintained WordPress and client websites: updates, design adjustments, performance optimization, structured data and technical SEO support. Worked with clients to improve functionality, crawlability and user experience.
                 </li>
               </ul>
             </li>
@@ -188,7 +203,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 <li
                   class="resume-desc"
                 >
-                  Managed digital security and auditing through daily log monitoring to ensure data policy compliance. Provided technical support for remote operations and built tracking systems to report on system performance metrics.
+                  Monitored 45+ virtual sessions, tracked attendance, enforced rules, provided technical support and evaluated performance. Built tracking and reporting systems to optimize workflows and improve operational efficiency.
                 </li>
               </ul>
             </li>
@@ -199,7 +214,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 class="exp-details-head"
               >
                 <h3>
-                  Logistics Coordinator & Data Analyst, Rulewave
+                  Logistics Coordinator, Rulewave
                 </h3>
                 <p
                   class="resume-date"
@@ -213,7 +228,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 <li
                   class="resume-desc"
                 >
-                  Audited logistics databases to maintain data integrity and automated digital workflows to reduce manual entry errors. Generated weekly performance reports and optimized supply chain documentation processes.
+                  Optimized supply chain operations, managed customer inquiries, analyzed reports, tracked shipments and implemented process improvements. Developed data-driven insights to improve operational accuracy and logistics performance.
                 </li>
               </ul>
             </li>
@@ -224,7 +239,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 class="exp-details-head"
               >
                 <h3>
-                  IT Teacher / ICT Instructor, University of St. La Salle
+                  Information Technology Teacher, University of St. La Salle
                 </h3>
                 <p
                   class="resume-date"
@@ -238,7 +253,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 <li
                   class="resume-desc"
                 >
-                  Instructed Senior High students in Web Development (HTML, CSS, JS) and digital literacy. Mentored students on technical documentation and research methodologies for complex IT thesis projects.
+                  Taught web development fundamentals (HTML, CSS, JavaScript, PHP) and facilitated research methodology sessions. Developed lesson plans and projects to improve student engagement and practical learning.
                 </li>
               </ul>
             </li>
@@ -383,7 +398,7 @@ exports[`Resume Page > matches the saved Resume snapshot 1`] = `
                 <li
                   class="edu-desc"
                 >
-                  Major in Web and Mobile Development, with a thesis on Information Management System for Sacred Heart Shrine Lupit Church.
+                  Bachelor of Science in Information Technology, major in Web and Mobile Development, with a thesis on an Information Management System for Sacred Heart Shrine Lupit Church.
                 </li>
               </ul>
             </li>

@@ -78,6 +78,14 @@ aside .profile-card img {
   font-weight: lighter;
 }
 
+.profile-title .title-part {
+  display: block;
+}
+
+.profile-title .title-sep {
+  display: none;
+}
+
 .profile-name {
   text-align: center;
 }
