@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00.260 --> 00:12.456
+A score says a site is slow, not why. The Speed Engine shows why, and what to fix first. Shown on our deliberately slow demo site.
+
+00:12.654 --> 00:19.329
+The overview gives the four scores for the whole site: performance, accessibility, best practices and SEO.
+
+00:19.520 --> 00:24.685
+Down the side are the Core Web Vitals, the measurements Google uses. Red means poor.
+
+00:24.875 --> 00:34.445
+A short to-do list in plain words: who does each fix, how big the job is, and how much it helps.
+
+00:34.636 --> 00:38.321
+And one click makes a one-page summary to share with a client.
+
+00:39.957 --> 00:48.802
+On a slow phone the main content takes almost 50 seconds, and the engine's test agrees with Google's.
+
+00:48.985 --> 00:55.302
+The story in plain words: what holds the page up, and when visitors finally see it.
+
+00:55.487 --> 01:04.801
+The exact cause: a 3.7 MB main image, set to load late. Our team's own guide sits right below.
+
+01:06.417 --> 01:10.775
+Fix plans are written automatically after every audit. This one got eight.
+
+01:10.951 --> 01:17.416
+Each plan puts the fix next to its evidence, so a developer can act on it straight away.
+
+01:17.569 --> 01:29.531
+Every Monday it checks every Elite site, deep-audits the failing ones and posts results in Slack. Or just ask the Speed Bot.

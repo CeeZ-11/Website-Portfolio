@@ -67,3 +67,7 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
   .code { grid-template-columns: 1fr; }
   header h1 { font-size: 24px; }
 }
+
+/* Narrated tour video. Loads only when played (preload="none"). */
+.video-tour h2 { margin-top: 24px; }
+.video-tour video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; background: #000; }
