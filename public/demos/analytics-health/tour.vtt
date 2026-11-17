@@ -1,0 +1,43 @@
+WEBVTT
+
+00:01.331 --> 00:14.438
+Broken tracking usually shows up weeks later. Analytics Health checks every PMW site every morning, so you know the next day.
+
+00:14.646 --> 00:20.557
+Up top is the whole picture: how many sites are healthy, how many need a look, and how many are critical.
+
+00:20.745 --> 00:24.517
+Switch between all sites, Elite and PMI with one click.
+
+00:24.694 --> 00:30.890
+Search for a site, or filter by problem: tracking, analytics, data quality or conversions.
+
+00:31.078 --> 00:37.750
+One row per site, worst first. A red mark shows exactly which check failed.
+
+00:39.177 --> 00:43.828
+Open a site, and you get a plain verdict: what's wrong, and how serious it is.
+
+00:44.012 --> 00:48.940
+Each issue shows the numbers before and after, so it's easy to explain.
+
+00:49.127 --> 00:57.319
+What the site should track: its GA4 property, tag manager, and expected events and conversions.
+
+00:57.510 --> 01:02.211
+Up to 90 days of history, so you can see exactly when a drop started.
+
+01:03.645 --> 01:08.464
+Monthly page views adds up traffic across every monitored site, month by month.
+
+01:08.643 --> 01:14.451
+Twelve months at a glance, and a spreadsheet download for reports.
+
+01:15.859 --> 01:22.643
+Every GA4 property our logins can see, each counted once.
+
+01:22.825 --> 01:28.646
+Switches leave out duplicates, roll-ups and internal sites, so the total stays honest.
+
+01:28.798 --> 01:36.836
+New critical problems also land in Slack every morning. Broken tracking gets caught the next day, not at month end.
